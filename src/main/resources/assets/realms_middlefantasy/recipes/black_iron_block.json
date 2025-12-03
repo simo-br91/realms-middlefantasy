@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "realms_middlefantasy:black_iron_ingot"
+    }
+  },
+  "result": {
+    "item": "realms_middlefantasy:black_iron_block",
+    "count": 1
+  }
+}

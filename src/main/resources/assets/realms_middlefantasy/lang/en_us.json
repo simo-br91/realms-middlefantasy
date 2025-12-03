@@ -3,5 +3,15 @@
   
   "_comment": "Messages système",
   "mod.realms_middlefantasy.name": "Realms of Middle-Fantasy: Chronicles of Arda",
-  "mod.realms_middlefantasy.description": "A vanilla+ mod inspired by Tolkien's Legendarium"
+  "mod.realms_middlefantasy.description": "A vanilla+ mod inspired by Tolkien's Legendarium",
+  
+  "item.realms_middlefantasy.raw_black_iron": "Raw Black Iron",
+  "item.realms_middlefantasy.black_iron_ingot": "Black Iron Ingot",
+  "item.realms_middlefantasy.black_iron_sword": "Black Iron Broadsword",
+  "item.realms_middlefantasy.black_iron_chestplate": "Black Iron Chestplate",
+  "item.realms_middlefantasy.hobbit_bread": "Hobbit Bread",
+
+  "block.realms_middlefantasy.black_iron_block": "Block of Black Iron",
+  "block.realms_middlefantasy.dwarven_stone": "Dwarven Stone"
+
 }

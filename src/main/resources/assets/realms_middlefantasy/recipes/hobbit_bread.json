@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "minecraft:wheat" },
+    { "item": "minecraft:wheat" },
+    { "item": "minecraft:wheat" },
+    { "item": "minecraft:honey_bottle" },
+    { "item": "minecraft:sweet_berries" }
+  ],
+  "result": {
+    "item": "realms_middlefantasy:hobbit_bread",
+    "count": 2
+  }
+}

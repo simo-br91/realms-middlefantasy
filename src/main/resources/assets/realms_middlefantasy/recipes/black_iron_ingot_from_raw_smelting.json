@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "realms_middlefantasy:raw_black_iron"
+  },
+  "result": "realms_middlefantasy:black_iron_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

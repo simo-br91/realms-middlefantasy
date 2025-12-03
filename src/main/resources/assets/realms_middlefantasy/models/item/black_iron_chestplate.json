@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "realms_middlefantasy:item/black_iron_chestplate"
+  }
+}

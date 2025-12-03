@@ -8,6 +8,7 @@ import com.simo.realmsofmiddlefantasy.entity.ModEntities;
 import com.simo.realmsofmiddlefantasy.world.ModFeatures;
 import com.simo.realmsofmiddlefantasy.world.ModStructures;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -41,10 +42,6 @@ public class RealmsOfMiddleFantasy {
         ModStructures.STRUCTURE_TYPES.register(modEventBus);
         ModFeatures.FEATURES.register(modEventBus);
         
-        // Event bus Forge (pour les events runtime)
-        MinecraftForge.EVENT_BUS.register(this);
-        
-        LOGGER.info("Realms of Middle-Fantasy: Chronicles of Arda - Initialisation réussie");
-        LOGGER.info("Version CORE - Palier 0 : Squelette technique");
+        LOGGER.info("Version CORE - Palier 0/2 : Mod initialisé avec Orc de base.");
     }
 }
