@@ -74,5 +74,9 @@ public class ModItems {
                     0x4A7A1C, // couleur secondaire (vert sale)
                     new Item.Properties()
             ));
+    public static final RegistryObject<Item> DWARF_SPAWN_EGG = ITEMS.register("dwarf_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.DWARF, 0x695a4a, 0xc1a37b,
+                    new Item.Properties()));
+
 
 }

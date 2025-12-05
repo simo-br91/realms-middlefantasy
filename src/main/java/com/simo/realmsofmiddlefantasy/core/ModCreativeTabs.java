@@ -38,6 +38,7 @@ public class ModCreativeTabs {
 
                                 // Mobs (tests)
                                 output.accept(ModItems.ORC_SPAWN_EGG.get());
+                                output.accept(ModItems.DWARF_SPAWN_EGG.get());
                             })
                             .build()
             );

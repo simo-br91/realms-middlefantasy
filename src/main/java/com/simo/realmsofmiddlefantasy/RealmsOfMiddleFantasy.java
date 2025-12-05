@@ -13,6 +13,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import software.bernie.geckolib.GeckoLib;
 
 /**
  * Classe principale du mod "Realms of Middle-Fantasy: Chronicles of Arda".
@@ -32,6 +33,7 @@ public class RealmsOfMiddleFantasy {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public RealmsOfMiddleFantasy() {
+        GeckoLib.initialize();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         
         // Enregistrement des registres DeferredRegister
