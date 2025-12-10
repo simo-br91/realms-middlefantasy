@@ -3,70 +3,129 @@
 	"minecraft:geometry": [
 		{
 			"description": {
-				"identifier": "geometry.orc_optimized",
+				"identifier": "geometry.orc_warrior",
 				"texture_width": 64,
 				"texture_height": 64,
 				"visible_bounds_width": 3,
-				"visible_bounds_height": 3.5,
-				"visible_bounds_offset": [0, 1.25, 0]
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 1.5, 0]
 			},
 			"bones": [
 				{
-					"name": "root",
+					"name": "root_base",
 					"pivot": [0, 0, 0],
 					"rotation": [0, 180, 0]
 				},
 				{
-					"name": "body",
-					"parent": "root",
-					"pivot": [0, 24, 0],
-					"rotation": [10, 0, 0],
+					"name": "waist_core",
+					"parent": "root_base",
+					"pivot": [0, 12, 0],
 					"cubes": [
-						{"origin": [-4, 12, -3], "size": [8, 12, 4], "uv": [16, 16]}
+						{"origin": [-4, 12, -2], "size": [8, 12, 4], "uv": [16, 16]}
 					]
 				},
 				{
-					"name": "head",
-					"parent": "body",
-					"pivot": [0, 24, 0],
-					"rotation": [-10, 0, 0],
+					"name": "belt_buckle_iron",
+					"parent": "waist_core",
+					"pivot": [0, 12, 0],
 					"cubes": [
-						{"origin": [-4, 24, -4], "size": [8, 8, 8], "uv": [0, 0]},
-						{"origin": [-5, 28, -5], "size": [2, 4, 1], "uv": [32, 0]},
-						{"origin": [3, 28, -5], "size": [2, 4, 1], "uv": [38, 0]},
-						{"origin": [-1, 23, -5], "size": [2, 3, 1], "uv": [32, 5]}
+						{"origin": [-2, 11, -2.5], "size": [4, 3, 1], "uv": [1, 1]}
 					]
 				},
 				{
-					"name": "rightArm",
-					"parent": "body",
+					"name": "torso_skin",
+					"parent": "waist_core",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4, 24, -2], "size": [8, 12, 4], "uv": [16, 32]}
+					]
+				},
+				{
+					"name": "chest_plate_jagged",
+					"parent": "torso_skin",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4.5, 26, -2.5], "size": [9, 10, 5], "inflate": 0.2, "uv": [1, 32]}
+					]
+				},
+				{
+					"name": "head_skin_base",
+					"parent": "torso_skin",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4, 24, -4], "size": [8, 8, 8], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "helmet_cap_iron",
+					"parent": "head_skin_base",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4.5, 28, -4.5], "size": [9, 5, 9], "inflate": 0.1, "uv": [32, 0]}
+					]
+				},
+				{
+					"name": "arm_right_skin",
+					"parent": "torso_skin",
 					"pivot": [-5, 22, 0],
 					"cubes": [
-						{"origin": [-8, 10, -2], "size": [4, 12, 4], "uv": [40, 16]}
+						{"origin": [-8, 12, -2], "size": [4, 12, 4], "uv": [40, 16]}
 					]
 				},
 				{
-					"name": "leftArm",
-					"parent": "body",
+					"name": "pauldron_right_spiked",
+					"parent": "arm_right_skin",
+					"pivot": [-5, 22, 0],
+					"cubes": [
+						{"origin": [-9, 21, -3], "size": [6, 6, 6], "uv": [40, 32]}
+					]
+				},
+				{
+					"name": "arm_left_skin",
+					"parent": "torso_skin",
 					"pivot": [5, 22, 0],
 					"cubes": [
-						{"origin": [4, 10, -2], "size": [4, 12, 4], "uv": [40, 32]}
+						{"origin": [4, 12, -2], "size": [4, 12, 4], "uv": [32, 48]}
 					]
 				},
 				{
-					"name": "rightLeg",
-					"parent": "root",
-					"pivot": [-2, 12, 0],
+					"name": "vambrace_left_leather",
+					"parent": "arm_left_skin",
+					"pivot": [5, 16, 0],
 					"cubes": [
-						{"origin": [-4, 0, -2], "size": [3, 12, 4], "uv": [0, 16]}
+						{"origin": [3.5, 12, -2.5], "size": [5, 6, 5], "inflate": 0.1, "uv": [48, 48]}
 					]
 				},
 				{
-					"name": "leftLeg",
-					"parent": "root",
-					"pivot": [2, 12, 0],
+					"name": "leg_right_skin",
+					"parent": "waist_core",
+					"pivot": [-1.9, 12, 0],
 					"cubes": [
-						{"origin": [1, 0, -2], "size": [3, 12, 4], "uv": [0, 32]}
+						{"origin": [-3.9, 0, -2], "size": [4, 12, 4], "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "boot_right_plate",
+					"parent": "leg_right_skin",
+					"pivot": [-1.9, 5, 0],
+					"cubes": [
+						{"origin": [-4.4, 0, -2.5], "size": [5, 5, 5], "inflate": 0.1, "uv": [0, 32]}
+					]
+				},
+				{
+					"name": "leg_left_skin",
+					"parent": "waist_core",
+					"pivot": [1.9, 12, 0],
+					"cubes": [
+						{"origin": [-0.1, 0, -2], "size": [4, 12, 4], "uv": [16, 48]}
+					]
+				},
+				{
+					"name": "boot_left_fur",
+					"parent": "leg_left_skin",
+					"pivot": [1.9, 5, 0],
+					"cubes": [
+						{"origin": [-0.6, 0, -2.5], "size": [5, 6, 5], "inflate": 0.2, "uv": [0, 48]}
 					]
 				}
 			]
