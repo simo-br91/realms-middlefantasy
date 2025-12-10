@@ -1,0 +1,99 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+
+    "idle_stance": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            { "time": 0.0, "vector": [0, 0, 0] },
+            { "time": 1.0, "vector": [0, 0.5, 0] },
+            { "time": 2.0, "vector": [0, 0, 0] }
+          ]
+        },
+        "head": {
+          "rotation": [
+            { "time": 0.0, "vector": [0, 0, 0] },
+            { "time": 1.0, "vector": [0, -1.0, 0] },
+            { "time": 2.0, "vector": [0, 0, 0] }
+          ]
+        }
+      }
+    },
+
+    "march_heavy": {
+      "loop": true,
+      "bones": {
+        "right_leg": {
+          "rotation": [
+            { "time": 0.0, "vector": [20, 0, 0] },
+            { "time": 0.5, "vector": [-20, 0, 0] },
+            { "time": 1.0, "vector": [20, 0, 0] }
+          ]
+        },
+        "left_leg": {
+          "rotation": [
+            { "time": 0.0, "vector": [-20, 0, 0] },
+            { "time": 0.5, "vector": [20, 0, 0] },
+            { "time": 1.0, "vector": [-20, 0, 0] }
+          ]
+        },
+        "body": {
+          "rotation": [
+            { "time": 0.0, "vector": [0, 0, 1] },
+            { "time": 0.5, "vector": [0, 0, -1] },
+            { "time": 1.0, "vector": [0, 0, 1] }
+          ]
+        }
+      }
+    },
+
+    "heavy_cleave": {
+      "loop": false,
+      "bones": {
+        "right_arm": {
+          "rotation": [
+            { "time": 0.0, "vector": [0, 0, 0] },
+            { "time": 0.2, "vector": [-80, 0, 0] },
+            { "time": 0.4, "vector": [30, 0, 0] }
+          ]
+        },
+        "body": {
+          "rotation": [
+            { "time": 0.0, "vector": [0, 0, 0] },
+            { "time": 0.2, "vector": [0, 20, 0] },
+            { "time": 0.4, "vector": [0, 0, 0] }
+          ]
+        }
+      }
+    },
+
+    "beard_sway": {
+      "loop": true,
+      "bones": {
+        "beard": {
+          "rotation": [
+            { "time": 0.0, "vector": [2, 0, 0] },
+            { "time": 0.5, "vector": [-2, 0, 0] },
+            { "time": 1.0, "vector": [2, 0, 0] }
+          ]
+        }
+      }
+    },
+
+    "beard_bounce": {
+      "loop": true,
+      "bones": {
+        "beard": {
+          "rotation": [
+            { "time": 0.0, "vector": [6, 0, 0] },
+            { "time": 0.25, "vector": [-6, 0, 0] },
+            { "time": 0.5, "vector": [6, 0, 0] }
+          ]
+        }
+      }
+    }
+
+  }
+}

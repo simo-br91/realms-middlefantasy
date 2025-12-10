@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dwarven_guardian.move": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": ["idle_stance"],
+          "transitions": [
+            { "walking": "query.is_moving" },
+            { "attack_swing": "query.is_delayed_attacking" }
+          ]
+        },
+        "walking": {
+          "animations": ["march_heavy"],
+          "transitions": [
+            { "default": "!query.is_moving" },
+            { "attack_swing": "query.is_delayed_attacking" }
+          ]
+        },
+        "attack_swing": {
+          "animations": ["heavy_cleave"],
+          "transitions": [
+            { "default": "query.all_animations_finished" }
+          ]
+        }
+      }
+    },
+    "controller.animation.dwarven_guardian.beard_physics": {
+      "initial_state": "static",
+      "states": {
+        "static": {
+          "animations": ["beard_sway"],
+          "transitions": [
+             { "moving_sway": "query.is_moving" }
+          ]
+        },
+        "moving_sway": {
+          "animations": ["beard_bounce"],
+          "transitions": [
+             { "static": "!query.is_moving" }
+          ]
+        }
+      }
+    }
+  }
+}

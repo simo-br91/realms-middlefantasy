@@ -18,7 +18,6 @@ public class ModEntityRenderers {
     // Déclare la LayerDefinition pour ORC_LAYER et DWARF_LAYER
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(OrcRenderer.ORC_LAYER, OrcRenderer::createBodyLayer);
         event.registerLayerDefinition(DwarfRenderer.DWARF_LAYER, DwarfRenderer::createBodyLayer);
     }
 
