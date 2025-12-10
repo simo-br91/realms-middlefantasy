@@ -51,33 +51,40 @@ public class OrcEntity extends Monster implements GeoEntity {
     }
 
     private PlayState predicate(AnimationState<OrcEntity> event) {
+        // Death animation
         if (this.isDeadOrDying()) {
             event.getController().setAnimation(
-                RawAnimation.begin().then("animation.orc.death", Animation.LoopType.PLAY_ONCE)
+                RawAnimation.begin().then("death", Animation.LoopType.PLAY_ONCE)
             );
             return PlayState.CONTINUE;
         }
 
+        // Attack animation
         if (this.swinging) {
             event.getController().setAnimation(
-                RawAnimation.begin().then("animation.orc.attack", Animation.LoopType.PLAY_ONCE)
+                RawAnimation.begin().then("melee_attack", Animation.LoopType.PLAY_ONCE)
             );
             return PlayState.CONTINUE;
         }
 
+        // Walking animation (with breathing overlay)
         if (event.isMoving()) {
             event.getController().setAnimation(
-                RawAnimation.begin().then("animation.orc.walk", Animation.LoopType.LOOP)
+                RawAnimation.begin()
+                    .then("walk", Animation.LoopType.LOOP)
+                    .then("look_at_target", Animation.LoopType.LOOP)
             );
         } else {
+            // Idle with breathing
             event.getController().setAnimation(
-                RawAnimation.begin().then("animation.orc.idle", Animation.LoopType.LOOP)
+                RawAnimation.begin()
+                    .then("idle_breathing", Animation.LoopType.LOOP)
+                    .then("look_at_target", Animation.LoopType.LOOP)
             );
         }
 
         return PlayState.CONTINUE;
     }
-
 
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
