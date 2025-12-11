@@ -5,19 +5,39 @@
       "loop": true,
       "bones": {
         "waist_core": {
-          "scale": [1.0, "1.0 + math.sin(query.life_time * 100) * 0.02", 1.0]
+          "scale": [
+            1.0,
+            "1.0 + math.sin(query.life_time * 100) * 0.02",
+            1.0
+          ]
         },
         "head_neck_joint": {
-          "rotation": ["math.sin(query.life_time * 50) * 2.0", 0, 0]
+          "rotation": [
+            "math.sin(query.life_time * 50) * 2.0",
+            0,
+            0
+          ]
         },
         "beard_braid_center": {
-          "rotation": ["math.cos(query.life_time * 50) * 5.0", 0, 0]
+          "rotation": [
+            "math.cos(query.life_time * 50) * 5.0",
+            0,
+            0
+          ]
         },
         "arm_R_upper": {
-          "rotation": [0, 0, 5]
+          "rotation": [
+            0,
+            0,
+            5
+          ]
         },
         "arm_L_upper": {
-          "rotation": [0, 0, -5]
+          "rotation": [
+            0,
+            0,
+            -5
+          ]
         }
       }
     },
@@ -26,23 +46,51 @@
       "anim_time_update": "query.modified_distance_moved",
       "bones": {
         "waist_core": {
-          "rotation": [0, 0, "math.cos(query.anim_time * 20) * 2.0"],
-          "position": [0, "math.abs(math.cos(query.anim_time * 20)) * 0.5", 0]
+          "rotation": [
+            0,
+            0,
+            "math.cos(query.anim_time * 20) * 2.0"
+          ],
+          "position": [
+            0,
+            "math.abs(math.cos(query.anim_time * 20)) * 0.5",
+            0
+          ]
         },
         "leg_R_thigh": {
-          "rotation": ["math.cos(query.anim_time * 20) * 40.0", 0, 0]
+          "rotation": [
+            "math.cos(query.anim_time * 20) * 40.0",
+            0,
+            0
+          ]
         },
         "leg_L_thigh": {
-          "rotation": ["math.cos(query.anim_time * 20 + 180) * 40.0", 0, 0]
+          "rotation": [
+            "math.cos(query.anim_time * 20 + 180) * 40.0",
+            0,
+            0
+          ]
         },
         "arm_R_upper": {
-          "rotation": ["math.cos(query.anim_time * 20 + 180) * 30.0", 0, 5]
+          "rotation": [
+            "math.cos(query.anim_time * 20 + 180) * 30.0",
+            0,
+            5
+          ]
         },
         "arm_L_upper": {
-          "rotation": ["math.cos(query.anim_time * 20) * 30.0", 0, -5]
+          "rotation": [
+            "math.cos(query.anim_time * 20) * 30.0",
+            0,
+            -5
+          ]
         },
         "beard_main_mass": {
-          "rotation": ["math.sin(query.anim_time * 40) * 5.0", 0, 0]
+          "rotation": [
+            "math.sin(query.anim_time * 40) * 5.0",
+            0,
+            0
+          ]
         }
       }
     },
@@ -52,26 +100,236 @@
       "bones": {
         "waist_core": {
           "rotation": {
-            "0.0": [0, 0, 0],
-            "0.2": [0, -20, 0],
-            "0.3": [10, 30, 0],
-            "0.5": [0, 0, 0]
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.2": [
+              0,
+              -20,
+              0
+            ],
+            "0.3": [
+              10,
+              30,
+              0
+            ],
+            "0.5": [
+              0,
+              0,
+              0
+            ]
           }
         },
         "arm_R_upper": {
           "rotation": {
-            "0.0": [0, 0, 5],
-            "0.2": [-120, -20, 0],
-            "0.3": [60, 0, 0],
-            "0.5": [0, 0, 5]
+            "0.0": [
+              0,
+              0,
+              5
+            ],
+            "0.2": [
+              -120,
+              -20,
+              0
+            ],
+            "0.3": [
+              60,
+              0,
+              0
+            ],
+            "0.5": [
+              0,
+              0,
+              5
+            ]
           }
         },
         "beard_braid_center": {
-           "rotation": {
-             "0.0": [0, 0, 0],
-             "0.3": [-20, 0, 0],
-             "0.5": [0, 0, 0]
-           }
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.3": [
+              -20,
+              0,
+              0
+            ],
+            "0.5": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "idle_stance": {
+      "loop": true,
+      "bones": {
+        "waist_core": {
+          "scale": [
+            1.0,
+            "1.0 + math.sin(query.life_time * 100) * 0.02",
+            1.0
+          ]
+        },
+        "head_neck_joint": {
+          "rotation": [
+            "math.sin(query.life_time * 50) * 2.0",
+            0,
+            0
+          ]
+        },
+        "beard_braid_center": {
+          "rotation": [
+            "math.cos(query.life_time * 50) * 5.0",
+            0,
+            0
+          ]
+        },
+        "arm_R_upper": {
+          "rotation": [
+            0,
+            0,
+            5
+          ]
+        },
+        "arm_L_upper": {
+          "rotation": [
+            0,
+            0,
+            -5
+          ]
+        }
+      }
+    },
+    "march_heavy": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "waist_core": {
+          "rotation": [
+            0,
+            0,
+            "math.cos(query.anim_time * 20) * 2.0"
+          ],
+          "position": [
+            0,
+            "math.abs(math.cos(query.anim_time * 20)) * 0.5",
+            0
+          ]
+        },
+        "leg_R_thigh": {
+          "rotation": [
+            "math.cos(query.anim_time * 20) * 40.0",
+            0,
+            0
+          ]
+        },
+        "leg_L_thigh": {
+          "rotation": [
+            "math.cos(query.anim_time * 20 + 180) * 40.0",
+            0,
+            0
+          ]
+        },
+        "arm_R_upper": {
+          "rotation": [
+            "math.cos(query.anim_time * 20 + 180) * 30.0",
+            0,
+            5
+          ]
+        },
+        "arm_L_upper": {
+          "rotation": [
+            "math.cos(query.anim_time * 20) * 30.0",
+            0,
+            -5
+          ]
+        },
+        "beard_main_mass": {
+          "rotation": [
+            "math.sin(query.anim_time * 40) * 5.0",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "attack": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.5,
+      "bones": {
+        "waist_core": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.2": [
+              0,
+              -20,
+              0
+            ],
+            "0.3": [
+              10,
+              30,
+              0
+            ],
+            "0.5": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "arm_R_upper": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              5
+            ],
+            "0.2": [
+              -120,
+              -20,
+              0
+            ],
+            "0.3": [
+              60,
+              0,
+              0
+            ],
+            "0.5": [
+              0,
+              0,
+              5
+            ]
+          }
+        },
+        "beard_braid_center": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.3": [
+              -20,
+              0,
+              0
+            ],
+            "0.5": [
+              0,
+              0,
+              0
+            ]
+          }
         }
       }
     }

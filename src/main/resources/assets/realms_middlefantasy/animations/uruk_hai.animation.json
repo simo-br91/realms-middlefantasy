@@ -1,7 +1,7 @@
 {
   "format_version": "1.8.0",
   "animations": {
-    "animation.uruk_hai_elite.idle_heavy_breathing": {
+    "idle_elite": {
       "loop": true,
       "bones": {
         "waist_core": {
@@ -22,7 +22,7 @@
         }
       }
     },
-    "animation.uruk_hai_elite.march_aggressive": {
+    "march_uruk": {
       "loop": true,
       "anim_time_update": "query.modified_distance_moved",
       "bones": {
@@ -46,7 +46,7 @@
         }
       }
     },
-    "animation.uruk_hai_elite.melee_smash": {
+    "brutal_strike": {
       "loop": false,
       "animation_length": 0.8,
       "bones": {
@@ -68,11 +68,24 @@
           }
         },
         "head_neck_base": {
-           "rotation": {
-             "0.0": [0, 0, 0],
-             "0.2": [10, -20, 0],
-             "0.4": [-10, 10, 0]
-           }
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [10, -20, 0],
+            "0.4": [-10, 10, 0]
+          }
+        }
+      }
+    },
+    "death": {
+      "loop": false,
+      "animation_length": 1.0,
+      "bones": {
+        "torso_core_flesh": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.5": [-45, 0, 0],
+            "1.0": [-90, 0, 0]
+          }
         }
       }
     }

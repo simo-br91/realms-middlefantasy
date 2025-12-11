@@ -1,28 +1,33 @@
 {
   "format_version": "1.8.0",
   "animations": {
-    "animation.orc_warrior.idle": {
+    "idle_ready": {
       "loop": true,
       "bones": {
         "waist_core": {
           "rotation": [0, 0, 0],
-          "position": [0, "math.sin(query.life_time * 100) * 0.5", 0]
+          "position": [0, "math.sin(query.life_time * 4) * 0.5", 0]
         },
         "torso_upper": {
-          "rotation": ["5 + math.cos(query.life_time * 100) * 2", 0, 0]
+          "rotation": ["5 + math.cos(query.life_time * 4) * 2", 0, 0]
         },
         "head_neck_group": {
-          "rotation": ["-5 + math.sin(query.life_time * 80) * 3", "math.cos(query.life_time * 50) * 5", 0]
+          "rotation": [
+            "-5 + math.sin(query.life_time * 3) * 3",
+            "math.cos(query.life_time * 2) * 5",
+            0
+          ]
         },
         "arm_right_shoulder": {
-          "rotation": ["math.cos(query.life_time * 100) * 3", 0, 5]
+          "rotation": ["math.cos(query.life_time * 4) * 3", 0, 5]
         },
         "arm_left_shoulder": {
-          "rotation": ["math.cos(query.life_time * 100 + 90) * 3", 0, -5]
+          "rotation": ["math.cos(query.life_time * 4 + 90) * 3", 0, -5]
         }
       }
     },
-    "animation.orc_warrior.walk": {
+
+    "march_armed": {
       "loop": true,
       "anim_time_update": "query.modified_distance_moved",
       "bones": {
@@ -49,16 +54,17 @@
         }
       }
     },
-    "animation.orc_warrior.attack": {
+
+    "sword_slash": {
       "loop": "hold_on_last_frame",
-      "animation_length": 0.5,
+      "animation_length": 0.6,
       "bones": {
         "torso_upper": {
           "rotation": {
             "0.0": [5, 0, 0],
             "0.2": [-15, 20, 0],
             "0.3": [20, -10, 0],
-            "0.5": [5, 0, 0]
+            "0.6": [5, 0, 0]
           }
         },
         "arm_right_shoulder": {
@@ -66,7 +72,7 @@
             "0.0": [0, 0, 0],
             "0.2": [-120, -30, 0],
             "0.3": [60, 0, 0],
-            "0.5": [0, 0, 0]
+            "0.6": [0, 0, 0]
           }
         },
         "head_neck_group": {
@@ -74,6 +80,34 @@
             "0.0": [0, 0, 0],
             "0.2": [0, -20, 0],
             "0.3": [0, 10, 0]
+          }
+        }
+      }
+    },
+
+    "death": {
+      "loop": false,
+      "animation_length": 0.8,
+      "bones": {
+        "waist_core": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.4": [20, 0, 0],
+            "0.8": [70, 0, 0]
+          }
+        },
+        "torso_upper": {
+          "rotation": {
+            "0.0": [5, 0, 0],
+            "0.4": [25, 0, 0],
+            "0.8": [65, 0, 0]
+          }
+        },
+        "head_neck_group": {
+          "rotation": {
+            "0.0": [-5, 0, 0],
+            "0.4": [15, 0, 0],
+            "0.8": [35, 0, 0]
           }
         }
       }

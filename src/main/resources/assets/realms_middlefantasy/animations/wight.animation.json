@@ -1,53 +1,53 @@
 {
   "format_version": "1.8.0",
   "animations": {
-    "animation.barrow_wight.idle": {
-      "loop": true,
-      "bones": {
-        "spine_ribcage": {
-          "rotation": ["math.sin(query.life_time * 50) * 2", 0, 0]
-        },
-        "arm_upper_right_bone": {
-          "rotation": [0, 0, "5 + math.cos(query.life_time * 50) * 2"]
-        },
-        "arm_upper_left_bone": {
-          "rotation": [0, 0, "-5 - math.cos(query.life_time * 50) * 2"]
-        },
-        "skull_base": {
-          "rotation": ["math.sin(query.life_time * 30) * 3", 0, 0]
-        }
-      }
-    },
-    "animation.barrow_wight.hover_bob": {
+    "idle_hover": {
       "loop": true,
       "bones": {
         "wight_root": {
-          "position": [0, "math.sin(query.life_time * 100) * 1.5", 0]
+          "position": [0, "math.sin(query.life_time * 3) * 1.0", 0]
+        },
+        "spine_ribcage": {
+          "rotation": ["math.sin(query.life_time * 4) * 3", 0, 0]
+        },
+        "skull_base": {
+          "rotation": ["math.sin(query.life_time * 2) * 2", 0, 0]
+        },
+        "arm_upper_right_bone": {
+          "rotation": [0, 0, "5 + math.cos(query.life_time * 3) * 2"]
+        },
+        "arm_upper_left_bone": {
+          "rotation": [0, 0, "-5 - math.cos(query.life_time * 3) * 2"]
         }
       }
     },
-    "animation.barrow_wight.walk": {
+
+    "float_glide": {
       "loop": true,
       "anim_time_update": "query.modified_distance_moved",
       "bones": {
+        "wight_root": {
+          "position": [0, "math.sin(query.anim_time * 10) * 1.5", 0]
+        },
         "leg_upper_left_bone": {
-          "rotation": ["math.cos(query.anim_time * 30) * 20", 0, 0]
+          "rotation": ["math.cos(query.anim_time * 20) * 15", 0, 0]
         },
         "leg_upper_right_bone": {
-          "rotation": ["math.cos(query.anim_time * 30 + 180) * 20", 0, 0]
+          "rotation": ["math.cos(query.anim_time * 20 + 180) * 15", 0, 0]
         },
         "arm_upper_left_bone": {
-          "rotation": ["math.cos(query.anim_time * 30 + 180) * 10", 0, -5]
+          "rotation": ["math.cos(query.anim_time * 20 + 180) * 10", 0, -5]
         },
         "arm_upper_right_bone": {
-          "rotation": ["math.cos(query.anim_time * 30) * 10", 0, 5]
+          "rotation": ["math.cos(query.anim_time * 20) * 10", 0, 5]
         },
         "spine_ribcage": {
-          "rotation": ["5 + math.cos(query.anim_time * 60) * 2", 0, 0]
+          "rotation": ["5 + math.cos(query.anim_time * 25) * 3", 0, 0]
         }
       }
     },
-    "animation.barrow_wight.attack": {
+
+    "attack_drain": {
       "loop": "hold_on_last_frame",
       "animation_length": 0.8,
       "bones": {
@@ -79,26 +79,36 @@
           "rotation": {
             "0.0": [0, 0, 0],
             "0.3": [-10, 0, 0],
-            "0.5": [5, 0, 0]
+            "0.5": [5, 0, 0],
+            "0.8": [0, 0, 0]
           }
         }
       }
     },
-    "animation.barrow_wight.hurt": {
-      "animation_length": 0.5,
+
+    "death_dissipate": {
+      "loop": false,
+      "animation_length": 1.0,
       "bones": {
+        "wight_root": {
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.4": [0, 1.5, 0],
+            "1.0": [0, -2.0, 0]
+          }
+        },
         "spine_ribcage": {
           "rotation": {
             "0.0": [0, 0, 0],
-            "0.1": [-20, 0, 0],
-            "0.5": [0, 0, 0]
+            "0.4": [10, 0, 0],
+            "1.0": [30, 0, 0]
           }
         },
         "skull_base": {
-           "rotation": {
+          "rotation": {
             "0.0": [0, 0, 0],
-            "0.1": [40, 0, 0],
-            "0.5": [0, 0, 0]
+            "0.4": [5, 0, 0],
+            "1.0": [25, 0, 0]
           }
         }
       }

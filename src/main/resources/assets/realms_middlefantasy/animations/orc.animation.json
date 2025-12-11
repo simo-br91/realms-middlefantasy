@@ -1,7 +1,7 @@
 {
   "format_version": "1.8.0",
   "animations": {
-    "animation.rmf_basic_orc.idle": {
+    "idle_breathing": {
       "loop": true,
       "animation_length": 2.0,
       "bones": {
@@ -25,24 +25,10 @@
             "1.0": [-8, 0, 0],
             "2.0": [-5, 0, 0]
           }
-        },
-        "arm_R_shoulder_joint": {
-          "rotation": {
-            "0.0": [0, 0, 0],
-            "1.0": [0, 0, 3],
-            "2.0": [0, 0, 0]
-          }
-        },
-        "arm_L_shoulder_joint": {
-          "rotation": {
-            "0.0": [0, 0, 0],
-            "1.0": [0, 0, -3],
-            "2.0": [0, 0, 0]
-          }
         }
       }
     },
-    "animation.rmf_basic_orc.walk": {
+    "walk": {
       "loop": true,
       "anim_time_update": "query.modified_distance_moved",
       "bones": {
@@ -66,7 +52,7 @@
         }
       }
     },
-    "animation.rmf_basic_orc.attack": {
+    "melee_attack": {
       "loop": false,
       "animation_length": 0.8,
       "bones": {
@@ -95,21 +81,35 @@
         }
       }
     },
-    "animation.rmf_basic_orc.hurt": {
+    "death": {
       "loop": false,
-      "animation_length": 0.5,
+      "animation_length": 1.0,
       "bones": {
         "torso_upper_chest": {
           "rotation": {
-            "0.0": [-20, 0, 0],
-            "0.5": [0, 0, 0]
+            "0.0": [0, 0, 0],
+            "0.3": [-45, 0, 0],
+            "1.0": [-90, 0, 0]
           }
         },
         "head_neck_joint": {
           "rotation": {
-            "0.0": [30, 0, 0],
-            "0.5": [0, 0, 0]
+            "0.0": [0, 0, 0],
+            "0.3": [30, 0, 0],
+            "1.0": [60, 0, 0]
           }
+        }
+      }
+    },
+    "look_at_target": {
+      "loop": true,
+      "bones": {
+        "head_neck_joint": {
+          "rotation": [
+            "query.target_x_rotation * 0.5",
+            "query.target_y_rotation * 0.5",
+            0
+          ]
         }
       }
     }

@@ -5,19 +5,39 @@
       "loop": true,
       "bones": {
         "torso_upper_hunch": {
-          "rotation": ["Math.sin(query.life_time * 50) * 2", 0, 0]
+          "rotation": [
+            "Math.sin(query.life_time * 50) * 2",
+            0,
+            0
+          ]
         },
         "head_base_skin": {
-          "rotation": ["Math.cos(query.life_time * 50) * 2", 0, 0]
+          "rotation": [
+            "Math.cos(query.life_time * 50) * 2",
+            0,
+            0
+          ]
         },
         "arm_left_shoulder_muscle": {
-          "rotation": [0, 0, -5]
+          "rotation": [
+            0,
+            0,
+            -5
+          ]
         },
         "arm_right_shoulder_muscle": {
-          "rotation": [0, 0, 5]
+          "rotation": [
+            0,
+            0,
+            5
+          ]
         },
         "jaw_lower_mandible": {
-          "rotation": ["Math.sin(query.life_time * 100) * 3 + 5", 0, 0]
+          "rotation": [
+            "Math.sin(query.life_time * 100) * 3 + 5",
+            0,
+            0
+          ]
         }
       }
     },
@@ -26,29 +46,65 @@
       "anim_time_update": "query.modified_distance_moved",
       "bones": {
         "waist_core": {
-          "rotation": [0, "Math.cos(query.anim_time * 20) * 5", "Math.cos(query.anim_time * 40) * 2"],
-          "position": [0, "Math.abs(Math.cos(query.anim_time * 20)) * 1", 0]
+          "rotation": [
+            0,
+            "Math.cos(query.anim_time * 20) * 5",
+            "Math.cos(query.anim_time * 40) * 2"
+          ],
+          "position": [
+            0,
+            "Math.abs(Math.cos(query.anim_time * 20)) * 1",
+            0
+          ]
         },
         "leg_left_thigh_flesh": {
-          "rotation": ["Math.cos(query.anim_time * 20) * 30", 0, 0]
+          "rotation": [
+            "Math.cos(query.anim_time * 20) * 30",
+            0,
+            0
+          ]
         },
         "leg_left_shin_bone": {
-          "rotation": ["Math.max(0, -Math.cos(query.anim_time * 20) * 30)", 0, 0]
+          "rotation": [
+            "Math.max(0, -Math.cos(query.anim_time * 20) * 30)",
+            0,
+            0
+          ]
         },
         "leg_right_thigh_flesh": {
-          "rotation": ["Math.cos(query.anim_time * 20 + 180) * 30", 0, 0]
+          "rotation": [
+            "Math.cos(query.anim_time * 20 + 180) * 30",
+            0,
+            0
+          ]
         },
         "leg_right_shin_bone": {
-          "rotation": ["Math.max(0, -Math.cos(query.anim_time * 20 + 180) * 30)", 0, 0]
+          "rotation": [
+            "Math.max(0, -Math.cos(query.anim_time * 20 + 180) * 30)",
+            0,
+            0
+          ]
         },
         "arm_left_shoulder_muscle": {
-          "rotation": ["Math.cos(query.anim_time * 20 + 180) * 20", 0, -5]
+          "rotation": [
+            "Math.cos(query.anim_time * 20 + 180) * 20",
+            0,
+            -5
+          ]
         },
         "arm_right_shoulder_muscle": {
-          "rotation": ["Math.cos(query.anim_time * 20) * 20", 0, 5]
+          "rotation": [
+            "Math.cos(query.anim_time * 20) * 20",
+            0,
+            5
+          ]
         },
         "torso_upper_hunch": {
-          "rotation": [10, 0, 0]
+          "rotation": [
+            10,
+            0,
+            0
+          ]
         }
       }
     },
@@ -58,34 +114,224 @@
       "bones": {
         "torso_upper_hunch": {
           "rotation": {
-            "0.0": [0, 0, 0],
-            "0.3": [-20, 10, 0],
-            "0.5": [30, -10, 0],
-            "1.0": [0, 0, 0]
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.3": [
+              -20,
+              10,
+              0
+            ],
+            "0.5": [
+              30,
+              -10,
+              0
+            ],
+            "1.0": [
+              0,
+              0,
+              0
+            ]
           }
         },
         "arm_right_shoulder_muscle": {
           "rotation": {
-            "0.0": [0, 0, 0],
-            "0.3": [-110, -20, 0],
-            "0.5": [60, 0, 0],
-            "0.8": [10, 0, 0],
-            "1.0": [0, 0, 0]
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.3": [
+              -110,
+              -20,
+              0
+            ],
+            "0.5": [
+              60,
+              0,
+              0
+            ],
+            "0.8": [
+              10,
+              0,
+              0
+            ],
+            "1.0": [
+              0,
+              0,
+              0
+            ]
           }
         },
         "arm_left_shoulder_muscle": {
           "rotation": {
-            "0.0": [0, 0, 0],
-            "0.3": [-40, 0, 0],
-            "0.5": [20, 0, 0],
-            "1.0": [0, 0, 0]
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.3": [
+              -40,
+              0,
+              0
+            ],
+            "0.5": [
+              20,
+              0,
+              0
+            ],
+            "1.0": [
+              0,
+              0,
+              0
+            ]
           }
         },
         "jaw_lower_mandible": {
           "rotation": {
-            "0.3": [0, 0, 0],
-            "0.5": [25, 0, 0],
-            "0.8": [0, 0, 0]
+            "0.3": [
+              0,
+              0,
+              0
+            ],
+            "0.5": [
+              25,
+              0,
+              0
+            ],
+            "0.8": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "animation.cave_troll.death": {
+      "loop": false,
+      "animation_length": 1.2,
+      "bones": {
+        "waist_core": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.4": [
+              -20,
+              0,
+              0
+            ],
+            "0.8": [
+              30,
+              0,
+              0
+            ],
+            "1.2": [
+              45,
+              0,
+              0
+            ]
+          }
+        },
+        "torso_upper_hunch": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.4": [
+              -10,
+              5,
+              0
+            ],
+            "0.8": [
+              25,
+              -10,
+              0
+            ],
+            "1.2": [
+              35,
+              -15,
+              0
+            ]
+          }
+        },
+        "head_base_skin": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.4": [
+              10,
+              0,
+              0
+            ],
+            "0.8": [
+              30,
+              0,
+              0
+            ],
+            "1.2": [
+              40,
+              0,
+              0
+            ]
+          }
+        },
+        "arm_left_shoulder_muscle": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              -5
+            ],
+            "0.4": [
+              -40,
+              0,
+              -10
+            ],
+            "0.8": [
+              -60,
+              0,
+              -20
+            ],
+            "1.2": [
+              -70,
+              0,
+              -30
+            ]
+          }
+        },
+        "arm_right_shoulder_muscle": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              5
+            ],
+            "0.4": [
+              -60,
+              0,
+              10
+            ],
+            "0.8": [
+              -80,
+              0,
+              20
+            ],
+            "1.2": [
+              -90,
+              0,
+              30
+            ]
           }
         }
       }
