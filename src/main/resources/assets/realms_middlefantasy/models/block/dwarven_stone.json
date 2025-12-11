@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "realms_middlefantasy:block/dwarven_stone"
+  }
+}
