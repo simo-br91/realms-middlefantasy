@@ -28,8 +28,9 @@ public class ModEntityRenderers {
         // Wargs
         event.registerEntityRenderer(ModEntities.WARG.get(), WargRenderer::new);
         
-        // Trolls
-        event.registerEntityRenderer(ModEntities.TROLL.get(), TrollRenderer::new);
+        // Trolls (DEUX VARIANTES DISTINCTES)
+        event.registerEntityRenderer(ModEntities.HILL_TROLL.get(), HillTrollRenderer::new);
+        event.registerEntityRenderer(ModEntities.CAVE_TROLL.get(), CaveTrollRenderer::new);
         
         // Araignées d'ombre
         event.registerEntityRenderer(ModEntities.SHADOW_SPIDER.get(), ShadowSpiderRenderer::new);

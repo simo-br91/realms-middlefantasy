@@ -25,38 +25,37 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import java.util.List;
 
 /**
- * Troll - Mini-boss local des cavernes et collines.
- * Attaques : Slam, charge, lancer de rocher.
+ * Hill Troll - Variante plus mobile que le Cave Troll.
+ * Se trouve dans les collines et plaines montagneuses.
+ * Légèrement moins tanky mais plus rapide.
  */
-public class TrollEntity extends Monster implements GeoEntity {
+public class HillTrollEntity extends Monster implements GeoEntity {
     
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private int slamCooldown = 0;
     private int rockThrowCooldown = 0;
-    private boolean isVariantCave;
 
-    public TrollEntity(EntityType<? extends Monster> entityType, Level level) {
+    public HillTrollEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
-        this.xpReward = 20;
-        this.isVariantCave = level.getRandom().nextBoolean();
+        this.xpReward = 18; // Légèrement moins que Cave Troll
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 60.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.22D)
-                .add(Attributes.ATTACK_DAMAGE, 10.0D)
+                .add(Attributes.MAX_HEALTH, 55.0D)    // Un peu moins tanky
+                .add(Attributes.MOVEMENT_SPEED, 0.25D) // Plus rapide
+                .add(Attributes.ATTACK_DAMAGE, 9.0D)   // Légèrement moins de dégâts
                 .add(Attributes.FOLLOW_RANGE, 28.0D)
-                .add(Attributes.ARMOR, 8.0D)
-                .add(Attributes.ARMOR_TOUGHNESS, 4.0D)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 0.8D);
+                .add(Attributes.ARMOR, 6.0D)           // Moins d'armure
+                .add(Attributes.ARMOR_TOUGHNESS, 3.0D)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 0.7D);
     }
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 0.9D, true));
-        this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 0.6D));
+        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0D, true));
+        this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 0.7D));
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 12.0F));
         this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
 
@@ -74,9 +73,9 @@ public class TrollEntity extends Monster implements GeoEntity {
         // Lancer de rocher à distance
         if (!this.level().isClientSide && this.getTarget() != null && rockThrowCooldown == 0) {
             double distance = this.distanceToSqr(this.getTarget());
-            if (distance > 64.0D && distance < 400.0D) { // Entre 8 et 20 blocs
+            if (distance > 64.0D && distance < 400.0D) {
                 throwRock();
-                rockThrowCooldown = 140; // 7 secondes
+                rockThrowCooldown = 120; // Plus court que Cave Troll
             }
         }
     }
@@ -86,9 +85,9 @@ public class TrollEntity extends Monster implements GeoEntity {
         boolean flag = super.doHurtTarget(target);
         
         if (flag && target instanceof LivingEntity living) {
-            if (slamCooldown == 0 && this.getRandom().nextFloat() < 0.3F) {
+            if (slamCooldown == 0 && this.getRandom().nextFloat() < 0.25F) {
                 performSlam(living);
-                slamCooldown = 100;
+                slamCooldown = 80; // Plus court que Cave Troll
             }
         }
         
@@ -96,29 +95,29 @@ public class TrollEntity extends Monster implements GeoEntity {
     }
 
     private void performSlam(LivingEntity target) {
-        double knockbackStrength = 2.5D;
+        double knockbackStrength = 2.0D;
         double xRatio = target.getX() - this.getX();
         double zRatio = target.getZ() - this.getZ();
         target.knockback(knockbackStrength, xRatio, zRatio);
         
-        this.playSound(SoundEvents.GENERIC_EXPLODE, 1.5F, 0.8F);
+        this.playSound(SoundEvents.GENERIC_EXPLODE, 1.3F, 0.9F);
         
         if (this.level() instanceof ServerLevel serverLevel) {
             serverLevel.sendParticles(ParticleTypes.EXPLOSION,
                 this.getX(), this.getY(), this.getZ(),
-                10, 1.0D, 0.5D, 1.0D, 0.0D);
+                8, 0.8D, 0.4D, 0.8D, 0.0D);
             
-            AABB area = this.getBoundingBox().inflate(4.0D);
+            AABB area = this.getBoundingBox().inflate(3.5D);
             List<LivingEntity> nearbyEntities = this.level().getEntitiesOfClass(
                 LivingEntity.class, area,
                 entity -> entity != this && entity instanceof Player
             );
             
             for (LivingEntity entity : nearbyEntities) {
-                entity.hurt(this.damageSources().mobAttack(this), 5.0F);
+                entity.hurt(this.damageSources().mobAttack(this), 4.0F);
                 double dx = entity.getX() - this.getX();
                 double dz = entity.getZ() - this.getZ();
-                entity.knockback(1.5D, dx, dz);
+                entity.knockback(1.2D, dx, dz);
             }
         }
     }
@@ -129,7 +128,6 @@ public class TrollEntity extends Monster implements GeoEntity {
         Vec3 targetPos = this.getTarget().position();
         Vec3 throwPos = this.position().add(0, 1.8D, 0);
         
-        // Créer un projectile (on utilise un snowball comme placeholder)
         net.minecraft.world.entity.projectile.Snowball rock = 
             new net.minecraft.world.entity.projectile.Snowball(this.level(), this);
         
@@ -138,16 +136,16 @@ public class TrollEntity extends Monster implements GeoEntity {
         double dz = targetPos.z - throwPos.z;
         double distance = Math.sqrt(dx * dx + dz * dz);
         
-        rock.shoot(dx, dy + distance * 0.1D, dz, 1.2F, 8.0F);
+        rock.shoot(dx, dy + distance * 0.1D, dz, 1.3F, 7.0F);
         rock.setPos(throwPos);
         
         this.level().addFreshEntity(rock);
-        this.playSound(SoundEvents.SNOW_GOLEM_SHOOT, 1.5F, 0.5F);
+        this.playSound(SoundEvents.SNOW_GOLEM_SHOOT, 1.5F, 0.6F);
     }
 
     @Override
     public float getScale() {
-        return isVariantCave ? 1.4F : 1.3F; // Cave trolls légèrement plus grands
+        return 1.25F; // Légèrement plus petit que Cave Troll
     }
 
     @Override
@@ -170,7 +168,7 @@ public class TrollEntity extends Monster implements GeoEntity {
         controllers.add(new AnimationController<>(this, "controller", 0, this::predicate));
     }
 
-    private PlayState predicate(AnimationState<TrollEntity> event) {
+    private PlayState predicate(AnimationState<HillTrollEntity> event) {
         if (this.isDeadOrDying()) {
             event.getController().setAnimation(
                 RawAnimation.begin().then("death_fall", Animation.LoopType.PLAY_ONCE)
@@ -180,18 +178,18 @@ public class TrollEntity extends Monster implements GeoEntity {
 
         if (this.swinging) {
             event.getController().setAnimation(
-                RawAnimation.begin().then("slam_ground", Animation.LoopType.PLAY_ONCE)
+                RawAnimation.begin().then("attack", Animation.LoopType.PLAY_ONCE)
             );
             return PlayState.CONTINUE;
         }
 
         if (event.isMoving()) {
             event.getController().setAnimation(
-                RawAnimation.begin().then("walk_heavy", Animation.LoopType.LOOP)
+                RawAnimation.begin().then("walk", Animation.LoopType.LOOP)
             );
         } else {
             event.getController().setAnimation(
-                RawAnimation.begin().then("idle_breathing", Animation.LoopType.LOOP)
+                RawAnimation.begin().then("idle", Animation.LoopType.LOOP)
             );
         }
 

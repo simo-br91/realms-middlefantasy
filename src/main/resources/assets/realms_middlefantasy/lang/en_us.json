@@ -12,6 +12,17 @@
   "item.realms_middlefantasy.hobbit_bread": "Hobbit Bread",
 
   "block.realms_middlefantasy.black_iron_block": "Block of Black Iron",
-  "block.realms_middlefantasy.dwarven_stone": "Dwarven Stone"
+  "block.realms_middlefantasy.dwarven_stone": "Dwarven Stone",
+  "item.realms_middlefantasy.orc_spawn_egg": "Orc Spawn Egg",
+  "item.realms_middlefantasy.orc_scout_spawn_egg": "Orc Scout Spawn Egg",
+  "item.realms_middlefantasy.orc_warrior_spawn_egg": "Orc Warrior Spawn Egg",
+  "item.realms_middlefantasy.orc_captain_spawn_egg": "Orc Captain Spawn Egg",
+  "item.realms_middlefantasy.uruk_hai_spawn_egg": "Uruk-hai Spawn Egg",
+  "item.realms_middlefantasy.goblin_spawn_egg": "Goblin Spawn Egg",
+  "item.realms_middlefantasy.warg_spawn_egg": "Warg Spawn Egg",
+  "item.realms_middlefantasy.troll_spawn_egg": "Troll Spawn Egg",
+  "item.realms_middlefantasy.shadow_spider_spawn_egg": "Shadow Spider Spawn Egg",
+  "item.realms_middlefantasy.wight_spawn_egg": "Wight Spawn Egg",
+  "item.realms_middlefantasy.dwarf_spawn_egg": "Dwarf Spawn Egg"
 
 }

@@ -38,7 +38,28 @@ public class ModCreativeTabs {
 
                                 // Mobs (tests)
                                 output.accept(ModItems.ORC_SPAWN_EGG.get());
+                                output.accept(ModItems.ORC_SCOUT_SPAWN_EGG.get());
+                                output.accept(ModItems.ORC_WARRIOR_SPAWN_EGG.get());
+                                output.accept(ModItems.ORC_CAPTAIN_SPAWN_EGG.get());
+                                output.accept(ModItems.ORC_SPAWN_EGG.get());
+                                output.accept(ModItems.ORC_SCOUT_SPAWN_EGG.get());
+                                output.accept(ModItems.ORC_WARRIOR_SPAWN_EGG.get());
+
+                                output.accept(ModItems.URUK_HAI_SPAWN_EGG.get());
+
+                                output.accept(ModItems.GOBLIN_SPAWN_EGG.get());
+
+                                output.accept(ModItems.WARG_SPAWN_EGG.get());
+
+                                output.accept(ModItems.HILL_TROLL_SPAWN_EGG.get());
+                                output.accept(ModItems.CAVE_TROLL_SPAWN_EGG.get());
+
+                                output.accept(ModItems.SHADOW_SPIDER_SPAWN_EGG.get());
+
+                                output.accept(ModItems.WIGHT_SPAWN_EGG.get());
+                                
                                 output.accept(ModItems.DWARF_SPAWN_EGG.get());
+
                             })
                             .build()
             );
