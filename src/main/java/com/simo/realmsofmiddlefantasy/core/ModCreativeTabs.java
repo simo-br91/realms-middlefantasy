@@ -57,8 +57,12 @@ public class ModCreativeTabs {
                                 output.accept(ModItems.SHADOW_SPIDER_SPAWN_EGG.get());
 
                                 output.accept(ModItems.WIGHT_SPAWN_EGG.get());
-                                
+
                                 output.accept(ModItems.DWARF_SPAWN_EGG.get());
+
+                                output.accept(ModItems.HIGH_ELF_WARRIOR_SPAWN_EGG.get());
+                                output.accept(ModItems.SILVAN_ELF_SCOUT_SPAWN_EGG.get());
+                                output.accept(ModItems.GALADHRIM_ARCHER_SPAWN_EGG.get());
 
                             })
                             .build()

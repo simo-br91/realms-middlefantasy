@@ -124,5 +124,17 @@ public class ModItems {
         public static final RegistryObject<Item> DWARF_SPAWN_EGG = ITEMS.register("dwarf_spawn_egg",
                 () -> new ForgeSpawnEggItem(ModEntities.DWARF, 0x695a4a, 0xc1a37b,
                         new Item.Properties()));
+        
+        // Elves
+        public static final RegistryObject<Item> HIGH_ELF_WARRIOR_SPAWN_EGG = ITEMS.register("high_elf_warrior_spawn_egg",
+                () -> new ForgeSpawnEggItem(ModEntities.HIGH_ELF_WARRIOR, 0xD4AF37, 0x4169E1,
+                        new Item.Properties()));
 
+        public static final RegistryObject<Item> SILVAN_ELF_SCOUT_SPAWN_EGG = ITEMS.register("silvan_elf_scout_spawn_egg",
+                () -> new ForgeSpawnEggItem(ModEntities.SILVAN_ELF_SCOUT, 0x228B22, 0x8FBC8F,
+                        new Item.Properties()));
+
+        public static final RegistryObject<Item> GALADHRIM_ARCHER_SPAWN_EGG = ITEMS.register("galadhrim_archer_spawn_egg",
+                () -> new ForgeSpawnEggItem(ModEntities.GALADHRIM_ARCHER, 0xFFD700, 0xC0C0C0,
+                        new Item.Properties()));
 }

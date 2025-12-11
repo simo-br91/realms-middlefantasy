@@ -23,6 +23,13 @@
   "item.realms_middlefantasy.troll_spawn_egg": "Troll Spawn Egg",
   "item.realms_middlefantasy.shadow_spider_spawn_egg": "Shadow Spider Spawn Egg",
   "item.realms_middlefantasy.wight_spawn_egg": "Wight Spawn Egg",
-  "item.realms_middlefantasy.dwarf_spawn_egg": "Dwarf Spawn Egg"
+  "item.realms_middlefantasy.dwarf_spawn_egg": "Dwarf Spawn Egg",
+  "item.realms_middlefantasy.high_elf_warrior_spawn_egg": "High Elf Warrior Spawn Egg",
+  "item.realms_middlefantasy.silvan_elf_scout_spawn_egg": "Silvan Elf Scout Spawn Egg",
+  "item.realms_middlefantasy.galadhrim_archer_spawn_egg": "Galadhrim Archer Spawn Egg",
+  
+  "entity.realms_middlefantasy.high_elf_warrior": "High Elf Warrior",
+  "entity.realms_middlefantasy.silvan_elf_scout": "Silvan Elf Scout",
+  "entity.realms_middlefantasy.galadhrim_archer": "Galadhrim Archer"
 
 }
