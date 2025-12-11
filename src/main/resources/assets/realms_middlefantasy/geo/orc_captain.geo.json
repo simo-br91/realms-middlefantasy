@@ -1,0 +1,153 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.orc_captain",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "root_base",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "orc_waist",
+					"parent": "root_base",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "orc_torso_core",
+					"parent": "orc_waist",
+					"pivot": [0, 12, 0],
+					"cubes": [
+						{"origin": [-4, 12, -2], "size": [8, 12, 4], "uv": [16, 16]}
+					]
+				},
+				{
+					"name": "armor_chestplate_jagged",
+					"parent": "orc_torso_core",
+					"pivot": [0, 12, 0],
+					"cubes": [
+						{"origin": [-4.5, 12.5, -2.5], "size": [9, 12, 5], "inflate": 0.2, "uv": [16, 32]},
+						{"origin": [-2, 18, -3], "size": [4, 4, 1], "uv": [32, 0]}
+					]
+				},
+				{
+					"name": "orc_head_neck",
+					"parent": "orc_torso_core",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4, 24, -4], "size": [8, 8, 8], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "orc_jaw_lower",
+					"parent": "orc_head_neck",
+					"pivot": [0, 26, -2],
+					"cubes": [
+						{"origin": [-4, 24, -5], "size": [8, 2, 1], "uv": [24, 0]}
+					]
+				},
+				{
+					"name": "armor_helmet_iron_cowl",
+					"parent": "orc_head_neck",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4.5, 28, -4.5], "size": [9, 4, 9], "inflate": 0.1, "uv": [32, 0]}
+					]
+				},
+				{
+					"name": "armor_helmet_spike_crest",
+					"parent": "armor_helmet_iron_cowl",
+					"pivot": [0, 32, 0],
+					"cubes": [
+						{"origin": [-1, 32, -2], "size": [2, 3, 6], "uv": [52, 0]}
+					]
+				},
+				{
+					"name": "orc_arm_R_shoulder",
+					"parent": "orc_torso_core",
+					"pivot": [-5, 22, 0],
+					"cubes": [
+						{"origin": [-8, 12, -2], "size": [4, 12, 4], "uv": [40, 16]}
+					]
+				},
+				{
+					"name": "armor_pauldron_R_spiked",
+					"parent": "orc_arm_R_shoulder",
+					"pivot": [-5, 22, 0],
+					"cubes": [
+						{"origin": [-9, 20, -3], "size": [5, 5, 6], "inflate": 0.1, "uv": [0, 32]}
+					]
+				},
+				{
+					"name": "orc_hand_R_grip",
+					"parent": "orc_arm_R_shoulder",
+					"pivot": [-6, 12, 0]
+				},
+				{
+					"name": "weapon_scimitar_blade",
+					"parent": "orc_hand_R_grip",
+					"pivot": [-6, 11, 0],
+					"rotation": [90, 0, 0],
+					"cubes": [
+						{"origin": [-6.5, 2, -1], "size": [1, 16, 4], "uv": [54, 16]}
+					]
+				},
+				{
+					"name": "orc_arm_L_shoulder",
+					"parent": "orc_torso_core",
+					"pivot": [5, 22, 0],
+					"cubes": [
+						{"origin": [4, 12, -2], "size": [4, 12, 4], "uv": [40, 16], "mirror": true}
+					]
+				},
+				{
+					"name": "armor_gauntlet_L_plate",
+					"parent": "orc_arm_L_shoulder",
+					"pivot": [5, 16, 0],
+					"cubes": [
+						{"origin": [3.5, 12, -2.5], "size": [5, 6, 5], "inflate": 0.1, "uv": [0, 48]}
+					]
+				},
+				{
+					"name": "orc_leg_R_thigh",
+					"parent": "orc_waist",
+					"pivot": [-1.9, 12, 0],
+					"cubes": [
+						{"origin": [-3.9, 0, -2], "size": [4, 12, 4], "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "armor_boot_R_iron",
+					"parent": "orc_leg_R_thigh",
+					"pivot": [-1.9, 5, 0],
+					"cubes": [
+						{"origin": [-4.1, 0, -3], "size": [4.4, 5, 5], "inflate": 0.1, "uv": [0, 32]}
+					]
+				},
+				{
+					"name": "orc_leg_L_thigh",
+					"parent": "orc_waist",
+					"pivot": [1.9, 12, 0],
+					"cubes": [
+						{"origin": [-0.1, 0, -2], "size": [4, 12, 4], "uv": [0, 16], "mirror": true}
+					]
+				},
+				{
+					"name": "armor_boot_L_iron",
+					"parent": "orc_leg_L_thigh",
+					"pivot": [1.9, 5, 0],
+					"cubes": [
+						{"origin": [-0.3, 0, -3], "size": [4.4, 5, 5], "inflate": 0.1, "uv": [0, 32], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}

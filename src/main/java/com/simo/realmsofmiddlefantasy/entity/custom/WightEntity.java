@@ -124,7 +124,9 @@ public class WightEntity extends Monster implements GeoEntity {
     @Override
     public boolean hurt(DamageSource source, float amount) {
         // Résistance aux dégâts physiques, faiblesse aux dégâts magiques
-        if (source.isFire() || source.is(net.minecraft.tags.DamageTypeTags.IS_EXPLOSION)) {
+        if (source.is(net.minecraft.world.damagesource.DamageTypes.IN_FIRE) || 
+            source.is(net.minecraft.world.damagesource.DamageTypes.ON_FIRE) ||
+            source.is(net.minecraft.tags.DamageTypeTags.IS_EXPLOSION)) {
             amount *= 1.5F; // Vulnérable au feu et explosions
         } else if (!source.is(net.minecraft.tags.DamageTypeTags.BYPASSES_ARMOR)) {
             amount *= 0.7F; // Résistant aux dégâts physiques

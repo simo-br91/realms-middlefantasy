@@ -1,0 +1,82 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.orc_captain.idle": {
+      "loop": true,
+      "bones": {
+        "orc_waist": {
+          "rotation": [0, 0, 0]
+        },
+        "orc_torso_core": {
+          "rotation": ["math.sin(query.life_time * 100) * 2", 0, 0]
+        },
+        "orc_head_neck": {
+          "rotation": ["math.cos(query.life_time * 80) * 3", "math.sin(query.life_time * 50) * 5", 0]
+        },
+        "orc_arm_R_shoulder": {
+          "rotation": ["5 + math.cos(query.life_time * 100) * 2", 0, "5"]
+        },
+        "orc_arm_L_shoulder": {
+          "rotation": ["-5 + math.cos(query.life_time * 100 + 45) * 2", 0, "-5"]
+        },
+        "orc_jaw_lower": {
+           "rotation": ["math.clamp(math.sin(query.life_time * 150) * 5, 0, 5)", 0, 0]
+        }
+      }
+    },
+    "animation.orc_captain.walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "orc_waist": {
+          "rotation": [0, "math.cos(query.anim_time * 30) * 5", 0],
+          "position": [0, "math.abs(math.cos(query.anim_time * 30)) * 0.5", 0]
+        },
+        "orc_leg_R_thigh": {
+          "rotation": ["math.cos(query.anim_time * 30) * 40", 0, 0]
+        },
+        "orc_leg_L_thigh": {
+          "rotation": ["math.cos(query.anim_time * 30 + 180) * 40", 0, 0]
+        },
+        "orc_arm_R_shoulder": {
+          "rotation": ["math.cos(query.anim_time * 30 + 180) * 20", 0, 5]
+        },
+        "orc_arm_L_shoulder": {
+          "rotation": ["math.cos(query.anim_time * 30) * 20", 0, -5]
+        },
+        "orc_head_neck": {
+          "rotation": [0, 0, 0]
+        }
+      }
+    },
+    "animation.orc_captain.attack": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.5,
+      "bones": {
+        "orc_torso_core": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-10, 20, 0],
+            "0.3": [15, -30, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "orc_arm_R_shoulder": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-60, 0, 30],
+            "0.3": [60, 0, -10],
+            "0.5": [10, 0, 0]
+          }
+        },
+        "weapon_scimitar_blade": {
+           "rotation": {
+             "0.0": [90, 0, 0],
+             "0.2": [120, 0, 0],
+             "0.3": [45, 0, 0]
+           }
+        }
+      }
+    }
+  }
+}

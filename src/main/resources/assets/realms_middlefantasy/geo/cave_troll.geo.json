@@ -1,0 +1,173 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.cave_troll",
+        "texture_width": 128,
+        "texture_height": 128,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 4.5,
+        "visible_bounds_offset": [0, 2.25, 0]
+      },
+      "bones": [
+        {
+          "name": "root_base",
+          "pivot": [0, 0, 0]
+        },
+        {
+          "name": "waist_core",
+          "parent": "root_base",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-9, 18, -6], "size": [18, 12, 12], "uv": [0, 52]}
+          ]
+        },
+        {
+          "name": "loincloth_front_flap",
+          "parent": "waist_core",
+          "pivot": [0, 18, -6],
+          "cubes": [
+            {"origin": [-5, 8, -6.5], "size": [10, 10, 1], "uv": [60, 52]}
+          ]
+        },
+        {
+          "name": "torso_lower_abdomen",
+          "parent": "waist_core",
+          "pivot": [0, 30, 0],
+          "cubes": [
+            {"origin": [-10, 30, -7], "size": [20, 14, 14], "uv": [0, 24]}
+          ]
+        },
+        {
+          "name": "torso_upper_hunch",
+          "parent": "torso_lower_abdomen",
+          "pivot": [0, 44, 0],
+          "cubes": [
+            {"origin": [-12, 44, -8], "size": [24, 16, 16], "uv": [0, 0], "inflate": 0.5}
+          ]
+        },
+        {
+          "name": "neck_collar_chain",
+          "parent": "torso_upper_hunch",
+          "pivot": [0, 58, -4],
+          "cubes": [
+            {"origin": [-6, 58, -6], "size": [12, 2, 12], "uv": [68, 0]}
+          ]
+        },
+        {
+          "name": "head_base_skin",
+          "parent": "torso_upper_hunch",
+          "pivot": [0, 60, -4],
+          "cubes": [
+            {"origin": [-5, 60, -9], "size": [10, 10, 10], "uv": [0, 76]}
+          ]
+        },
+        {
+          "name": "jaw_lower_mandible",
+          "parent": "head_base_skin",
+          "pivot": [0, 62, -4],
+          "cubes": [
+            {"origin": [-5.5, 60, -9.5], "size": [11, 3, 11], "uv": [40, 76]}
+          ]
+        },
+        {
+          "name": "arm_left_shoulder_muscle",
+          "parent": "torso_upper_hunch",
+          "pivot": [12, 56, 0],
+          "cubes": [
+            {"origin": [12, 50, -5], "size": [10, 14, 10], "uv": [64, 14]}
+          ]
+        },
+        {
+          "name": "arm_left_forearm_bone",
+          "parent": "arm_left_shoulder_muscle",
+          "pivot": [17, 50, 0],
+          "cubes": [
+            {"origin": [14, 32, -4], "size": [6, 18, 8], "uv": [92, 38]}
+          ]
+        },
+        {
+          "name": "hand_left_palm",
+          "parent": "arm_left_forearm_bone",
+          "pivot": [17, 32, 0],
+          "cubes": [
+            {"origin": [13, 24, -5], "size": [8, 8, 10], "uv": [84, 64]}
+          ]
+        },
+        {
+          "name": "arm_right_shoulder_muscle",
+          "parent": "torso_upper_hunch",
+          "pivot": [-12, 56, 0],
+          "cubes": [
+            {"origin": [-22, 50, -5], "size": [10, 14, 10], "uv": [64, 14]}
+          ]
+        },
+        {
+          "name": "arm_right_forearm_bone",
+          "parent": "arm_right_shoulder_muscle",
+          "pivot": [-17, 50, 0],
+          "cubes": [
+            {"origin": [-20, 32, -4], "size": [6, 18, 8], "uv": [92, 38]}
+          ]
+        },
+        {
+          "name": "hand_right_palm",
+          "parent": "arm_right_forearm_bone",
+          "pivot": [-17, 32, 0],
+          "cubes": [
+            {"origin": [-21, 24, -5], "size": [8, 8, 10], "uv": [84, 64]}
+          ]
+        },
+        {
+          "name": "leg_left_thigh_flesh",
+          "parent": "waist_core",
+          "pivot": [5, 18, 0],
+          "cubes": [
+            {"origin": [1, 6, -4], "size": [8, 12, 8], "uv": [32, 88]}
+          ]
+        },
+        {
+          "name": "leg_left_shin_bone",
+          "parent": "leg_left_thigh_flesh",
+          "pivot": [5, 6, 0],
+          "cubes": [
+            {"origin": [2, 0, -3], "size": [6, 6, 6], "uv": [64, 88]}
+          ]
+        },
+        {
+          "name": "foot_left_toes",
+          "parent": "leg_left_shin_bone",
+          "pivot": [5, 0, 0],
+          "cubes": [
+            {"origin": [1, 0, -5], "size": [8, 3, 10], "uv": [0, 96]}
+          ]
+        },
+        {
+          "name": "leg_right_thigh_flesh",
+          "parent": "waist_core",
+          "pivot": [-5, 18, 0],
+          "cubes": [
+            {"origin": [-9, 6, -4], "size": [8, 12, 8], "uv": [32, 88]}
+          ]
+        },
+        {
+          "name": "leg_right_shin_bone",
+          "parent": "leg_right_thigh_flesh",
+          "pivot": [-5, 6, 0],
+          "cubes": [
+            {"origin": [-8, 0, -3], "size": [6, 6, 6], "uv": [64, 88]}
+          ]
+        },
+        {
+          "name": "foot_right_toes",
+          "parent": "leg_right_shin_bone",
+          "pivot": [-5, 0, 0],
+          "cubes": [
+            {"origin": [-9, 0, -5], "size": [8, 3, 10], "uv": [0, 96]}
+          ]
+        }
+      ]
+    }
+  ]
+}

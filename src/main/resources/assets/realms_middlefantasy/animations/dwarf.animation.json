@@ -1,99 +1,79 @@
 {
-  "format_version": "1.10.0",
+  "format_version": "1.8.0",
   "animations": {
-
-    "idle_stance": {
+    "animation.dwarf_basic.idle": {
       "loop": true,
       "bones": {
-        "body": {
-          "rotation": [
-            { "time": 0.0, "vector": [0, 0, 0] },
-            { "time": 1.0, "vector": [0, 0.5, 0] },
-            { "time": 2.0, "vector": [0, 0, 0] }
-          ]
+        "waist_core": {
+          "scale": [1.0, "1.0 + math.sin(query.life_time * 100) * 0.02", 1.0]
         },
-        "head": {
-          "rotation": [
-            { "time": 0.0, "vector": [0, 0, 0] },
-            { "time": 1.0, "vector": [0, -1.0, 0] },
-            { "time": 2.0, "vector": [0, 0, 0] }
-          ]
+        "head_neck_joint": {
+          "rotation": ["math.sin(query.life_time * 50) * 2.0", 0, 0]
+        },
+        "beard_braid_center": {
+          "rotation": ["math.cos(query.life_time * 50) * 5.0", 0, 0]
+        },
+        "arm_R_upper": {
+          "rotation": [0, 0, 5]
+        },
+        "arm_L_upper": {
+          "rotation": [0, 0, -5]
         }
       }
     },
-
-    "march_heavy": {
+    "animation.dwarf_basic.walk": {
       "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
       "bones": {
-        "right_leg": {
-          "rotation": [
-            { "time": 0.0, "vector": [20, 0, 0] },
-            { "time": 0.5, "vector": [-20, 0, 0] },
-            { "time": 1.0, "vector": [20, 0, 0] }
-          ]
+        "waist_core": {
+          "rotation": [0, 0, "math.cos(query.anim_time * 20) * 2.0"],
+          "position": [0, "math.abs(math.cos(query.anim_time * 20)) * 0.5", 0]
         },
-        "left_leg": {
-          "rotation": [
-            { "time": 0.0, "vector": [-20, 0, 0] },
-            { "time": 0.5, "vector": [20, 0, 0] },
-            { "time": 1.0, "vector": [-20, 0, 0] }
-          ]
+        "leg_R_thigh": {
+          "rotation": ["math.cos(query.anim_time * 20) * 40.0", 0, 0]
         },
-        "body": {
-          "rotation": [
-            { "time": 0.0, "vector": [0, 0, 1] },
-            { "time": 0.5, "vector": [0, 0, -1] },
-            { "time": 1.0, "vector": [0, 0, 1] }
-          ]
+        "leg_L_thigh": {
+          "rotation": ["math.cos(query.anim_time * 20 + 180) * 40.0", 0, 0]
+        },
+        "arm_R_upper": {
+          "rotation": ["math.cos(query.anim_time * 20 + 180) * 30.0", 0, 5]
+        },
+        "arm_L_upper": {
+          "rotation": ["math.cos(query.anim_time * 20) * 30.0", 0, -5]
+        },
+        "beard_main_mass": {
+          "rotation": ["math.sin(query.anim_time * 40) * 5.0", 0, 0]
         }
       }
     },
-
-    "heavy_cleave": {
-      "loop": false,
+    "animation.dwarf_basic.attack": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.5,
       "bones": {
-        "right_arm": {
-          "rotation": [
-            { "time": 0.0, "vector": [0, 0, 0] },
-            { "time": 0.2, "vector": [-80, 0, 0] },
-            { "time": 0.4, "vector": [30, 0, 0] }
-          ]
+        "waist_core": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [0, -20, 0],
+            "0.3": [10, 30, 0],
+            "0.5": [0, 0, 0]
+          }
         },
-        "body": {
-          "rotation": [
-            { "time": 0.0, "vector": [0, 0, 0] },
-            { "time": 0.2, "vector": [0, 20, 0] },
-            { "time": 0.4, "vector": [0, 0, 0] }
-          ]
-        }
-      }
-    },
-
-    "beard_sway": {
-      "loop": true,
-      "bones": {
-        "beard": {
-          "rotation": [
-            { "time": 0.0, "vector": [2, 0, 0] },
-            { "time": 0.5, "vector": [-2, 0, 0] },
-            { "time": 1.0, "vector": [2, 0, 0] }
-          ]
-        }
-      }
-    },
-
-    "beard_bounce": {
-      "loop": true,
-      "bones": {
-        "beard": {
-          "rotation": [
-            { "time": 0.0, "vector": [6, 0, 0] },
-            { "time": 0.25, "vector": [-6, 0, 0] },
-            { "time": 0.5, "vector": [6, 0, 0] }
-          ]
+        "arm_R_upper": {
+          "rotation": {
+            "0.0": [0, 0, 5],
+            "0.2": [-120, -20, 0],
+            "0.3": [60, 0, 0],
+            "0.5": [0, 0, 5]
+          }
+        },
+        "beard_braid_center": {
+           "rotation": {
+             "0.0": [0, 0, 0],
+             "0.3": [-20, 0, 0],
+             "0.5": [0, 0, 0]
+           }
         }
       }
     }
-
   }
 }

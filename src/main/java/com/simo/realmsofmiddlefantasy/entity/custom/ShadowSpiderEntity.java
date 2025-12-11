@@ -1,8 +1,6 @@
 package com.simo.realmsofmiddlefantasy.entity.custom;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
@@ -36,7 +34,7 @@ public class ShadowSpiderEntity extends Spider implements GeoEntity {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 22.0D) // Plus tanky que spider vanilla
+                .add(Attributes.MAX_HEALTH, 22.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.32D)
                 .add(Attributes.ATTACK_DAMAGE, 3.5D);
     }
@@ -45,13 +43,13 @@ public class ShadowSpiderEntity extends Spider implements GeoEntity {
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.5F));
-        this.goalSelector.addGoal(4, new Spider.SpiderAttackGoal(this));
+        this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.8D));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
-        this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
         
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
-        this.targetSelector.addGoal(2, new Spider.SpiderTargetGoal<>(this, Player.class));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
     }
 
     @Override
@@ -60,22 +58,21 @@ public class ShadowSpiderEntity extends Spider implements GeoEntity {
             if (target instanceof LivingEntity living) {
                 int poisonDuration = 0;
                 
-                // Poison plus long selon la difficulté
                 switch (this.level().getDifficulty()) {
                     case EASY -> poisonDuration = 7;
                     case NORMAL -> poisonDuration = 15;
                     case HARD -> poisonDuration = 20;
+                    default -> poisonDuration = 0;
                 }
                 
                 if (poisonDuration > 0) {
                     living.addEffect(new MobEffectInstance(
                         MobEffects.POISON, 
                         poisonDuration * 20, 
-                        1 // Poison II
+                        1
                     ), this);
                 }
                 
-                // Chance de ralentir (effet toile)
                 if (this.getRandom().nextFloat() < 0.4F) {
                     living.addEffect(new MobEffectInstance(
                         MobEffects.MOVEMENT_SLOWDOWN, 
@@ -93,12 +90,10 @@ public class ShadowSpiderEntity extends Spider implements GeoEntity {
     public void tick() {
         super.tick();
         
-        // Descente depuis le plafond (embuscade)
         if (!this.level().isClientSide && this.getTarget() != null) {
             BlockPos above = this.blockPosition().above(3);
             if (this.level().getBlockState(above).isSolidRender(this.level(), above)) {
-                // L'araignée est sous un plafond solide
-                if (this.getRandom().nextFloat() < 0.02F) { // 2% de chance par tick
+                if (this.getRandom().nextFloat() < 0.02F) {
                     this.setDeltaMovement(this.getDeltaMovement().add(0, -0.3D, 0));
                 }
             }

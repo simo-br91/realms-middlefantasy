@@ -1,0 +1,80 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.uruk_hai_elite.idle_heavy_breathing": {
+      "loop": true,
+      "bones": {
+        "waist_core": {
+          "rotation": [0, 0, 0]
+        },
+        "torso_core_flesh": {
+          "rotation": ["math.cos(query.life_time * 100) * 1.5", 0, 0],
+          "scale": [1.0, "1.0 + (math.sin(query.life_time * 100) * 0.02)", 1.0]
+        },
+        "head_neck_base": {
+          "rotation": ["math.sin(query.life_time * 80) * 2", "math.cos(query.life_time * 40) * 2", 0]
+        },
+        "arm_upper_flesh_R": {
+          "rotation": [-5, 0, 5]
+        },
+        "arm_upper_flesh_L": {
+          "rotation": [-5, 0, -5]
+        }
+      }
+    },
+    "animation.uruk_hai_elite.march_aggressive": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "waist_core": {
+          "rotation": [0, "math.cos(query.anim_time * 20) * 5", "math.cos(query.anim_time * 20) * 2"]
+        },
+        "leg_upper_flesh_R": {
+          "rotation": ["math.cos(query.anim_time * 30) * 45", 0, 0]
+        },
+        "leg_upper_flesh_L": {
+          "rotation": ["math.cos(query.anim_time * 30 + 180) * 45", 0, 0]
+        },
+        "arm_upper_flesh_R": {
+          "rotation": ["math.cos(query.anim_time * 30 + 180) * 30", 0, 5]
+        },
+        "arm_upper_flesh_L": {
+          "rotation": ["math.cos(query.anim_time * 30) * 30", 0, -5]
+        },
+        "head_neck_base": {
+          "rotation": [0, 0, 0]
+        }
+      }
+    },
+    "animation.uruk_hai_elite.melee_smash": {
+      "loop": false,
+      "animation_length": 0.8,
+      "bones": {
+        "torso_core_flesh": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-15, 20, 0],
+            "0.4": [25, -10, 0],
+            "0.8": [0, 0, 0]
+          }
+        },
+        "arm_upper_flesh_R": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-110, -20, 0],
+            "0.4": [60, 0, 0],
+            "0.6": [10, 0, 0],
+            "0.8": [0, 0, 0]
+          }
+        },
+        "head_neck_base": {
+           "rotation": {
+             "0.0": [0, 0, 0],
+             "0.2": [10, -20, 0],
+             "0.4": [-10, 10, 0]
+           }
+        }
+      }
+    }
+  }
+}

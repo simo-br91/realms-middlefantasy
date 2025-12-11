@@ -1,0 +1,82 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.orc_warrior.idle": {
+      "loop": true,
+      "bones": {
+        "waist_core": {
+          "rotation": [0, 0, 0],
+          "position": [0, "math.sin(query.life_time * 100) * 0.5", 0]
+        },
+        "torso_upper": {
+          "rotation": ["5 + math.cos(query.life_time * 100) * 2", 0, 0]
+        },
+        "head_neck_group": {
+          "rotation": ["-5 + math.sin(query.life_time * 80) * 3", "math.cos(query.life_time * 50) * 5", 0]
+        },
+        "arm_right_shoulder": {
+          "rotation": ["math.cos(query.life_time * 100) * 3", 0, 5]
+        },
+        "arm_left_shoulder": {
+          "rotation": ["math.cos(query.life_time * 100 + 90) * 3", 0, -5]
+        }
+      }
+    },
+    "animation.orc_warrior.walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "waist_core": {
+          "rotation": [0, "math.cos(query.anim_time * 20) * 5", "math.cos(query.anim_time * 40) * 2"]
+        },
+        "leg_right_upper": {
+          "rotation": ["math.cos(query.anim_time * 30) * 40", 0, 0]
+        },
+        "leg_left_upper": {
+          "rotation": ["math.cos(query.anim_time * 30 + 180) * 40", 0, 0]
+        },
+        "arm_right_shoulder": {
+          "rotation": ["math.cos(query.anim_time * 30 + 180) * 30", 0, 5]
+        },
+        "arm_left_shoulder": {
+          "rotation": ["math.cos(query.anim_time * 30) * 30", 0, -5]
+        },
+        "torso_upper": {
+          "rotation": [10, 0, 0]
+        },
+        "head_neck_group": {
+          "rotation": [-10, 0, 0]
+        }
+      }
+    },
+    "animation.orc_warrior.attack": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.5,
+      "bones": {
+        "torso_upper": {
+          "rotation": {
+            "0.0": [5, 0, 0],
+            "0.2": [-15, 20, 0],
+            "0.3": [20, -10, 0],
+            "0.5": [5, 0, 0]
+          }
+        },
+        "arm_right_shoulder": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-120, -30, 0],
+            "0.3": [60, 0, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "head_neck_group": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [0, -20, 0],
+            "0.3": [0, 10, 0]
+          }
+        }
+      }
+    }
+  }
+}

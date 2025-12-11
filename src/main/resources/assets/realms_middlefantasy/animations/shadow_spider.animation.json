@@ -1,0 +1,54 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.shadow_spider.idle": {
+      "loop": true,
+      "bones": {
+        "abdomen_bulb": {
+          "rotation": ["2.5 * math.cos(query.anim_time * 100)", 0, 0]
+        },
+        "mandible_left_fang": {
+          "rotation": [0, "math.sin(query.anim_time * 150) * 5", 0]
+        },
+        "mandible_right_fang": {
+          "rotation": [0, "-math.sin(query.anim_time * 150) * 5", 0]
+        },
+        "cephalothorax_core": {
+          "position": [0, "math.sin(query.anim_time * 80) * 0.2", 0]
+        }
+      }
+    },
+    "animation.shadow_spider.walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "leg_L1_femur": { "rotation": [0, "-45 + math.cos(query.anim_time * 30) * 20", "-30 + math.sin(query.anim_time * 30) * 20"] },
+        "leg_R1_femur": { "rotation": [0, "45 + math.cos(query.anim_time * 30 + 180) * 20", "30 + math.sin(query.anim_time * 30 + 180) * 20"] },
+        "leg_L2_femur": { "rotation": [0, "-15 + math.cos(query.anim_time * 30 + 180) * 20", "-25 + math.sin(query.anim_time * 30 + 180) * 20"] },
+        "leg_R2_femur": { "rotation": [0, "15 + math.cos(query.anim_time * 30) * 20", "25 + math.sin(query.anim_time * 30) * 20"] },
+        "leg_L3_femur": { "rotation": [0, "15 + math.cos(query.anim_time * 30) * 20", "-25 + math.sin(query.anim_time * 30) * 20"] },
+        "leg_R3_femur": { "rotation": [0, "-15 + math.cos(query.anim_time * 30 + 180) * 20", "25 + math.sin(query.anim_time * 30 + 180) * 20"] },
+        "leg_L4_femur": { "rotation": [0, "45 + math.cos(query.anim_time * 30 + 180) * 20", "-30 + math.sin(query.anim_time * 30 + 180) * 20"] },
+        "leg_R4_femur": { "rotation": [0, "-45 + math.cos(query.anim_time * 30) * 20", "30 + math.sin(query.anim_time * 30) * 20"] },
+        "cephalothorax_core": { "rotation": [0, 0, "math.cos(query.anim_time * 30) * 2"] }
+      }
+    },
+    "animation.shadow_spider.attack": {
+      "loop": true,
+      "bones": {
+        "cephalothorax_core": {
+          "rotation": [-15, 0, 0],
+          "position": [0, 2, 0]
+        },
+        "mandible_left_fang": {
+          "rotation": [0, "-20 + math.sin(query.anim_time * 800) * 30", 0]
+        },
+        "mandible_right_fang": {
+          "rotation": [0, "20 - math.sin(query.anim_time * 800) * 30", 0]
+        },
+        "leg_L1_femur": { "rotation": [-30, -20, -10] },
+        "leg_R1_femur": { "rotation": [-30, 20, 10] }
+      }
+    }
+  }
+}

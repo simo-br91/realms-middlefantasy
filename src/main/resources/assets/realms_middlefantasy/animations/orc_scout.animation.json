@@ -1,0 +1,95 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.orc_scout.idle": {
+      "loop": true,
+      "bones": {
+        "waist_core": {
+          "rotation": [0, 0, 0],
+          "position": [0, "math.sin(query.life_time * 2) * 0.2", 0]
+        },
+        "torso_upper": {
+          "rotation": ["15 + math.cos(query.life_time * 2) * 2", 0, 0]
+        },
+        "orc_head_neck": {
+          "rotation": ["-15 + math.sin(query.life_time * 1.5) * 3", "math.sin(query.life_time * 0.8) * 5", 0]
+        },
+        "shoulder_L": {
+          "rotation": [0, 0, -5]
+        },
+        "shoulder_R": {
+          "rotation": [0, 0, 5]
+        },
+        "ear_pointed_L": {
+          "rotation": [0, 0, "math.sin(query.life_time * 15) * 5"]
+        }
+      }
+    },
+    "animation.orc_scout.walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "waist_core": {
+          "position": [0, "math.abs(math.sin(query.anim_time * 20)) * 0.5", 0],
+          "rotation": [5, 0, "math.cos(query.anim_time * 20) * 2"]
+        },
+        "leg_thigh_L": {
+          "rotation": ["math.sin(query.anim_time * 20) * 40", 0, 0]
+        },
+        "leg_shin_L": {
+          "rotation": ["math.abs(math.sin(query.anim_time * 20 - 45)) * 30", 0, 0]
+        },
+        "leg_thigh_R": {
+          "rotation": ["-math.sin(query.anim_time * 20) * 40", 0, 0]
+        },
+        "leg_shin_R": {
+          "rotation": ["math.abs(math.sin(query.anim_time * 20 + 45)) * 30", 0, 0]
+        },
+        "shoulder_L": {
+          "rotation": ["-math.sin(query.anim_time * 20) * 30", 0, 0]
+        },
+        "shoulder_R": {
+          "rotation": ["math.sin(query.anim_time * 20) * 30", 0, 0]
+        },
+        "orc_head_neck": {
+          "rotation": [-10, 0, 0]
+        },
+        "loincloth_front_rag": {
+           "rotation": ["math.sin(query.anim_time * 20) * 15", 0, 0]
+        }
+      }
+    },
+    "animation.orc_scout.attack": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.5,
+      "bones": {
+        "torso_upper": {
+          "rotation": {
+            "0.0": [15, 0, 0],
+            "0.2": [10, 20, 0],
+            "0.3": [20, -15, 0],
+            "0.5": [15, 0, 0]
+          }
+        },
+        "shoulder_R": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-60, 0, 45],
+            "0.3": [45, 0, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "arm_lower_R": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-45, 0, 0],
+            "0.3": [0, 0, 0]
+          }
+        },
+        "weapon_jagged_blade": {
+           "rotation": [90, 0, 0]
+        }
+      }
+    }
+  }
+}

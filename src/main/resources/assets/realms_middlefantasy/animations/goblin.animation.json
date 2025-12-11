@@ -1,0 +1,96 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.goblin_mountain.idle": {
+      "loop": true,
+      "animation_length": 3.0,
+      "bones": {
+        "goblin_torso_skin": {
+          "rotation": {
+            "0.0": [15, 0, 0],
+            "1.5": [18, 0, 0],
+            "3.0": [15, 0, 0]
+          }
+        },
+        "goblin_head_neck": {
+          "rotation": {
+            "0.0": [-15, 0, 0],
+            "0.5": [-15, 10, 0],
+            "1.0": [-15, -10, 0],
+            "3.0": [-15, 0, 0]
+          }
+        },
+        "goblin_ear_L": {
+          "rotation": {
+            "0.0": [0, 0, -10],
+            "1.5": [0, 0, -25],
+            "3.0": [0, 0, -10]
+          }
+        },
+        "goblin_ear_R": {
+          "rotation": {
+            "0.0": [0, 0, 10],
+            "1.5": [0, 0, 25],
+            "3.0": [0, 0, 10]
+          }
+        },
+        "arm_upper_L_flesh": {
+          "rotation": [0, 0, -10]
+        },
+        "arm_upper_R_flesh": {
+          "rotation": [0, 0, 10]
+        }
+      }
+    },
+    "animation.goblin_mountain.walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "leg_thigh_L": {
+          "rotation": ["Math.cos(query.anim_time * 20.0) * 40.0", 0, 0]
+        },
+        "leg_shin_L": {
+          "rotation": ["Math.abs(Math.sin(query.anim_time * 20.0)) * 30.0", 0, 0]
+        },
+        "leg_thigh_R": {
+          "rotation": ["Math.cos(query.anim_time * 20.0 + 180) * 40.0", 0, 0]
+        },
+        "leg_shin_R": {
+          "rotation": ["Math.abs(Math.sin(query.anim_time * 20.0 + 180)) * 30.0", 0, 0]
+        },
+        "arm_upper_L_flesh": {
+          "rotation": ["Math.cos(query.anim_time * 20.0 + 180) * 30.0", 0, -10]
+        },
+        "arm_upper_R_flesh": {
+          "rotation": ["Math.cos(query.anim_time * 20.0) * 30.0", 0, 10]
+        },
+        "goblin_torso_skin": {
+          "position": [0, "Math.abs(Math.cos(query.anim_time * 20.0)) * 1.0", 0],
+          "rotation": [25, 0, 0]
+        }
+      }
+    },
+    "animation.goblin_mountain.attack": {
+      "loop": false,
+      "animation_length": 0.5,
+      "bones": {
+        "arm_upper_R_flesh": {
+          "rotation": {
+            "0.0": [0, 0, 10],
+            "0.2": [-120, 20, 0],
+            "0.3": [60, -10, 0],
+            "0.5": [0, 0, 10]
+          }
+        },
+        "goblin_torso_skin": {
+          "rotation": {
+            "0.0": [15, 0, 0],
+            "0.2": [0, -20, 0],
+            "0.3": [25, 10, 0],
+            "0.5": [15, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

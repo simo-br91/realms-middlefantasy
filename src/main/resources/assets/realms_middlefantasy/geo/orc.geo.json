@@ -1,134 +1,179 @@
 {
-	"format_version": "1.12.0",
-	"minecraft:geometry": [
-		{
-			"description": {
-				"identifier": "geometry.orc_warrior",
-				"texture_width": 64,
-				"texture_height": 64,
-				"visible_bounds_width": 3,
-				"visible_bounds_height": 3,
-				"visible_bounds_offset": [0, 1.5, 0]
-			},
-			"bones": [
-				{
-					"name": "root_base",
-					"pivot": [0, 0, 0],
-					"rotation": [0, 180, 0]
-				},
-				{
-					"name": "waist_core",
-					"parent": "root_base",
-					"pivot": [0, 12, 0],
-					"cubes": [
-						{"origin": [-4, 12, -2], "size": [8, 12, 4], "uv": [16, 16]}
-					]
-				},
-				{
-					"name": "belt_buckle_iron",
-					"parent": "waist_core",
-					"pivot": [0, 12, 0],
-					"cubes": [
-						{"origin": [-2, 11, -2.5], "size": [4, 3, 1], "uv": [1, 1]}
-					]
-				},
-				{
-					"name": "torso_skin",
-					"parent": "waist_core",
-					"pivot": [0, 24, 0],
-					"cubes": [
-						{"origin": [-4, 24, -2], "size": [8, 12, 4], "uv": [16, 32]}
-					]
-				},
-				{
-					"name": "chest_plate_jagged",
-					"parent": "torso_skin",
-					"pivot": [0, 24, 0],
-					"cubes": [
-						{"origin": [-4.5, 26, -2.5], "size": [9, 10, 5], "inflate": 0.2, "uv": [1, 32]}
-					]
-				},
-				{
-					"name": "head_skin_base",
-					"parent": "torso_skin",
-					"pivot": [0, 24, 0],
-					"cubes": [
-						{"origin": [-4, 24, -4], "size": [8, 8, 8], "uv": [0, 0]}
-					]
-				},
-				{
-					"name": "helmet_cap_iron",
-					"parent": "head_skin_base",
-					"pivot": [0, 24, 0],
-					"cubes": [
-						{"origin": [-4.5, 28, -4.5], "size": [9, 5, 9], "inflate": 0.1, "uv": [32, 0]}
-					]
-				},
-				{
-					"name": "arm_right_skin",
-					"parent": "torso_skin",
-					"pivot": [-5, 22, 0],
-					"cubes": [
-						{"origin": [-8, 12, -2], "size": [4, 12, 4], "uv": [40, 16]}
-					]
-				},
-				{
-					"name": "pauldron_right_spiked",
-					"parent": "arm_right_skin",
-					"pivot": [-5, 22, 0],
-					"cubes": [
-						{"origin": [-9, 21, -3], "size": [6, 6, 6], "uv": [40, 32]}
-					]
-				},
-				{
-					"name": "arm_left_skin",
-					"parent": "torso_skin",
-					"pivot": [5, 22, 0],
-					"cubes": [
-						{"origin": [4, 12, -2], "size": [4, 12, 4], "uv": [32, 48]}
-					]
-				},
-				{
-					"name": "vambrace_left_leather",
-					"parent": "arm_left_skin",
-					"pivot": [5, 16, 0],
-					"cubes": [
-						{"origin": [3.5, 12, -2.5], "size": [5, 6, 5], "inflate": 0.1, "uv": [48, 48]}
-					]
-				},
-				{
-					"name": "leg_right_skin",
-					"parent": "waist_core",
-					"pivot": [-1.9, 12, 0],
-					"cubes": [
-						{"origin": [-3.9, 0, -2], "size": [4, 12, 4], "uv": [0, 16]}
-					]
-				},
-				{
-					"name": "boot_right_plate",
-					"parent": "leg_right_skin",
-					"pivot": [-1.9, 5, 0],
-					"cubes": [
-						{"origin": [-4.4, 0, -2.5], "size": [5, 5, 5], "inflate": 0.1, "uv": [0, 32]}
-					]
-				},
-				{
-					"name": "leg_left_skin",
-					"parent": "waist_core",
-					"pivot": [1.9, 12, 0],
-					"cubes": [
-						{"origin": [-0.1, 0, -2], "size": [4, 12, 4], "uv": [16, 48]}
-					]
-				},
-				{
-					"name": "boot_left_fur",
-					"parent": "leg_left_skin",
-					"pivot": [1.9, 5, 0],
-					"cubes": [
-						{"origin": [-0.6, 0, -2.5], "size": [5, 6, 5], "inflate": 0.2, "uv": [0, 48]}
-					]
-				}
-			]
-		}
-	]
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.rmf_basic_orc",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [0, 1.5, 0]
+      },
+      "bones": [
+        {
+          "name": "root_pivot",
+          "pivot": [0, 0, 0]
+        },
+        {
+          "name": "waist_core",
+          "parent": "root_pivot",
+          "pivot": [0, 12, 0],
+          "cubes": [
+            {"origin": [-4, 9, -2], "size": [8, 6, 4], "uv": [16, 16], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "belt_leather_strap",
+          "parent": "waist_core",
+          "pivot": [0, 10, 0],
+          "cubes": [
+            {"origin": [-4.5, 9, -2.5], "size": [9, 2, 5], "uv": [0, 32]}
+          ]
+        },
+        {
+          "name": "torso_upper_chest",
+          "parent": "waist_core",
+          "pivot": [0, 15, 0],
+          "cubes": [
+            {"origin": [-5, 15, -3], "size": [10, 9, 6], "uv": [16, 32]}
+          ]
+        },
+        {
+          "name": "armor_chest_plate_rusted",
+          "parent": "torso_upper_chest",
+          "pivot": [0, 19, -3],
+          "cubes": [
+            {"origin": [-4, 16, -3.5], "size": [8, 7, 1], "uv": [0, 48]}
+          ]
+        },
+        {
+          "name": "head_neck_joint",
+          "parent": "torso_upper_chest",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-2, 24, -2], "size": [4, 2, 4], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "head_cranium_skin",
+          "parent": "head_neck_joint",
+          "pivot": [0, 26, 0],
+          "cubes": [
+            {"origin": [-4, 26, -4], "size": [8, 8, 8], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "helmet_cap_scraps",
+          "parent": "head_cranium_skin",
+          "pivot": [0, 30, 0],
+          "cubes": [
+            {"origin": [-4.5, 30, -4.5], "size": [9, 4, 9], "uv": [32, 0]}
+          ]
+        },
+        {
+          "name": "jaw_mandible_lower",
+          "parent": "head_cranium_skin",
+          "pivot": [0, 28, -2],
+          "cubes": [
+            {"origin": [-4, 26, -5], "size": [8, 2, 1], "uv": [24, 0]}
+          ]
+        },
+        {
+          "name": "arm_R_shoulder_joint",
+          "parent": "torso_upper_chest",
+          "pivot": [-5, 22, 0],
+          "cubes": [
+            {"origin": [-9, 20, -2], "size": [4, 4, 4], "uv": [40, 16]}
+          ]
+        },
+        {
+          "name": "pauldron_R_jagged",
+          "parent": "arm_R_shoulder_joint",
+          "pivot": [-7, 23, 0],
+          "rotation": [0, 0, -15],
+          "cubes": [
+            {"origin": [-9.5, 22, -2.5], "size": [5, 3, 5], "uv": [40, 32]}
+          ]
+        },
+        {
+          "name": "arm_R_forearm",
+          "parent": "arm_R_shoulder_joint",
+          "pivot": [-7, 18, 0],
+          "cubes": [
+            {"origin": [-9, 10, -2], "size": [4, 10, 4], "uv": [40, 16]}
+          ]
+        },
+        {
+          "name": "item_R_hand_grip",
+          "parent": "arm_R_forearm",
+          "pivot": [-7, 11, 0]
+        },
+        {
+          "name": "arm_L_shoulder_joint",
+          "parent": "torso_upper_chest",
+          "pivot": [5, 22, 0],
+          "cubes": [
+            {"origin": [5, 20, -2], "size": [4, 4, 4], "uv": [40, 16], "mirror": true}
+          ]
+        },
+        {
+          "name": "arm_L_forearm",
+          "parent": "arm_L_shoulder_joint",
+          "pivot": [7, 18, 0],
+          "cubes": [
+            {"origin": [5, 10, -2], "size": [4, 10, 4], "uv": [40, 16], "mirror": true}
+          ]
+        },
+        {
+          "name": "leg_R_thigh",
+          "parent": "waist_core",
+          "pivot": [-2, 9, 0],
+          "cubes": [
+            {"origin": [-4, 5, -2], "size": [4, 4, 4], "uv": [0, 16]}
+          ]
+        },
+        {
+          "name": "leg_R_shin_bone",
+          "parent": "leg_R_thigh",
+          "pivot": [-2, 5, 0],
+          "cubes": [
+            {"origin": [-4, 0, -2], "size": [4, 5, 4], "uv": [0, 16]}
+          ]
+        },
+        {
+          "name": "boot_R_iron_toe",
+          "parent": "leg_R_shin_bone",
+          "pivot": [-2, 1, -1],
+          "cubes": [
+            {"origin": [-4, 0, -4], "size": [4, 2, 2], "uv": [0, 26]}
+          ]
+        },
+        {
+          "name": "leg_L_thigh",
+          "parent": "waist_core",
+          "pivot": [2, 9, 0],
+          "cubes": [
+            {"origin": [0, 5, -2], "size": [4, 4, 4], "uv": [0, 16], "mirror": true}
+          ]
+        },
+        {
+          "name": "leg_L_shin_bone",
+          "parent": "leg_L_thigh",
+          "pivot": [2, 5, 0],
+          "cubes": [
+            {"origin": [0, 0, -2], "size": [4, 5, 4], "uv": [0, 16], "mirror": true}
+          ]
+        },
+        {
+          "name": "boot_L_iron_toe",
+          "parent": "leg_L_shin_bone",
+          "pivot": [2, 1, -1],
+          "cubes": [
+            {"origin": [0, 0, -4], "size": [4, 2, 2], "uv": [0, 26], "mirror": true}
+          ]
+        }
+      ]
+    }
+  ]
 }

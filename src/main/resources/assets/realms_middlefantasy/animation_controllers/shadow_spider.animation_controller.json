@@ -1,27 +1,28 @@
 {
   "format_version": "1.10.0",
   "animation_controllers": {
-    "controller.animation.orc_warrior.general": {
+    "controller.animation.shadow_spider.base": {
       "initial_state": "default",
       "states": {
         "default": {
-          "animations": ["look_at_target", "idle_breathing"],
+          "animations": ["idle"],
           "transitions": [
             { "walking": "query.modified_move_speed > 0.1" },
             { "attacking": "query.is_delayed_attacking" }
           ]
         },
         "walking": {
-          "animations": ["walk", "look_at_target"],
+          "animations": ["walk"],
           "transitions": [
             { "default": "query.modified_move_speed <= 0.1" },
             { "attacking": "query.is_delayed_attacking" }
           ]
         },
         "attacking": {
-          "animations": ["melee_attack"],
+          "animations": ["attack"],
           "transitions": [
-            { "default": "!query.is_delayed_attacking" }
+            { "default": "!query.is_delayed_attacking && query.modified_move_speed <= 0.1" },
+            { "walking": "!query.is_delayed_attacking && query.modified_move_speed > 0.1" }
           ]
         }
       }

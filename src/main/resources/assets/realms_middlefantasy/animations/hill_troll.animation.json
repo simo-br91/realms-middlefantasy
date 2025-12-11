@@ -1,0 +1,126 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.hill_troll.idle": {
+      "loop": true,
+      "animation_length": 4.0,
+      "bones": {
+        "troll_waist": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "2.0": [2, 0, 0],
+            "4.0": [0, 0, 0]
+          }
+        },
+        "troll_torso_upper": {
+          "rotation": {
+            "0.0": [15, 0, 0],
+            "2.0": [18, 0, 0],
+            "4.0": [15, 0, 0]
+          }
+        },
+        "troll_head_base": {
+          "rotation": {
+            "0.0": [-15, 0, 0],
+            "2.0": [-10, 0, 0],
+            "4.0": [-15, 0, 0]
+          }
+        },
+        "troll_arm_upper_R": {
+          "rotation": [0, 0, 5]
+        },
+        "troll_arm_upper_L": {
+          "rotation": [0, 0, -5]
+        }
+      }
+    },
+    "animation.hill_troll.walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "troll_waist": {
+          "rotation": [0, 0, "Math.cos(query.anim_time * 20) * 2"],
+          "position": [0, "Math.sin(query.anim_time * 40) * 0.5", 0]
+        },
+        "troll_thigh_R": {
+          "rotation": ["Math.cos(query.anim_time * 30) * 30", 0, 0]
+        },
+        "troll_shin_R": {
+          "rotation": ["Math.abs(Math.sin(query.anim_time * 30)) * 30", 0, 0]
+        },
+        "troll_thigh_L": {
+          "rotation": ["Math.cos(query.anim_time * 30 + 180) * 30", 0, 0]
+        },
+        "troll_shin_L": {
+          "rotation": ["Math.abs(Math.sin(query.anim_time * 30 + 180)) * 30", 0, 0]
+        },
+        "troll_arm_upper_R": {
+          "rotation": ["Math.cos(query.anim_time * 30 + 180) * 20", 0, 5]
+        },
+        "troll_arm_upper_L": {
+          "rotation": ["Math.cos(query.anim_time * 30) * 20", 0, -5]
+        },
+        "troll_torso_upper": {
+          "rotation": [20, 0, "Math.cos(query.anim_time * 20) * -2"]
+        }
+      }
+    },
+    "animation.hill_troll.attack": {
+      "loop": false,
+      "animation_length": 1.2,
+      "bones": {
+        "troll_waist": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.4": [-15, 20, 0],
+            "0.8": [10, -10, 0],
+            "1.2": [0, 0, 0]
+          }
+        },
+        "troll_torso_upper": {
+          "rotation": {
+            "0.0": [15, 0, 0],
+            "0.4": [-10, 0, 0],
+            "0.8": [30, 0, 0],
+            "1.2": [15, 0, 0]
+          }
+        },
+        "troll_arm_upper_R": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.4": [-110, -20, 0],
+            "0.7": [60, 0, 0],
+            "1.2": [0, 0, 0]
+          }
+        },
+        "troll_jaw": {
+          "rotation": {
+            "0.6": [0, 0, 0],
+            "0.8": [20, 0, 0],
+            "1.0": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.hill_troll.hurt": {
+      "loop": false,
+      "animation_length": 0.5,
+      "bones": {
+        "troll_torso_upper": {
+          "rotation": {
+            "0.0": [15, 0, 0],
+            "0.1": [-10, 0, 0],
+            "0.5": [15, 0, 0]
+          }
+        },
+        "troll_head_base": {
+          "rotation": {
+            "0.0": [-15, 0, 0],
+            "0.1": [10, 0, 0],
+            "0.5": [-15, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

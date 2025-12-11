@@ -1,0 +1,187 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.uruk_hai_elite",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3.5,
+        "visible_bounds_offset": [0, 1.5, 0]
+      },
+      "bones": [
+        {
+          "name": "root_base",
+          "pivot": [0, 0, 0]
+        },
+        {
+          "name": "waist_core",
+          "parent": "root_base",
+          "pivot": [0, 12, 0]
+        },
+        {
+          "name": "belt_leather_girth",
+          "parent": "waist_core",
+          "pivot": [0, 12, 0],
+          "cubes": [
+            {"origin": [-4.5, 10, -2.5], "size": [9, 4, 5], "uv": [16, 48]}
+          ]
+        },
+        {
+          "name": "loincloth_plate_front",
+          "parent": "belt_leather_girth",
+          "pivot": [0, 10, -2.5],
+          "cubes": [
+            {"origin": [-3, 4, -2.7], "size": [6, 6, 1], "uv": [20, 52]}
+          ]
+        },
+        {
+          "name": "torso_core_flesh",
+          "parent": "waist_core",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-4, 12, -2], "size": [8, 12, 4], "uv": [16, 16]}
+          ]
+        },
+        {
+          "name": "breastplate_isengard_steel",
+          "parent": "torso_core_flesh",
+          "pivot": [0, 18, 0],
+          "cubes": [
+            {"origin": [-4.5, 13, -2.5], "size": [9, 12, 5], "uv": [16, 32], "inflate": 0.2}
+          ]
+        },
+        {
+          "name": "head_neck_base",
+          "parent": "torso_core_flesh",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-4, 24, -4], "size": [8, 8, 8], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "helmet_iron_cowl",
+          "parent": "head_neck_base",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-4.5, 23.5, -4.5], "size": [9, 9, 9], "uv": [32, 0], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "helmet_visor_crest",
+          "parent": "helmet_iron_cowl",
+          "pivot": [0, 32, 0],
+          "cubes": [
+            {"origin": [-1, 31, -5], "size": [2, 4, 2], "uv": [56, 0]}
+          ]
+        },
+        {
+          "name": "shoulder_joint_R",
+          "parent": "torso_core_flesh",
+          "pivot": [-5, 22, 0]
+        },
+        {
+          "name": "arm_upper_flesh_R",
+          "parent": "shoulder_joint_R",
+          "pivot": [-5, 22, 0],
+          "cubes": [
+            {"origin": [-8, 12, -2], "size": [4, 12, 4], "uv": [40, 16]}
+          ]
+        },
+        {
+          "name": "pauldron_spiked_R",
+          "parent": "arm_upper_flesh_R",
+          "pivot": [-5, 22, 0],
+          "cubes": [
+            {"origin": [-9, 20, -3], "size": [5, 6, 6], "uv": [0, 32]}
+          ]
+        },
+        {
+          "name": "vambrace_plate_R",
+          "parent": "arm_upper_flesh_R",
+          "pivot": [-6, 16, 0],
+          "cubes": [
+            {"origin": [-8.5, 12, -2.5], "size": [5, 6, 5], "uv": [40, 32], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "item_mount_R",
+          "parent": "arm_upper_flesh_R",
+          "pivot": [-6, 11, 0]
+        },
+        {
+          "name": "shoulder_joint_L",
+          "parent": "torso_core_flesh",
+          "pivot": [5, 22, 0]
+        },
+        {
+          "name": "arm_upper_flesh_L",
+          "parent": "shoulder_joint_L",
+          "pivot": [5, 22, 0],
+          "cubes": [
+            {"origin": [4, 12, -2], "size": [4, 12, 4], "uv": [32, 48]}
+          ]
+        },
+        {
+          "name": "pauldron_spiked_L",
+          "parent": "arm_upper_flesh_L",
+          "pivot": [5, 22, 0],
+          "cubes": [
+            {"origin": [4, 20, -3], "size": [5, 6, 6], "uv": [0, 48]}
+          ]
+        },
+        {
+          "name": "vambrace_plate_L",
+          "parent": "arm_upper_flesh_L",
+          "pivot": [6, 16, 0],
+          "cubes": [
+            {"origin": [3.5, 12, -2.5], "size": [5, 6, 5], "uv": [48, 48], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "leg_hip_joint_R",
+          "parent": "waist_core",
+          "pivot": [-1.9, 12, 0]
+        },
+        {
+          "name": "leg_upper_flesh_R",
+          "parent": "leg_hip_joint_R",
+          "pivot": [-1.9, 12, 0],
+          "cubes": [
+            {"origin": [-3.9, 0, -2], "size": [4, 12, 4], "uv": [0, 16]}
+          ]
+        },
+        {
+          "name": "greave_heavy_R",
+          "parent": "leg_upper_flesh_R",
+          "pivot": [-1.9, 6, 0],
+          "cubes": [
+            {"origin": [-4.1, 0, -2.2], "size": [4.4, 7, 4.4], "uv": [0, 48], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "leg_hip_joint_L",
+          "parent": "waist_core",
+          "pivot": [1.9, 12, 0]
+        },
+        {
+          "name": "leg_upper_flesh_L",
+          "parent": "leg_hip_joint_L",
+          "pivot": [1.9, 12, 0],
+          "cubes": [
+            {"origin": [-0.1, 0, -2], "size": [4, 12, 4], "uv": [16, 48]}
+          ]
+        },
+        {
+          "name": "greave_heavy_L",
+          "parent": "leg_upper_flesh_L",
+          "pivot": [1.9, 6, 0],
+          "cubes": [
+            {"origin": [-0.3, 0, -2.2], "size": [4.4, 7, 4.4], "uv": [0, 48], "inflate": 0.1}
+          ]
+        }
+      ]
+    }
+  ]
+}

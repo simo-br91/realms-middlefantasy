@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.hill_troll": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": ["idle"],
+          "transitions": [
+            { "walking": "query.is_moving" },
+            { "attacking": "variable.attack_time > 0" },
+            { "hurt": "query.health < query.previous_health" }
+          ]
+        },
+        "walking": {
+          "animations": ["walk"],
+          "transitions": [
+            { "default": "!query.is_moving" },
+            { "attacking": "variable.attack_time > 0" },
+            { "hurt": "query.health < query.previous_health" }
+          ]
+        },
+        "attacking": {
+          "animations": ["attack"],
+          "transitions": [
+            { "default": "query.any_animation_finished" }
+          ]
+        },
+        "hurt": {
+          "animations": ["hurt"],
+          "transitions": [
+            { "default": "query.any_animation_finished" }
+          ]
+        }
+      }
+    }
+  }
+}
