@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "realms_middlefantasy:item/mithril_sword"
+  }
+}

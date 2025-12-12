@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "realms_middlefantasy:black_iron_ingot" },
+    { "item": "realms_middlefantasy:mithril_ingot" }
+  ],
+  "result": {
+    "item": "realms_middlefantasy:galvorn_ingot",
+    "count": 1
+  }
+}

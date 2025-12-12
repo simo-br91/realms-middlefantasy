@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "realms_middlefantasy:item/soldier_of_gondor_spawn_egg"
+    "layer0": "realms_middlefantasy:item/solider_of_gondor_spawn_egg"
   }
 }

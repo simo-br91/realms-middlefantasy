@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "# #",
+    " # "
+  ],
+  "key": {
+    "#": { "item": "realms_middlefantasy:mithril_ingot" }
+  },
+  "result": { "item": "realms_middlefantasy:ithildin_plate", "count": 4 }
+}

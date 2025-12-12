@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "realms_middlefantasy:item/ent_shepherd_spawn_egg"
+    "layer0": "realms_middlefantasy:item/ent_spawn_egg"
   }
 }

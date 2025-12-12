@@ -1,34 +1,39 @@
 package com.simo.realmsofmiddlefantasy.core;
 
 import com.simo.realmsofmiddlefantasy.RealmsOfMiddleFantasy;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
+/**
+ * Registers all the blocks for the mod (Palier 1: Black Iron + Mithril).
+ */
 public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, RealmsOfMiddleFantasy.MODID);
 
     // ─────────────────────────────────────────────────────────
-    // Dwarven core blocks
+    // Dwarven Core Blocks
     // ─────────────────────────────────────────────────────────
 
-    // Bloc de stockage du fer noir (métal dense, résistant)
+    // Black Iron Block - Dense and resistant metal
     public static final RegistryObject<Block> BLACK_IRON_BLOCK = registerBlock("black_iron_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.METAL)
-                    .strength(5.0f, 6.0f)          // proche du fer
+                    .strength(5.0f, 6.0f)          // Similar to iron
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.METAL)));
 
-    // Pierre naine décorative (mur de salles naines, halls, etc.)
+    // Dwarven Stone - Decorative stone for dwarven halls and walls
     public static final RegistryObject<Block> DWARVEN_STONE = registerBlock("dwarven_stone",
             () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.STONE)
@@ -37,14 +42,62 @@ public class ModBlocks {
                     .sound(SoundType.STONE)));
 
     // ─────────────────────────────────────────────────────────
-    // Helper pour enregistrer bloc + block item
+    // Mithril and Ithildin Plates
     // ─────────────────────────────────────────────────────────
 
+    // Mithril Ore - Found in the depths of the mountains
+    public static final RegistryObject<Block> MITHRIL_ORE = registerBlock("mithril_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .strength(4.0F, 8.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE), UniformInt.of(3, 7)));
+
+    // Mithril Block - A solid block of mithril, much stronger than iron
+    public static final RegistryObject<Block> MITHRIL_BLOCK = registerBlock("mithril_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.METAL)
+                    .strength(6.0F, 10.0F) // stronger than iron
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)));
+
+    // Ithildin Plate (Unlit and Lit Versions)
+    public static final RegistryObject<Block> ITHILDIN_PLATE = registerBlock("ithildin_plate",
+            () -> new IthildinPlateBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.METAL)
+                    .strength(3.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL), false, ModBlocks.ITHILDIN_PLATE_LIT, ModBlocks.ITHILDIN_PLATE));
+
+    public static final RegistryObject<Block> ITHILDIN_PLATE_LIT = registerBlock("ithildin_plate_lit",
+            () -> new IthildinPlateBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.METAL)
+                    .strength(3.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)
+                    .lightLevel(s -> 12), true, ModBlocks.ITHILDIN_PLATE_LIT, ModBlocks.ITHILDIN_PLATE));
+
+    // ─────────────────────────────────────────────────────────
+    // Dwarven Forge Block
+    // ─────────────────────────────────────────────────────────
+
+    // Dwarven Forge - A place for crafting and smelting blacksmith items
+    public static final RegistryObject<Block> DWARVEN_FORGE = registerBlock("dwarven_forge",
+            () -> new DwarvenForgeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.METAL)
+                    .strength(5.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)));
+
+    // ─────────────────────────────────────────────────────────
+    // Helper Methods
+    // ─────────────────────────────────────────────────────────
+
+    // Register a block and its associated item
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> blockSupplier) {
         RegistryObject<T> block = BLOCKS.register(name, blockSupplier);
-        // Enregistre automatiquement le BlockItem correspondant
-        ModItems.ITEMS.register(name,
-                () -> new net.minecraft.world.item.BlockItem(block.get(), new net.minecraft.world.item.Item.Properties()));
+        // Automatically register the corresponding BlockItem
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
         return block;
     }
 }

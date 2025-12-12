@@ -30,6 +30,30 @@
   
   "entity.realms_middlefantasy.high_elf_warrior": "High Elf Warrior",
   "entity.realms_middlefantasy.silvan_elf_scout": "Silvan Elf Scout",
-  "entity.realms_middlefantasy.galadhrim_archer": "Galadhrim Archer"
+  "entity.realms_middlefantasy.galadhrim_archer": "Galadhrim Archer",
+
+  "block.realms_middlefantasy.mithril_ore": "Mithril Ore",
+  "item.realms_middlefantasy.mithril_ingot": "Mithril Ingot",
+  "block.realms_middlefantasy.mithril_block": "Mithril Block",
+
+  "item.realms_middlefantasy.mithril_sword": "Mithril Sword",
+  "item.realms_middlefantasy.mithril_pickaxe": "Mithril Pickaxe",
+
+  "item.realms_middlefantasy.mithril_helmet": "Mithril Helmet",
+  "item.realms_middlefantasy.mithril_chestplate": "Mithril Chestplate",
+  "item.realms_middlefantasy.mithril_leggings": "Mithril Leggings",
+  "item.realms_middlefantasy.mithril_boots": "Mithril Boots",
+
+  "item.realms_middlefantasy.galvorn_ingot": "Galvorn Ingot",
+
+  "item.realms_middlefantasy.galvorn_helmet": "Galvorn Hood",
+  "item.realms_middlefantasy.galvorn_chestplate": "Galvorn Vest",
+  "item.realms_middlefantasy.galvorn_leggings": "Galvorn Leggings",
+  "item.realms_middlefantasy.galvorn_boots": "Galvorn Boots",
+
+  "block.realms_middlefantasy.ithildin_plate": "Ithildin Plate",
+  "block.realms_middlefantasy.ithildin_plate_lit": "Ithildin Plate (Lit)",
+
+  "block.realms_middlefantasy.dwarven_forge": "Dwarven Forge"
 
 }
