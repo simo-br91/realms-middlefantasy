@@ -24,41 +24,40 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 /**
- * Galadhrim Archer - Elite Lothlórien archer.
- * Master of the bow, defends elven sanctuaries with precision.
+ * Silvan Elf Scout - Woodland elf ranger with superior tracking abilities.
+ * Fast, stealthy, and deadly with a bow.
  */
-public class GaladhrimArcherEntity extends Monster implements GeoEntity, RangedAttackMob {
+public class SilvanElfScoutEntity extends Monster implements GeoEntity, RangedAttackMob {
     
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    public GaladhrimArcherEntity(EntityType<? extends Monster> type, Level level) {
+    public SilvanElfScoutEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 28.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.30D)
-                .add(Attributes.ATTACK_DAMAGE, 5.0D)
-                .add(Attributes.FOLLOW_RANGE, 36.0D)
-                .add(Attributes.ARMOR, 6.0D);
+                .add(Attributes.MAX_HEALTH, 24.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.32D)
+                .add(Attributes.ATTACK_DAMAGE, 4.0D)
+                .add(Attributes.FOLLOW_RANGE, 32.0D)
+                .add(Attributes.ARMOR, 4.0D);
     }
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new RangedBowAttackGoal<>(this, 0.9D, 15, 32.0F));
-        this.goalSelector.addGoal(3, new AvoidEntityGoal<>(this, Monster.class, 12.0F, 1.3D, 1.5D));
-        this.goalSelector.addGoal(7, new RandomStrollGoal(this, 0.7D));
-        this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 12.0F));
+        this.goalSelector.addGoal(1, new RangedBowAttackGoal<>(this, 1.0D, 20, 28.0F));
+        this.goalSelector.addGoal(3, new AvoidEntityGoal<>(this, Monster.class, 10.0F, 1.2D, 1.4D));
+        this.goalSelector.addGoal(7, new RandomStrollGoal(this, 0.8D));
+        this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 10.0F));
         this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
 
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Monster.class, 10, true, false,
             entity -> entity instanceof OrcEntity || entity instanceof OrcScoutEntity || 
                       entity instanceof OrcWarriorEntity || entity instanceof UrukHaiEntity ||
-                      entity instanceof GoblinEntity || entity instanceof WargEntity ||
-                      entity instanceof HillTrollEntity || entity instanceof CaveTrollEntity));
+                      entity instanceof GoblinEntity || entity instanceof WargEntity));
     }
 
     @Override
@@ -66,16 +65,15 @@ public class GaladhrimArcherEntity extends Monster implements GeoEntity, RangedA
         ItemStack bow = new ItemStack(Items.BOW);
         AbstractArrow arrow = ProjectileUtil.getMobArrow(this, bow, velocity);
         
-        // Galadhrim archers have superior accuracy
+        // Silvan elves have good accuracy
         double d0 = target.getX() - this.getX();
         double d1 = target.getY(0.3333333333333333D) - arrow.getY();
         double d2 = target.getZ() - this.getZ();
         double d3 = Math.sqrt(d0 * d0 + d2 * d2);
         
-        // Higher velocity and better accuracy than regular elves
-        arrow.shoot(d0, d1 + d3 * 0.18D, d2, 1.8F, (float)(10 - this.level().getDifficulty().getId() * 4));
+        arrow.shoot(d0, d1 + d3 * 0.15D, d2, 1.7F, (float)(12 - this.level().getDifficulty().getId() * 4));
         
-        this.playSound(SoundEvents.SKELETON_SHOOT, 1.0F, 0.9F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
+        this.playSound(SoundEvents.SKELETON_SHOOT, 1.0F, 1.0F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level().addFreshEntity(arrow);
     }
 
@@ -99,25 +97,25 @@ public class GaladhrimArcherEntity extends Monster implements GeoEntity, RangedA
         controllers.add(new AnimationController<>(this, "controller", 0, this::predicate));
     }
 
-    private PlayState predicate(AnimationState<GaladhrimArcherEntity> event) {
+    private PlayState predicate(AnimationState<SilvanElfScoutEntity> event) {
         if (this.isDeadOrDying()) {
             event.getController().setAnimation(
-                RawAnimation.begin().then("death", Animation.LoopType.PLAY_ONCE)
+                RawAnimation.begin().then("animation.silvan_elf_scout.hurt", Animation.LoopType.PLAY_ONCE)
             );
             return PlayState.CONTINUE;
         }
 
         if (this.isAggressive()) {
             event.getController().setAnimation(
-                RawAnimation.begin().then("animation.galadhrim_archer.attack_bow", Animation.LoopType.HOLD_ON_LAST_FRAME)
+                RawAnimation.begin().then("animation.silvan_elf_scout.attack", Animation.LoopType.HOLD_ON_LAST_FRAME)
             );
         } else if (event.isMoving()) {
             event.getController().setAnimation(
-                RawAnimation.begin().then("animation.galadhrim_archer.walk", Animation.LoopType.LOOP)
+                RawAnimation.begin().then("animation.silvan_elf_scout.walk", Animation.LoopType.LOOP)
             );
         } else {
             event.getController().setAnimation(
-                RawAnimation.begin().then("animation.galadhrim_archer.idle", Animation.LoopType.LOOP)
+                RawAnimation.begin().then("animation.silvan_elf_scout.idle", Animation.LoopType.LOOP)
             );
         }
 

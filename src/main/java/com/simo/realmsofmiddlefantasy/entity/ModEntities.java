@@ -118,4 +118,24 @@ public class ModEntities {
                             .sized(0.6F, 1.4F)
                             .build(new ResourceLocation(RealmsOfMiddleFantasy.MODID, "dwarf").toString())
             );
+
+
+        // Elves
+        public static final RegistryObject<EntityType<HighElfWarriorEntity>> HIGH_ELF_WARRIOR =
+                ENTITY_TYPES.register("high_elf_warrior",
+                        () -> EntityType.Builder.<HighElfWarriorEntity>of(HighElfWarriorEntity::new, MobCategory.CREATURE)
+                                .sized(0.6f, 1.95f)
+                                .build(RealmsOfMiddleFantasy.MODID + ":high_elf_warrior"));
+
+        public static final RegistryObject<EntityType<SilvanElfScoutEntity>> SILVAN_ELF_SCOUT =
+                ENTITY_TYPES.register("silvan_elf_scout",
+                        () -> EntityType.Builder.<SilvanElfScoutEntity>of(SilvanElfScoutEntity::new, MobCategory.CREATURE)
+                                .sized(0.6f, 1.95f)
+                                .build(RealmsOfMiddleFantasy.MODID + ":silvan_elf_scout"));
+
+        public static final RegistryObject<EntityType<GaladhrimArcherEntity>> GALADHRIM_ARCHER =
+                ENTITY_TYPES.register("galadhrim_archer",
+                        () -> EntityType.Builder.<GaladhrimArcherEntity>of(GaladhrimArcherEntity::new, MobCategory.CREATURE)
+                                .sized(0.6f, 1.95f)
+                                .build(RealmsOfMiddleFantasy.MODID + ":galadhrim_archer"));
 }

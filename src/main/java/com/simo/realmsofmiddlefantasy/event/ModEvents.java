@@ -42,5 +42,10 @@ public class ModEvents {
         
         // Peuples Libres
         event.put(ModEntities.DWARF.get(), DwarfEntity.createAttributes().build());
+
+        // Elves
+        event.put(ModEntities.HIGH_ELF_WARRIOR.get(), HighElfWarriorEntity.createAttributes().build());
+        event.put(ModEntities.SILVAN_ELF_SCOUT.get(), SilvanElfScoutEntity.createAttributes().build());
+        event.put(ModEntities.GALADHRIM_ARCHER.get(), GaladhrimArcherEntity.createAttributes().build());
     }
 }
