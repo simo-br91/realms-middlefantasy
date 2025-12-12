@@ -1,25 +1,21 @@
 package com.simo.realmsofmiddlefantasy.client.model.men;
 
-import com.simo.realmsofmiddlefantasy.RealmsOfMiddleFantasy;
+import com.simo.realmsofmiddlefantasy.client.model.BaseGeoModel;
 import com.simo.realmsofmiddlefantasy.entity.men.DunedainRangerEntity;
 
-import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.GeoModel;
-
-public class DunedainRangerModel extends GeoModel<DunedainRangerEntity> {
-    
+public class DunedainRangerModel extends BaseGeoModel<DunedainRangerEntity> {
     @Override
-    public ResourceLocation getModelResource(DunedainRangerEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "geo/dunedain_ranger.geo.json");
+    protected String modelPath(DunedainRangerEntity entity) {
+        return "geo/dunedain_ranger.geo.json";
     }
 
     @Override
-    public ResourceLocation getTextureResource(DunedainRangerEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "textures/entity/dunedain_ranger.png");
+    protected String texturePath(DunedainRangerEntity entity) {
+        return "textures/entity/dunedain_ranger.png";
     }
 
     @Override
-    public ResourceLocation getAnimationResource(DunedainRangerEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/dunedain_ranger.animation.json");
+    protected String animationPath(DunedainRangerEntity entity) {
+        return "animations/dunedain_ranger.animation.json";
     }
 }

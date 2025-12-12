@@ -49,7 +49,37 @@ public class DwarvenForgeMenu extends AbstractContainerMenu {
     }
 
     @Override
-    public ItemStack quickMoveStack(Player player, int index) {
-        return ItemStack.EMPTY;
+    public ItemStack quickMoveStack(Player playerIn, int index) {
+        ItemStack sourceStack = ItemStack.EMPTY;
+        Slot sourceSlot = this.slots.get(index);
+
+        if (sourceSlot != null && sourceSlot.hasItem()) {
+            ItemStack originalStack = sourceSlot.getItem();
+            sourceStack = originalStack.copy();
+
+            // Assuming 3 slots in the forge (0, 1, 2) and the rest are inventory
+            // TE_INVENTORY_SLOT_COUNT = 3
+            // VANILLA_FIRST_SLOT_INDEX = 0
+            // VANILLA_SLOT_COUNT = 36
+            
+            if (index < 3) { 
+                // Moving FROM Forge TO Player Inventory
+                if (!this.moveItemStackTo(originalStack, 3, 39, true)) {
+                    return ItemStack.EMPTY;
+                }
+            } else {
+                // Moving FROM Player Inventory TO Forge
+                if (!this.moveItemStackTo(originalStack, 0, 3, false)) {
+                    return ItemStack.EMPTY;
+                }
+            }
+
+            if (originalStack.isEmpty()) {
+                sourceSlot.set(ItemStack.EMPTY);
+            } else {
+                sourceSlot.setChanged();
+            }
+        }
+        return sourceStack;
     }
 }

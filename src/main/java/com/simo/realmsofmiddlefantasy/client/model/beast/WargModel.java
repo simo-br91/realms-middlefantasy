@@ -3,23 +3,19 @@ package com.simo.realmsofmiddlefantasy.client.model.beast;
 import com.simo.realmsofmiddlefantasy.client.model.BaseGeoModel;
 import com.simo.realmsofmiddlefantasy.entity.beast.WargEntity;
 
-/**
- * GeckoLib model for Warg.
- */
 public class WargModel extends BaseGeoModel<WargEntity> {
-
     @Override
-    protected String modelPath() {
+    protected String modelPath(WargEntity entity) {
         return "geo/warg.geo.json";
     }
 
     @Override
-    protected String texturePath() {
+    protected String texturePath(WargEntity entity) {
         return "textures/entity/warg.png";
     }
 
     @Override
-    protected String animationPath() {
+    protected String animationPath(WargEntity entity) {
         return "animations/warg.animation.json";
     }
 }

@@ -66,6 +66,9 @@ public class GalvornStealthEvents {
     // Extra safety: if a mob is already targeting you, drop target when too far.
     @SubscribeEvent
     public static void onLivingTick(LivingEvent.LivingTickEvent event) {
+        // Optimization: Only check once per second (20 ticks)
+        if (event.getEntity().tickCount % 20 != 0) return;
+
         if (!(event.getEntity() instanceof Monster monster)) return;
 
         LivingEntity target = monster.getTarget();

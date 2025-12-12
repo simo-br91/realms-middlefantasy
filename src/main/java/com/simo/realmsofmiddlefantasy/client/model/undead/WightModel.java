@@ -1,25 +1,21 @@
 package com.simo.realmsofmiddlefantasy.client.model.undead;
 
-import com.simo.realmsofmiddlefantasy.RealmsOfMiddleFantasy;
+import com.simo.realmsofmiddlefantasy.client.model.BaseGeoModel;
 import com.simo.realmsofmiddlefantasy.entity.undead.WightEntity;
 
-import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.GeoModel;
-
-public class WightModel extends GeoModel<WightEntity> {
-    
+public class WightModel extends BaseGeoModel<WightEntity> {
     @Override
-    public ResourceLocation getModelResource(WightEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "geo/wight.geo.json");
+    protected String modelPath(WightEntity entity) {
+        return "geo/wight.geo.json";
     }
 
     @Override
-    public ResourceLocation getTextureResource(WightEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "textures/entity/wight.png");
+    protected String texturePath(WightEntity entity) {
+        return "textures/entity/wight.png";
     }
 
     @Override
-    public ResourceLocation getAnimationResource(WightEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/wight.animation.json");
+    protected String animationPath(WightEntity entity) {
+        return "animations/wight.animation.json";
     }
 }

@@ -1,25 +1,21 @@
 package com.simo.realmsofmiddlefantasy.client.model.dwarf;
 
-import com.simo.realmsofmiddlefantasy.RealmsOfMiddleFantasy;
+import com.simo.realmsofmiddlefantasy.client.model.BaseGeoModel;
 import com.simo.realmsofmiddlefantasy.entity.dwarf.DwarfEntity;
 
-import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.GeoModel;
-
-public class DwarfModel extends GeoModel<DwarfEntity> {
-    
+public class DwarfModel extends BaseGeoModel<DwarfEntity> {
     @Override
-    public ResourceLocation getModelResource(DwarfEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "geo/dwarf.geo.json");
+    protected String modelPath(DwarfEntity entity) {
+        return "geo/dwarf.geo.json";
     }
 
     @Override
-    public ResourceLocation getTextureResource(DwarfEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "textures/entity/dwarf.png");
+    protected String texturePath(DwarfEntity entity) {
+        return "textures/entity/dwarf.png";
     }
 
     @Override
-    public ResourceLocation getAnimationResource(DwarfEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/dwarf.animation.json");
+    protected String animationPath(DwarfEntity entity) {
+        return "animations/dwarf.animation.json";
     }
 }

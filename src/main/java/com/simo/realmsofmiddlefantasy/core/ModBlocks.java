@@ -62,20 +62,13 @@ public class ModBlocks {
                     .sound(SoundType.METAL)));
 
     // Ithildin Plate (Unlit and Lit Versions)
-    public static final RegistryObject<Block> ITHILDIN_PLATE = registerBlock("ithildin_plate",
-            () -> new IthildinPlateBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.METAL)
-                    .strength(3.0F, 6.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.METAL), false, ModBlocks.ITHILDIN_PLATE_LIT, ModBlocks.ITHILDIN_PLATE));
-
-    public static final RegistryObject<Block> ITHILDIN_PLATE_LIT = registerBlock("ithildin_plate_lit",
-            () -> new IthildinPlateBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.METAL)
-                    .strength(3.0F, 6.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.METAL)
-                    .lightLevel(s -> 12), true, ModBlocks.ITHILDIN_PLATE_LIT, ModBlocks.ITHILDIN_PLATE));
+        public static final RegistryObject<Block> ITHILDIN_PLATE = registerBlock("ithildin_plate",
+                () -> new IthildinPlateBlock(BlockBehaviour.Properties.of()
+                        .mapColor(MapColor.METAL)
+                        .strength(3.0F, 6.0F)
+                        .requiresCorrectToolForDrops()
+                        .sound(SoundType.METAL)
+                        .lightLevel(state -> state.getValue(IthildinPlateBlock.LIT) ? 12 : 0))); // Dynamic light
 
     // ─────────────────────────────────────────────────────────
     // Dwarven Forge Block

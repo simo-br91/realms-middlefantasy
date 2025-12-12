@@ -1,25 +1,21 @@
 package com.simo.realmsofmiddlefantasy.client.model.orc;
 
-import com.simo.realmsofmiddlefantasy.RealmsOfMiddleFantasy;
+import com.simo.realmsofmiddlefantasy.client.model.BaseGeoModel;
 import com.simo.realmsofmiddlefantasy.entity.orc.OrcEntity;
 
-import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.GeoModel;
-
-public class OrcModel extends GeoModel<OrcEntity> {
-    
+public class OrcModel extends BaseGeoModel<OrcEntity> {
     @Override
-    public ResourceLocation getModelResource(OrcEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "geo/orc.geo.json");
+    protected String modelPath(OrcEntity entity) {
+        return "geo/orc.geo.json";
     }
 
     @Override
-    public ResourceLocation getTextureResource(OrcEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "textures/entity/orc.png");
+    protected String texturePath(OrcEntity entity) {
+        return "textures/entity/orc.png";
     }
 
     @Override
-    public ResourceLocation getAnimationResource(OrcEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/orc.animation.json");
+    protected String animationPath(OrcEntity entity) {
+        return "animations/orc.animation.json";
     }
 }

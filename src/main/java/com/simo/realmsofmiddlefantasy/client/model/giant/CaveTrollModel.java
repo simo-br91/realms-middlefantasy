@@ -1,25 +1,21 @@
 package com.simo.realmsofmiddlefantasy.client.model.giant;
 
-import com.simo.realmsofmiddlefantasy.RealmsOfMiddleFantasy;
+import com.simo.realmsofmiddlefantasy.client.model.BaseGeoModel;
 import com.simo.realmsofmiddlefantasy.entity.giant.CaveTrollEntity;
 
-import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.GeoModel;
-
-public class CaveTrollModel extends GeoModel<CaveTrollEntity> {
-    
+public class CaveTrollModel extends BaseGeoModel<CaveTrollEntity> {
     @Override
-    public ResourceLocation getModelResource(CaveTrollEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "geo/cave_troll.geo.json");
+    protected String modelPath(CaveTrollEntity entity) {
+        return "geo/cave_troll.geo.json";
     }
 
     @Override
-    public ResourceLocation getTextureResource(CaveTrollEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "textures/entity/cave_troll.png");
+    protected String texturePath(CaveTrollEntity entity) {
+        return "textures/entity/cave_troll.png";
     }
 
     @Override
-    public ResourceLocation getAnimationResource(CaveTrollEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/cave_troll.animation.json");
+    protected String animationPath(CaveTrollEntity entity) {
+        return "animations/cave_troll.animation.json";
     }
 }

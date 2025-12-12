@@ -1,25 +1,21 @@
 package com.simo.realmsofmiddlefantasy.client.model.orc;
 
-import com.simo.realmsofmiddlefantasy.RealmsOfMiddleFantasy;
+import com.simo.realmsofmiddlefantasy.client.model.BaseGeoModel;
 import com.simo.realmsofmiddlefantasy.entity.orc.UrukHaiEntity;
 
-import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.GeoModel;
-
-public class UrukHaiModel extends GeoModel<UrukHaiEntity> {
-    
+public class UrukHaiModel extends BaseGeoModel<UrukHaiEntity> {
     @Override
-    public ResourceLocation getModelResource(UrukHaiEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "geo/uruk_hai.geo.json");
+    protected String modelPath(UrukHaiEntity entity) {
+        return "geo/uruk_hai.geo.json";
     }
 
     @Override
-    public ResourceLocation getTextureResource(UrukHaiEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "textures/entity/uruk_hai.png");
+    protected String texturePath(UrukHaiEntity entity) {
+        return "textures/entity/uruk_hai.png";
     }
 
     @Override
-    public ResourceLocation getAnimationResource(UrukHaiEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/uruk_hai.animation.json");
+    protected String animationPath(UrukHaiEntity entity) {
+        return "animations/uruk_hai.animation.json";
     }
 }

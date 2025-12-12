@@ -1,25 +1,21 @@
 package com.simo.realmsofmiddlefantasy.client.model.dwarf;
 
-import com.simo.realmsofmiddlefantasy.RealmsOfMiddleFantasy;
+import com.simo.realmsofmiddlefantasy.client.model.BaseGeoModel;
 import com.simo.realmsofmiddlefantasy.entity.dwarf.IronHillsWarriorEntity;
 
-import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.GeoModel;
-
-public class IronHillsWarriorModel extends GeoModel<IronHillsWarriorEntity> {
-    
+public class IronHillsWarriorModel extends BaseGeoModel<IronHillsWarriorEntity> {
     @Override
-    public ResourceLocation getModelResource(IronHillsWarriorEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "geo/iron_hills_warrior.geo.json");
+    protected String modelPath(IronHillsWarriorEntity entity) {
+        return "geo/iron_hills_warrior.geo.json";
     }
 
     @Override
-    public ResourceLocation getTextureResource(IronHillsWarriorEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "textures/entity/iron_hills_warrior.png");
+    protected String texturePath(IronHillsWarriorEntity entity) {
+        return "textures/entity/iron_hills_warrior.png";
     }
 
     @Override
-    public ResourceLocation getAnimationResource(IronHillsWarriorEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/iron_hills_warrior.animation.json");
+    protected String animationPath(IronHillsWarriorEntity entity) {
+        return "animations/iron_hills_warrior.animation.json";
     }
 }

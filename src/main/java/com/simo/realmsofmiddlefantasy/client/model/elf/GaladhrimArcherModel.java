@@ -1,25 +1,21 @@
 package com.simo.realmsofmiddlefantasy.client.model.elf;
 
-import com.simo.realmsofmiddlefantasy.RealmsOfMiddleFantasy;
+import com.simo.realmsofmiddlefantasy.client.model.BaseGeoModel;
 import com.simo.realmsofmiddlefantasy.entity.elf.GaladhrimArcherEntity;
 
-import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.GeoModel;
-
-public class GaladhrimArcherModel extends GeoModel<GaladhrimArcherEntity> {
-    
+public class GaladhrimArcherModel extends BaseGeoModel<GaladhrimArcherEntity> {
     @Override
-    public ResourceLocation getModelResource(GaladhrimArcherEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "geo/galadhrim_archer.geo.json");
+    protected String modelPath(GaladhrimArcherEntity entity) {
+        return "geo/galadhrim_archer.geo.json";
     }
 
     @Override
-    public ResourceLocation getTextureResource(GaladhrimArcherEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "textures/entity/galadhrim_archer.png");
+    protected String texturePath(GaladhrimArcherEntity entity) {
+        return "textures/entity/galadhrim_archer.png";
     }
 
     @Override
-    public ResourceLocation getAnimationResource(GaladhrimArcherEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/galadhrim_archer.animation.json");
+    protected String animationPath(GaladhrimArcherEntity entity) {
+        return "animations/galadhrim_archer.animation.json";
     }
 }
