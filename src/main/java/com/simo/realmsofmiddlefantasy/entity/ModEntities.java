@@ -138,4 +138,35 @@ public class ModEntities {
                         () -> EntityType.Builder.<GaladhrimArcherEntity>of(GaladhrimArcherEntity::new, MobCategory.CREATURE)
                                 .sized(0.6f, 1.95f)
                                 .build(RealmsOfMiddleFantasy.MODID + ":galadhrim_archer"));
+        // ─────────────────────────────────────────────────────────
+        // Men of the West
+        // ─────────────────────────────────────────────────────────
+
+        public static final RegistryObject<EntityType<DunedainRangerEntity>> DUNEDAIN_RANGER =
+                ENTITY_TYPES.register("dunedain_ranger",
+                        () -> EntityType.Builder.<DunedainRangerEntity>of(DunedainRangerEntity::new, MobCategory.CREATURE)
+                                .sized(0.6f, 1.95f)
+                                .build(RealmsOfMiddleFantasy.MODID + ":dunedain_ranger"));
+
+        public static final RegistryObject<EntityType<ManOfNorthEntity>> MAN_OF_NORTH =
+                ENTITY_TYPES.register("man_of_north",
+                        () -> EntityType.Builder.<ManOfNorthEntity>of(ManOfNorthEntity::new, MobCategory.CREATURE)
+                                .sized(0.6f, 1.95f)
+                                .build(RealmsOfMiddleFantasy.MODID + ":man_of_north"));
+
+        // ─────────────────────────────────────────────────────────
+        // Gondor Forces
+        // ─────────────────────────────────────────────────────────
+
+        public static final RegistryObject<EntityType<CitadelGuardEntity>> CITADEL_GUARD =
+                ENTITY_TYPES.register("citadel_guard",
+                        () -> EntityType.Builder.<CitadelGuardEntity>of(CitadelGuardEntity::new, MobCategory.CREATURE)
+                                .sized(0.6f, 1.95f)
+                                .build(RealmsOfMiddleFantasy.MODID + ":citadel_guard"));
+
+        public static final RegistryObject<EntityType<SoldierOfGondorEntity>> SOLDIER_OF_GONDOR =
+                ENTITY_TYPES.register("soldier_of_gondor",
+                        () -> EntityType.Builder.<SoldierOfGondorEntity>of(SoldierOfGondorEntity::new, MobCategory.CREATURE)
+                                .sized(0.6f, 1.95f)
+                                .build(RealmsOfMiddleFantasy.MODID + ":soldier_of_gondor"));
 }

@@ -47,5 +47,13 @@ public class ModEvents {
         event.put(ModEntities.HIGH_ELF_WARRIOR.get(), HighElfWarriorEntity.createAttributes().build());
         event.put(ModEntities.SILVAN_ELF_SCOUT.get(), SilvanElfScoutEntity.createAttributes().build());
         event.put(ModEntities.GALADHRIM_ARCHER.get(), GaladhrimArcherEntity.createAttributes().build());
+
+        // Men of the West
+        event.put(ModEntities.DUNEDAIN_RANGER.get(), DunedainRangerEntity.createAttributes().build());
+        event.put(ModEntities.MAN_OF_NORTH.get(), ManOfNorthEntity.createAttributes().build());
+
+        // Gondor Forces
+        event.put(ModEntities.CITADEL_GUARD.get(), CitadelGuardEntity.createAttributes().build());
+        event.put(ModEntities.SOLDIER_OF_GONDOR.get(), SoldierOfGondorEntity.createAttributes().build());
     }
 }

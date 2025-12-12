@@ -64,6 +64,12 @@ public class ModCreativeTabs {
                                 output.accept(ModItems.SILVAN_ELF_SCOUT_SPAWN_EGG.get());
                                 output.accept(ModItems.GALADHRIM_ARCHER_SPAWN_EGG.get());
 
+                                output.accept(ModItems.DUNEDAIN_RANGER_SPAWN_EGG.get());
+                                output.accept(ModItems.MAN_OF_NORTH_SPAWN_EGG.get());
+
+                                output.accept(ModItems.CITADEL_GUARD_SPAWN_EGG.get());
+                                output.accept(ModItems.SOLDIER_OF_GONDOR_SPAWN_EGG.get());
+
                             })
                             .build()
             );

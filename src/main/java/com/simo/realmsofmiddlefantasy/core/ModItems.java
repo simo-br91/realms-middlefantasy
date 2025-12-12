@@ -137,4 +137,22 @@ public class ModItems {
         public static final RegistryObject<Item> GALADHRIM_ARCHER_SPAWN_EGG = ITEMS.register("galadhrim_archer_spawn_egg",
                 () -> new ForgeSpawnEggItem(ModEntities.GALADHRIM_ARCHER, 0xFFD700, 0xC0C0C0,
                         new Item.Properties()));
+        
+        // Men
+        public static final RegistryObject<Item> DUNEDAIN_RANGER_SPAWN_EGG = ITEMS.register("dunedain_ranger_spawn_egg",
+                () -> new ForgeSpawnEggItem(ModEntities.DUNEDAIN_RANGER, 0x4A5A3A, 0x8B7355,
+                        new Item.Properties()));
+
+        public static final RegistryObject<Item> MAN_OF_NORTH_SPAWN_EGG = ITEMS.register("man_of_north_spawn_egg",
+                () -> new ForgeSpawnEggItem(ModEntities.MAN_OF_NORTH, 0x5A6A7A, 0x3A4A5A,
+                        new Item.Properties()));
+
+        // Gondor Forces
+        public static final RegistryObject<Item> CITADEL_GUARD_SPAWN_EGG = ITEMS.register("citadel_guard_spawn_egg",
+                () -> new ForgeSpawnEggItem(ModEntities.CITADEL_GUARD, 0x0A0A0A, 0xF5F5F5,
+                        new Item.Properties()));
+
+        public static final RegistryObject<Item> SOLDIER_OF_GONDOR_SPAWN_EGG = ITEMS.register("soldier_of_gondor_spawn_egg",
+                () -> new ForgeSpawnEggItem(ModEntities.SOLDIER_OF_GONDOR, 0x1A1A1A, 0xD4D4D4,
+                        new Item.Properties()));
 }

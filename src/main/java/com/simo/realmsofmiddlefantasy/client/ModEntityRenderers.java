@@ -40,5 +40,13 @@ public class ModEntityRenderers {
         
         // Peuples Libres
         event.registerEntityRenderer(ModEntities.DWARF.get(), DwarfRenderer::new);
+
+        // Men of the West
+        event.registerEntityRenderer(ModEntities.DUNEDAIN_RANGER.get(), DunedainRangerRenderer::new);
+        event.registerEntityRenderer(ModEntities.MAN_OF_NORTH.get(), ManOfNorthRenderer::new);
+
+        // Gondor Forces
+        event.registerEntityRenderer(ModEntities.CITADEL_GUARD.get(), CitadelGuardRenderer::new);
+        event.registerEntityRenderer(ModEntities.SOLDIER_OF_GONDOR.get(), SoldierOfGondorRenderer::new);
     }
 }
