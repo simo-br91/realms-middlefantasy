@@ -1,0 +1,197 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.silvan_elf_scout",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [0, 1.5, 0]
+      },
+      "bones": [
+        {
+          "name": "root_base",
+          "pivot": [0, 0, 0]
+        },
+        {
+          "name": "waist_core",
+          "parent": "root_base",
+          "pivot": [0, 12, 0],
+          "cubes": [
+            {"origin": [-4, 12, -2], "size": [8, 4, 4], "uv": [16, 16]}
+          ]
+        },
+        {
+          "name": "belt_sash",
+          "parent": "waist_core",
+          "pivot": [0, 12, 0],
+          "cubes": [
+            {"origin": [-4.5, 11.5, -2.5], "size": [9, 3, 5], "uv": [16, 48], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "torso_upper_skin",
+          "parent": "waist_core",
+          "pivot": [0, 16, 0],
+          "cubes": [
+            {"origin": [-4, 16, -2], "size": [8, 8, 4], "uv": [16, 32]}
+          ]
+        },
+        {
+          "name": "tunic_chest_armor",
+          "parent": "torso_upper_skin",
+          "pivot": [0, 16, 0],
+          "cubes": [
+            {"origin": [-4.5, 16, -2.5], "size": [9, 8, 5], "uv": [16, 0], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "quiver_strap",
+          "parent": "tunic_chest_armor",
+          "pivot": [0, 20, 0],
+          "rotation": [0, 0, -25],
+          "cubes": [
+            {"origin": [-4.6, 18, -2.6], "size": [9.2, 1, 5.2], "uv": [40, 0]}
+          ]
+        },
+        {
+          "name": "quiver_container",
+          "parent": "tunic_chest_armor",
+          "pivot": [2, 20, 3],
+          "rotation": [0, 0, -15],
+          "cubes": [
+            {"origin": [-1, 16, 2.5], "size": [4, 10, 3], "uv": [48, 48]}
+          ]
+        },
+        {
+          "name": "neck_joint",
+          "parent": "torso_upper_skin",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-1.5, 24, -1.5], "size": [3, 2, 3], "uv": [0, 16]}
+          ]
+        },
+        {
+          "name": "head_skin",
+          "parent": "neck_joint",
+          "pivot": [0, 26, 0],
+          "cubes": [
+            {"origin": [-4, 26, -4], "size": [8, 8, 8], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "ear_L_point",
+          "parent": "head_skin",
+          "pivot": [4, 30, 0],
+          "rotation": [0, -15, -15],
+          "cubes": [
+            {"origin": [4, 29, 0], "size": [3, 3, 1], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "ear_R_point",
+          "parent": "head_skin",
+          "pivot": [-4, 30, 0],
+          "rotation": [0, 15, 15],
+          "cubes": [
+            {"origin": [-7, 29, 0], "size": [3, 3, 1], "uv": [0, 4]}
+          ]
+        },
+        {
+          "name": "hood_cowl",
+          "parent": "head_skin",
+          "pivot": [0, 26, 0],
+          "cubes": [
+            {"origin": [-4.5, 26, -4.5], "size": [9, 9, 9], "uv": [32, 0], "inflate": 0.2}
+          ]
+        },
+        {
+          "name": "shoulder_L_joint",
+          "parent": "torso_upper_skin",
+          "pivot": [5, 22, 0]
+        },
+        {
+          "name": "arm_L_upper_skin",
+          "parent": "shoulder_L_joint",
+          "pivot": [6, 22, 0],
+          "cubes": [
+            {"origin": [4, 12, -2], "size": [4, 12, 4], "uv": [32, 48]}
+          ]
+        },
+        {
+          "name": "vambrace_L_leather",
+          "parent": "arm_L_upper_skin",
+          "pivot": [6, 16, 0],
+          "cubes": [
+            {"origin": [4.2, 12.5, -2.2], "size": [3.6, 5, 4.4], "uv": [48, 20], "inflate": 0.05}
+          ]
+        },
+        {
+          "name": "shoulder_R_joint",
+          "parent": "torso_upper_skin",
+          "pivot": [-5, 22, 0]
+        },
+        {
+          "name": "arm_R_upper_skin",
+          "parent": "shoulder_R_joint",
+          "pivot": [-6, 22, 0],
+          "cubes": [
+            {"origin": [-8, 12, -2], "size": [4, 12, 4], "uv": [40, 16]}
+          ]
+        },
+        {
+          "name": "vambrace_R_leather",
+          "parent": "arm_R_upper_skin",
+          "pivot": [-6, 16, 0],
+          "cubes": [
+            {"origin": [-7.8, 12.5, -2.2], "size": [3.6, 5, 4.4], "uv": [48, 20], "inflate": 0.05}
+          ]
+        },
+        {
+          "name": "hip_L_joint",
+          "parent": "waist_core",
+          "pivot": [2, 12, 0]
+        },
+        {
+          "name": "leg_L_skin",
+          "parent": "hip_L_joint",
+          "pivot": [2, 12, 0],
+          "cubes": [
+            {"origin": [-0.1, 0, -2], "size": [4, 12, 4], "uv": [16, 48]}
+          ]
+        },
+        {
+          "name": "boot_L_leather",
+          "parent": "leg_L_skin",
+          "pivot": [2, 5, 0],
+          "cubes": [
+            {"origin": [-0.1, 0, -2.5], "size": [4, 5, 5], "uv": [0, 32], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "hip_R_joint",
+          "parent": "waist_core",
+          "pivot": [-2, 12, 0]
+        },
+        {
+          "name": "leg_R_skin",
+          "parent": "hip_R_joint",
+          "pivot": [-2, 12, 0],
+          "cubes": [
+            {"origin": [-3.9, 0, -2], "size": [4, 12, 4], "uv": [0, 16]}
+          ]
+        },
+        {
+          "name": "boot_R_leather",
+          "parent": "leg_R_skin",
+          "pivot": [-2, 5, 0],
+          "cubes": [
+            {"origin": [-3.9, 0, -2.5], "size": [4, 5, 5], "uv": [0, 32], "inflate": 0.1}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.dunedain_ranger.idle": {
+      "loop": true,
+      "bones": {
+        "waist_core": {
+          "position": [0, "math.sin(query.life_time * 50) * 0.2", 0]
+        },
+        "torso_base_tunic": {
+          "rotation": ["math.sin(query.life_time * 50) * 1.5", 0, 0]
+        },
+        "head_neck_pivot": {
+          "rotation": ["math.sin(query.life_time * 30) * 2", "math.sin(query.life_time * 40) * 2", 0]
+        },
+        "arm_R_shoulder_joint": {
+          "rotation": ["math.sin(query.life_time * 50) * 2 - 5", 0, 5]
+        },
+        "arm_L_shoulder_joint": {
+          "rotation": ["math.sin(query.life_time * 50) * 2 - 5", 0, -5]
+        },
+        "cloak_drape_back": {
+          "rotation": ["5 + math.sin(query.life_time * 40) * 2", 0, 0]
+        }
+      }
+    },
+    "animation.dunedain_ranger.walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "leg_R_hip_joint": {
+          "rotation": ["math.cos(query.anim_time * 30) * 40", 0, 0]
+        },
+        "leg_L_hip_joint": {
+          "rotation": ["math.cos(query.anim_time * 30 + 180) * 40", 0, 0]
+        },
+        "arm_R_shoulder_joint": {
+          "rotation": ["math.cos(query.anim_time * 30 + 180) * 30", 0, 5]
+        },
+        "arm_L_shoulder_joint": {
+          "rotation": ["math.cos(query.anim_time * 30) * 30", 0, -5]
+        },
+        "torso_base_tunic": {
+          "rotation": [0, "math.cos(query.anim_time * 30) * 5", 0]
+        },
+        "cloak_drape_back": {
+          "rotation": ["20 + math.abs(math.sin(query.anim_time * 60)) * 10", 0, 0]
+        }
+      }
+    },
+    "animation.dunedain_ranger.attack": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.5,
+      "bones": {
+        "torso_base_tunic": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [0, -20, 0],
+            "0.3": [0, 30, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "arm_R_shoulder_joint": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [-60, -20, 20],
+            "0.3": [60, 0, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "cloak_drape_back": {
+          "rotation": {
+            "0.0": [5, 0, 0],
+            "0.3": [35, 10, 0],
+            "0.5": [5, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.dunedain_ranger.hurt": {
+      "animation_length": 0.5,
+      "bones": {
+        "waist_core": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [-15, 0, -5],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "head_neck_pivot": {
+           "rotation": {
+             "0.0": [0, 0, 0],
+             "0.1": [-20, 0, 0],
+             "0.5": [0, 0, 0]
+           }
+        }
+      }
+    }
+  }
+}

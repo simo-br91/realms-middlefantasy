@@ -1,0 +1,169 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.great_eagle",
+        "texture_width": 128,
+        "texture_height": 128,
+        "visible_bounds_width": 6,
+        "visible_bounds_height": 4,
+        "visible_bounds_offset": [0, 1.5, 0]
+      },
+      "bones": [
+        {
+          "name": "eagle_body_core",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            { "origin": [-6, 18, -8], "size": [12, 10, 18], "uv": [0, 0] },
+            { "origin": [-5, 17, -7], "size": [10, 2, 16], "uv": [0, 28], "inflate": 0.5 }
+          ]
+        },
+        {
+          "name": "eagle_neck_base",
+          "parent": "eagle_body_core",
+          "pivot": [0, 26, -8],
+          "cubes": [
+            { "origin": [-3, 23, -13], "size": [6, 6, 6], "uv": [60, 0] }
+          ]
+        },
+        {
+          "name": "eagle_head_cranial",
+          "parent": "eagle_neck_base",
+          "pivot": [0, 27, -13],
+          "cubes": [
+            { "origin": [-3.5, 26, -18], "size": [7, 6, 8], "uv": [60, 12] },
+            { "origin": [-4, 30, -16], "size": [8, 1, 6], "uv": [60, 26] }
+          ]
+        },
+        {
+          "name": "eagle_beak_upper",
+          "parent": "eagle_head_cranial",
+          "pivot": [0, 28, -18],
+          "cubes": [
+            { "origin": [-1.5, 27, -23], "size": [3, 3, 5], "uv": [90, 0] },
+            { "origin": [-1, 26, -23], "size": [2, 1, 1], "uv": [90, 8] }
+          ]
+        },
+        {
+          "name": "eagle_beak_lower",
+          "parent": "eagle_head_cranial",
+          "pivot": [0, 27, -18],
+          "cubes": [
+            { "origin": [-1.5, 26, -22], "size": [3, 1, 4], "uv": [90, 10] }
+          ]
+        },
+        {
+          "name": "eagle_wing_root_L",
+          "parent": "eagle_body_core",
+          "pivot": [6, 26, -4],
+          "cubes": [
+            { "origin": [6, 25, -5], "size": [14, 2, 12], "uv": [0, 50] }
+          ]
+        },
+        {
+          "name": "eagle_wing_mid_L",
+          "parent": "eagle_wing_root_L",
+          "pivot": [20, 26, -2],
+          "cubes": [
+            { "origin": [20, 25.5, -4], "size": [12, 1, 10], "uv": [0, 64] }
+          ]
+        },
+        {
+          "name": "eagle_wing_tip_L",
+          "parent": "eagle_wing_mid_L",
+          "pivot": [32, 26, 0],
+          "cubes": [
+            { "origin": [32, 25.5, -3], "size": [16, 0, 8], "uv": [0, 75] }
+          ]
+        },
+        {
+          "name": "eagle_wing_root_R",
+          "parent": "eagle_body_core",
+          "pivot": [-6, 26, -4],
+          "cubes": [
+            { "origin": [-20, 25, -5], "size": [14, 2, 12], "uv": [0, 50], "mirror": true }
+          ]
+        },
+        {
+          "name": "eagle_wing_mid_R",
+          "parent": "eagle_wing_root_R",
+          "pivot": [-20, 26, -2],
+          "cubes": [
+            { "origin": [-32, 25.5, -4], "size": [12, 1, 10], "uv": [0, 64], "mirror": true }
+          ]
+        },
+        {
+          "name": "eagle_wing_tip_R",
+          "parent": "eagle_wing_mid_R",
+          "pivot": [-32, 26, 0],
+          "cubes": [
+            { "origin": [-48, 25.5, -3], "size": [16, 0, 8], "uv": [0, 75], "mirror": true }
+          ]
+        },
+        {
+          "name": "eagle_leg_thigh_L",
+          "parent": "eagle_body_core",
+          "pivot": [3, 19, 4],
+          "cubes": [
+            { "origin": [1, 14, 2], "size": [4, 6, 5], "uv": [52, 50] }
+          ]
+        },
+        {
+          "name": "eagle_leg_shin_L",
+          "parent": "eagle_leg_thigh_L",
+          "pivot": [3, 14, 6],
+          "cubes": [
+            { "origin": [2, 8, 5], "size": [2, 6, 2], "uv": [52, 61] }
+          ]
+        },
+        {
+          "name": "eagle_talon_cluster_L",
+          "parent": "eagle_leg_shin_L",
+          "pivot": [3, 8, 6],
+          "cubes": [
+            { "origin": [1, 7, 3], "size": [4, 1, 5], "uv": [52, 69] },
+            { "origin": [1.5, 6, 2], "size": [1, 1, 2], "uv": [52, 75] },
+            { "origin": [3.5, 6, 2], "size": [1, 1, 2], "uv": [56, 75] },
+            { "origin": [2.5, 7, 8], "size": [1, 1, 2], "uv": [60, 75] }
+          ]
+        },
+        {
+          "name": "eagle_leg_thigh_R",
+          "parent": "eagle_body_core",
+          "pivot": [-3, 19, 4],
+          "cubes": [
+            { "origin": [-5, 14, 2], "size": [4, 6, 5], "uv": [52, 50], "mirror": true }
+          ]
+        },
+        {
+          "name": "eagle_leg_shin_R",
+          "parent": "eagle_leg_thigh_R",
+          "pivot": [-3, 14, 6],
+          "cubes": [
+            { "origin": [-4, 8, 5], "size": [2, 6, 2], "uv": [52, 61], "mirror": true }
+          ]
+        },
+        {
+          "name": "eagle_talon_cluster_R",
+          "parent": "eagle_leg_shin_R",
+          "pivot": [-3, 8, 6],
+          "cubes": [
+            { "origin": [-5, 7, 3], "size": [4, 1, 5], "uv": [52, 69], "mirror": true },
+            { "origin": [-4.5, 6, 2], "size": [1, 1, 2], "uv": [52, 75], "mirror": true },
+            { "origin": [-2.5, 6, 2], "size": [1, 1, 2], "uv": [56, 75], "mirror": true },
+            { "origin": [-3.5, 7, 8], "size": [1, 1, 2], "uv": [60, 75], "mirror": true }
+          ]
+        },
+        {
+          "name": "eagle_tail_fan",
+          "parent": "eagle_body_core",
+          "pivot": [0, 24, 10],
+          "cubes": [
+            { "origin": [-5, 23, 10], "size": [10, 1, 12], "uv": [36, 36] }
+          ]
+        }
+      ]
+    }
+  ]
+}

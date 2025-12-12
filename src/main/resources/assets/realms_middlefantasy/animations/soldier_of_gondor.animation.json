@@ -1,0 +1,79 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.gondor_soldier.idle": {
+      "loop": true,
+      "bones": {
+        "waist_core": {
+          "position": [0, "math.cos(query.life_time * 2) * 0.2", 0]
+        },
+        "head_skin": {
+          "rotation": ["math.sin(query.life_time * 1.5) * 2", 0, 0]
+        },
+        "arm_R_upper_skin": {
+          "rotation": [0, 0, "5 + math.cos(query.life_time * 2) * 2"]
+        },
+        "arm_L_upper_skin": {
+          "rotation": [0, 0, "-5 - math.cos(query.life_time * 2) * 2"]
+        }
+      }
+    },
+    "animation.gondor_soldier.walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "leg_R_upper_skin": {
+          "rotation": ["math.cos(query.anim_time * 30) * 30", 0, 0]
+        },
+        "leg_L_upper_skin": {
+          "rotation": ["math.cos(query.anim_time * 30 + 180) * 30", 0, 0]
+        },
+        "arm_R_upper_skin": {
+          "rotation": ["math.cos(query.anim_time * 30 + 180) * 20", 0, 5]
+        },
+        "arm_L_upper_skin": {
+          "rotation": ["math.cos(query.anim_time * 30) * 20", 0, -5]
+        },
+        "waist_core": {
+          "rotation": [0, "math.cos(query.anim_time * 30) * 3", 0]
+        }
+      }
+    },
+    "animation.gondor_soldier.attack": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.5,
+      "bones": {
+        "waist_core": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [0, -20, 0],
+            "0.3": [0, 30, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "arm_R_upper_skin": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [-60, 0, 0],
+            "0.3": [45, 0, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "weapon_sword_hilt": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.3": [90, 0, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "shield_mount_L": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-20, 20, 0],
+            "0.5": [0, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

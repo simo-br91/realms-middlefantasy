@@ -1,0 +1,211 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.high_elf_warrior",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [0, 1.5, 0]
+      },
+      "bones": [
+        {
+          "name": "waist_core",
+          "pivot": [0, 24, 0]
+        },
+        {
+          "name": "torso_inner_flesh",
+          "parent": "waist_core",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-4, 24, -2], "size": [8, 12, 4], "uv": [16, 16]}
+          ]
+        },
+        {
+          "name": "chest_plate_armor",
+          "parent": "torso_inner_flesh",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-4.5, 24, -2.5], "size": [9, 13, 5], "uv": [16, 32], "inflate": 0.2}
+          ]
+        },
+        {
+          "name": "fauld_skirt_front",
+          "parent": "chest_plate_armor",
+          "pivot": [0, 24, -2.5],
+          "rotation": [-5, 0, 0],
+          "cubes": [
+            {"origin": [-4, 14, -2.6], "size": [8, 10, 1], "uv": [0, 32]}
+          ]
+        },
+        {
+          "name": "fauld_skirt_back",
+          "parent": "chest_plate_armor",
+          "pivot": [0, 24, 2.5],
+          "rotation": [5, 0, 0],
+          "cubes": [
+            {"origin": [-4, 14, 2.6], "size": [8, 10, 1], "uv": [0, 43]}
+          ]
+        },
+        {
+          "name": "neck_flesh",
+          "parent": "torso_inner_flesh",
+          "pivot": [0, 36, 0],
+          "cubes": [
+            {"origin": [-1.5, 36, -1.5], "size": [3, 2, 3], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "head_skin",
+          "parent": "neck_flesh",
+          "pivot": [0, 38, 0],
+          "cubes": [
+            {"origin": [-4, 38, -4], "size": [8, 8, 8], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "helmet_base",
+          "parent": "head_skin",
+          "pivot": [0, 38, 0],
+          "cubes": [
+            {"origin": [-4.5, 38, -4.5], "size": [9, 9, 9], "uv": [32, 0], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "helmet_crest_high",
+          "parent": "helmet_base",
+          "pivot": [0, 47, 0],
+          "cubes": [
+            {"origin": [-1, 47, -2], "size": [2, 6, 8], "uv": [32, 18]}
+          ]
+        },
+        {
+          "name": "shoulder_L_joint",
+          "parent": "torso_inner_flesh",
+          "pivot": [5, 35, 0]
+        },
+        {
+          "name": "arm_upper_L_skin",
+          "parent": "shoulder_L_joint",
+          "pivot": [5, 35, 0],
+          "cubes": [
+            {"origin": [4, 26, -2], "size": [3, 10, 4], "uv": [40, 16]}
+          ]
+        },
+        {
+          "name": "pauldron_L_armor",
+          "parent": "arm_upper_L_skin",
+          "pivot": [5, 35, 0],
+          "rotation": [0, 0, -10],
+          "cubes": [
+            {"origin": [4, 32, -2.5], "size": [5, 6, 5], "uv": [40, 32]}
+          ]
+        },
+        {
+          "name": "vambrace_L_armor",
+          "parent": "arm_upper_L_skin",
+          "pivot": [6, 26, 0],
+          "cubes": [
+            {"origin": [4.5, 18, -2.5], "size": [3, 8, 5], "uv": [40, 43], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "shoulder_R_joint",
+          "parent": "torso_inner_flesh",
+          "pivot": [-5, 35, 0]
+        },
+        {
+          "name": "arm_upper_R_skin",
+          "parent": "shoulder_R_joint",
+          "pivot": [-5, 35, 0],
+          "cubes": [
+            {"origin": [-7, 26, -2], "size": [3, 10, 4], "uv": [40, 16]}
+          ]
+        },
+        {
+          "name": "pauldron_R_armor",
+          "parent": "arm_upper_R_skin",
+          "pivot": [-5, 35, 0],
+          "rotation": [0, 0, 10],
+          "cubes": [
+            {"origin": [-9, 32, -2.5], "size": [5, 6, 5], "uv": [40, 32]}
+          ]
+        },
+        {
+          "name": "vambrace_R_armor",
+          "parent": "arm_upper_R_skin",
+          "pivot": [-6, 26, 0],
+          "cubes": [
+            {"origin": [-7.5, 18, -2.5], "size": [3, 8, 5], "uv": [40, 43], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "hand_R_grip",
+          "parent": "vambrace_R_armor",
+          "pivot": [-6, 18, 0]
+        },
+        {
+          "name": "elven_blade_hilt",
+          "parent": "hand_R_grip",
+          "pivot": [-6, 17, 0],
+          "rotation": [90, 0, 0],
+          "cubes": [
+            {"origin": [-6.5, 14, -0.5], "size": [1, 4, 1], "uv": [0, 54]}
+          ]
+        },
+        {
+          "name": "elven_blade_metal",
+          "parent": "elven_blade_hilt",
+          "pivot": [-6, 14, 0],
+          "cubes": [
+            {"origin": [-7, 0, -1], "size": [2, 14, 2], "uv": [4, 48]}
+          ]
+        },
+        {
+          "name": "leg_L_joint",
+          "parent": "waist_core",
+          "pivot": [2, 24, 0]
+        },
+        {
+          "name": "thigh_L_skin",
+          "parent": "leg_L_joint",
+          "pivot": [2, 24, 0],
+          "cubes": [
+            {"origin": [0, 12, -2], "size": [4, 12, 4], "uv": [0, 16]}
+          ]
+        },
+        {
+          "name": "greave_L_armor",
+          "parent": "thigh_L_skin",
+          "pivot": [2, 12, 0],
+          "cubes": [
+            {"origin": [0.5, 0, -2.5], "size": [3, 12, 5], "uv": [0, 32], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "leg_R_joint",
+          "parent": "waist_core",
+          "pivot": [-2, 24, 0]
+        },
+        {
+          "name": "thigh_R_skin",
+          "parent": "leg_R_joint",
+          "pivot": [-2, 24, 0],
+          "cubes": [
+            {"origin": [-4, 12, -2], "size": [4, 12, 4], "uv": [0, 16]}
+          ]
+        },
+        {
+          "name": "greave_R_armor",
+          "parent": "thigh_R_skin",
+          "pivot": [-2, 12, 0],
+          "cubes": [
+            {"origin": [-3.5, 0, -2.5], "size": [3, 12, 5], "uv": [0, 32], "inflate": 0.1}
+          ]
+        }
+      ]
+    }
+  ]
+}

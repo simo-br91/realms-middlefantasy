@@ -1,0 +1,193 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.gondor_soldier",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [0, 1.5, 0]
+      },
+      "bones": [
+        {
+          "name": "root_base",
+          "pivot": [0, 0, 0]
+        },
+        {
+          "name": "waist_core",
+          "parent": "root_base",
+          "pivot": [0, 12, 0]
+        },
+        {
+          "name": "torso_skin",
+          "parent": "waist_core",
+          "pivot": [0, 12, 0],
+          "cubes": [
+            {"origin": [-4, 12, -2], "size": [8, 12, 4], "uv": [16, 16]}
+          ]
+        },
+        {
+          "name": "armor_breastplate",
+          "parent": "torso_skin",
+          "pivot": [0, 12, 0],
+          "cubes": [
+            {"origin": [-4.5, 12, -2.5], "size": [9, 12, 5], "uv": [16, 32], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "armor_skirt_chainmail",
+          "parent": "waist_core",
+          "pivot": [0, 12, 0],
+          "cubes": [
+            {"origin": [-4.5, 4, -2.5], "size": [9, 8, 5], "uv": [16, 48], "inflate": 0.05}
+          ]
+        },
+        {
+          "name": "head_skin",
+          "parent": "torso_skin",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-4, 24, -4], "size": [8, 8, 8], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "helmet_base_steel",
+          "parent": "head_skin",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-4.5, 24, -4.5], "size": [9, 9, 9], "uv": [32, 0], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "helmet_wing_L",
+          "parent": "helmet_base_steel",
+          "pivot": [4.5, 28, 0],
+          "rotation": [0, 0, 10],
+          "cubes": [
+            {"origin": [4.5, 26, -1], "size": [1, 6, 4], "uv": [54, 0]}
+          ]
+        },
+        {
+          "name": "helmet_wing_R",
+          "parent": "helmet_base_steel",
+          "pivot": [-4.5, 28, 0],
+          "rotation": [0, 0, -10],
+          "cubes": [
+            {"origin": [-5.5, 26, -1], "size": [1, 6, 4], "uv": [54, 0]}
+          ]
+        },
+        {
+          "name": "arm_R_upper_skin",
+          "parent": "torso_skin",
+          "pivot": [-5, 22, 0],
+          "cubes": [
+            {"origin": [-8, 12, -2], "size": [4, 12, 4], "uv": [40, 16]}
+          ]
+        },
+        {
+          "name": "pauldron_plate_R",
+          "parent": "arm_R_upper_skin",
+          "pivot": [-5, 22, 0],
+          "cubes": [
+            {"origin": [-9, 18, -2.5], "size": [5, 6, 5], "uv": [0, 32], "inflate": 0.2}
+          ]
+        },
+        {
+          "name": "vambrace_plate_R",
+          "parent": "arm_R_upper_skin",
+          "pivot": [-6, 16, 0],
+          "cubes": [
+            {"origin": [-8.5, 12, -2.5], "size": [5, 6, 5], "uv": [40, 32], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "hand_R_grip",
+          "parent": "arm_R_upper_skin",
+          "pivot": [-6, 12, 0]
+        },
+        {
+          "name": "weapon_sword_hilt",
+          "parent": "hand_R_grip",
+          "pivot": [-6, 11, 0],
+          "cubes": [
+            {"origin": [-6.5, 10, -1], "size": [1, 4, 2], "uv": [0, 16]}
+          ]
+        },
+        {
+          "name": "weapon_sword_blade",
+          "parent": "weapon_sword_hilt",
+          "pivot": [-6, 14, 0],
+          "cubes": [
+            {"origin": [-6.5, 14, -0.5], "size": [1, 14, 1], "uv": [4, 16]}
+          ]
+        },
+        {
+          "name": "arm_L_upper_skin",
+          "parent": "torso_skin",
+          "pivot": [5, 22, 0],
+          "cubes": [
+            {"origin": [4, 12, -2], "size": [4, 12, 4], "uv": [32, 48]}
+          ]
+        },
+        {
+          "name": "pauldron_plate_L",
+          "parent": "arm_L_upper_skin",
+          "pivot": [5, 22, 0],
+          "cubes": [
+            {"origin": [4, 18, -2.5], "size": [5, 6, 5], "uv": [0, 48], "inflate": 0.2}
+          ]
+        },
+        {
+          "name": "vambrace_plate_L",
+          "parent": "arm_L_upper_skin",
+          "pivot": [6, 16, 0],
+          "cubes": [
+            {"origin": [3.5, 12, -2.5], "size": [5, 6, 5], "uv": [40, 32], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "shield_mount_L",
+          "parent": "arm_L_upper_skin",
+          "pivot": [6, 14, 0],
+          "cubes": [
+            {"origin": [6, 12, 2], "size": [8, 14, 1], "uv": [0, 50]}
+          ]
+        },
+        {
+          "name": "leg_R_upper_skin",
+          "parent": "waist_core",
+          "pivot": [-1.9, 12, 0],
+          "cubes": [
+            {"origin": [-3.9, 0, -2], "size": [4, 12, 4], "uv": [0, 16]}
+          ]
+        },
+        {
+          "name": "greave_plate_R",
+          "parent": "leg_R_upper_skin",
+          "pivot": [-1.9, 6, 0],
+          "cubes": [
+            {"origin": [-4.1, 0, -2.2], "size": [4.4, 7, 4.4], "uv": [0, 32], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "leg_L_upper_skin",
+          "parent": "waist_core",
+          "pivot": [1.9, 12, 0],
+          "cubes": [
+            {"origin": [-0.1, 0, -2], "size": [4, 12, 4], "uv": [16, 48]}
+          ]
+        },
+        {
+          "name": "greave_plate_L",
+          "parent": "leg_L_upper_skin",
+          "pivot": [1.9, 6, 0],
+          "cubes": [
+            {"origin": [-0.3, 0, -2.2], "size": [4.4, 7, 4.4], "uv": [0, 32], "inflate": 0.1}
+          ]
+        }
+      ]
+    }
+  ]
+}

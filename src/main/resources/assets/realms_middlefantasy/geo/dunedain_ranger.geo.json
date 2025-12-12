@@ -1,0 +1,187 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.dunedain_ranger",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [0, 1.5, 0]
+      },
+      "bones": [
+        {
+          "name": "root_pivot",
+          "pivot": [0, 0, 0]
+        },
+        {
+          "name": "waist_core",
+          "parent": "root_pivot",
+          "pivot": [0, 12, 0]
+        },
+        {
+          "name": "torso_base_tunic",
+          "parent": "waist_core",
+          "pivot": [0, 12, 0],
+          "cubes": [
+            {"origin": [-4, 12, -2], "size": [8, 12, 4], "uv": [16, 16], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "belt_leather_sash",
+          "parent": "torso_base_tunic",
+          "pivot": [0, 12, 0],
+          "cubes": [
+            {"origin": [-4.5, 11, -2.5], "size": [9, 2, 5], "uv": [16, 32], "inflate": 0.15}
+          ]
+        },
+        {
+          "name": "chest_armor_leather",
+          "parent": "torso_base_tunic",
+          "pivot": [0, 20, 0],
+          "cubes": [
+            {"origin": [-4, 16, -2.2], "size": [8, 8, 4.4], "uv": [16, 40], "inflate": 0.2}
+          ]
+        },
+        {
+          "name": "cloak_shoulder_mount",
+          "parent": "torso_base_tunic",
+          "pivot": [0, 24, 2],
+          "cubes": [
+            {"origin": [-5, 22, -2.5], "size": [10, 2, 6], "uv": [0, 0], "inflate": 0.3}
+          ]
+        },
+        {
+          "name": "cloak_drape_back",
+          "parent": "cloak_shoulder_mount",
+          "pivot": [0, 23, 3],
+          "cubes": [
+            {"origin": [-5, 8, 3], "size": [10, 16, 1], "uv": [32, 0]}
+          ]
+        },
+        {
+          "name": "star_clasp_silver",
+          "parent": "cloak_shoulder_mount",
+          "pivot": [0, 23, -2.5],
+          "cubes": [
+            {"origin": [-1, 22.5, -3], "size": [2, 2, 1], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "head_neck_pivot",
+          "parent": "torso_base_tunic",
+          "pivot": [0, 24, 0]
+        },
+        {
+          "name": "head_skin_face",
+          "parent": "head_neck_pivot",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-4, 24, -4], "size": [8, 8, 8], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "hood_fabric_main",
+          "parent": "head_skin_face",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-4.5, 23.5, -4.5], "size": [9, 9, 9], "uv": [32, 0], "inflate": 0.25}
+          ]
+        },
+        {
+          "name": "mask_cowl_lower",
+          "parent": "hood_fabric_main",
+          "pivot": [0, 24, -4],
+          "cubes": [
+            {"origin": [-4, 24, -4.6], "size": [8, 3, 1], "uv": [40, 10]}
+          ]
+        },
+        {
+          "name": "arm_R_shoulder_joint",
+          "parent": "torso_base_tunic",
+          "pivot": [-5, 22, 0]
+        },
+        {
+          "name": "arm_R_upper_sleeve",
+          "parent": "arm_R_shoulder_joint",
+          "pivot": [-5, 22, 0],
+          "cubes": [
+            {"origin": [-8, 12, -2], "size": [4, 12, 4], "uv": [40, 16]}
+          ]
+        },
+        {
+          "name": "glove_R_leather",
+          "parent": "arm_R_upper_sleeve",
+          "pivot": [-6, 15, 0],
+          "cubes": [
+            {"origin": [-8.2, 12, -2.2], "size": [4.4, 4, 4.4], "uv": [40, 32], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "arm_L_shoulder_joint",
+          "parent": "torso_base_tunic",
+          "pivot": [5, 22, 0]
+        },
+        {
+          "name": "arm_L_upper_sleeve",
+          "parent": "arm_L_shoulder_joint",
+          "pivot": [5, 22, 0],
+          "cubes": [
+            {"origin": [4, 12, -2], "size": [4, 12, 4], "uv": [32, 48]}
+          ]
+        },
+        {
+          "name": "glove_L_leather",
+          "parent": "arm_L_upper_sleeve",
+          "pivot": [6, 15, 0],
+          "cubes": [
+            {"origin": [3.8, 12, -2.2], "size": [4.4, 4, 4.4], "uv": [48, 48], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "leg_R_hip_joint",
+          "parent": "waist_core",
+          "pivot": [-1.9, 12, 0]
+        },
+        {
+          "name": "leg_R_trouser",
+          "parent": "leg_R_hip_joint",
+          "pivot": [-1.9, 12, 0],
+          "cubes": [
+            {"origin": [-3.9, 0, -2], "size": [4, 12, 4], "uv": [0, 16]}
+          ]
+        },
+        {
+          "name": "boot_R_leather",
+          "parent": "leg_R_trouser",
+          "pivot": [-1.9, 5, 0],
+          "cubes": [
+            {"origin": [-4.1, 0, -2.2], "size": [4.4, 5, 4.4], "uv": [0, 32], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "leg_L_hip_joint",
+          "parent": "waist_core",
+          "pivot": [1.9, 12, 0]
+        },
+        {
+          "name": "leg_L_trouser",
+          "parent": "leg_L_hip_joint",
+          "pivot": [1.9, 12, 0],
+          "cubes": [
+            {"origin": [-0.1, 0, -2], "size": [4, 12, 4], "uv": [16, 48]}
+          ]
+        },
+        {
+          "name": "boot_L_leather",
+          "parent": "leg_L_trouser",
+          "pivot": [1.9, 5, 0],
+          "cubes": [
+            {"origin": [-0.3, 0, -2.2], "size": [4.4, 5, 4.4], "uv": [0, 48], "inflate": 0.1}
+          ]
+        }
+      ]
+    }
+  ]
+}

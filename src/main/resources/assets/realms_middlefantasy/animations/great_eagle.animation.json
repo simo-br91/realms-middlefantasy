@@ -1,0 +1,122 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.great_eagle.idle_perch": {
+      "loop": true,
+      "bones": {
+        "eagle_body_core": {
+          "rotation": [5, 0, 0],
+          "position": [0, -1, 0]
+        },
+        "eagle_neck_base": {
+          "rotation": ["Math.cos(query.life_time * 100) * 2", 0, 0]
+        },
+        "eagle_wing_root_L": {
+          "rotation": [0, 0, -10]
+        },
+        "eagle_wing_mid_L": {
+          "rotation": [0, 160, 0]
+        },
+        "eagle_wing_root_R": {
+          "rotation": [0, 0, 10]
+        },
+        "eagle_wing_mid_R": {
+          "rotation": [0, -160, 0]
+        },
+        "eagle_leg_thigh_L": {
+          "rotation": [-25, 0, 0]
+        },
+        "eagle_leg_shin_L": {
+          "rotation": [45, 0, 0]
+        },
+        "eagle_leg_thigh_R": {
+          "rotation": [-25, 0, 0]
+        },
+        "eagle_leg_shin_R": {
+          "rotation": [45, 0, 0]
+        }
+      }
+    },
+    "animation.great_eagle.fly_cycle": {
+      "loop": true,
+      "anim_time_update": "query.life_time * 1.5",
+      "bones": {
+        "eagle_body_core": {
+          "rotation": ["5 + Math.cos(query.life_time * 300) * 2", 0, 0]
+        },
+        "eagle_wing_root_L": {
+          "rotation": [0, 0, "Math.cos(query.life_time * 300) * 45 - 10"]
+        },
+        "eagle_wing_mid_L": {
+          "rotation": [0, 0, "Math.cos(query.life_time * 300 - 20) * 30"]
+        },
+        "eagle_wing_tip_L": {
+          "rotation": [0, 0, "Math.cos(query.life_time * 300 - 40) * 20"]
+        },
+        "eagle_wing_root_R": {
+          "rotation": [0, 0, "-Math.cos(query.life_time * 300) * 45 + 10"]
+        },
+        "eagle_wing_mid_R": {
+          "rotation": [0, 0, "-Math.cos(query.life_time * 300 - 20) * 30"]
+        },
+        "eagle_wing_tip_R": {
+          "rotation": [0, 0, "-Math.cos(query.life_time * 300 - 40) * 20"]
+        },
+        "eagle_leg_thigh_L": {
+          "rotation": [60, 0, 0]
+        },
+        "eagle_leg_thigh_R": {
+          "rotation": [60, 0, 0]
+        },
+        "eagle_talon_cluster_L": {
+          "rotation": [20, 0, 0]
+        },
+        "eagle_talon_cluster_R": {
+          "rotation": [20, 0, 0]
+        }
+      }
+    },
+    "animation.great_eagle.air_attack": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 1.0,
+      "bones": {
+        "eagle_body_core": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.5": [45, 0, 0]
+          }
+        },
+        "eagle_leg_thigh_L": {
+          "rotation": {
+            "0.0": [60, 0, 0],
+            "0.5": [-20, 0, 0]
+          }
+        },
+        "eagle_leg_shin_L": {
+           "rotation": {
+             "0.0": [0, 0, 0],
+             "0.5": [30, 0, 0]
+           }
+        },
+        "eagle_talon_cluster_L": {
+           "rotation": {
+             "0.0": [0, 0, 0],
+             "0.5": [45, 0, 0]
+           }
+        },
+        "eagle_leg_thigh_R": {
+          "rotation": {
+            "0.0": [60, 0, 0],
+            "0.5": [-20, 0, 0]
+          }
+        },
+        "eagle_beak_lower": {
+          "rotation": {
+            "0.3": [0, 0, 0],
+            "0.6": [25, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

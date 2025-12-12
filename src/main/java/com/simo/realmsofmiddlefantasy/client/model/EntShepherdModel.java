@@ -9,16 +9,16 @@ public class EntShepherdModel extends GeoModel<EntShepherdEntity> {
     
     @Override
     public ResourceLocation getModelResource(EntShepherdEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "geo/ent_shepherd.geo.json");
+        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "geo/ent.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(EntShepherdEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "textures/entity/ent_shepherd.png");
+        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "textures/entity/ent.png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(EntShepherdEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/ent_animation.json");
+        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/ent.animation.json");
     }
 }

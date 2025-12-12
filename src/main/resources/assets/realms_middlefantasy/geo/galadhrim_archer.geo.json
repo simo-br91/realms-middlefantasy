@@ -1,0 +1,212 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.galadhrim_archer",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [0, 1.5, 0]
+      },
+      "bones": [
+        {
+          "name": "root_base",
+          "pivot": [0, 0, 0]
+        },
+        {
+          "name": "waist_core",
+          "parent": "root_base",
+          "pivot": [0, 24, 0]
+        },
+        {
+          "name": "body_torso",
+          "parent": "waist_core",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-4, 24, -2], "size": [8, 12, 4], "uv": [16, 16]}
+          ]
+        },
+        {
+          "name": "tunic_layer",
+          "parent": "body_torso",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-4.5, 22, -2.5], "size": [9, 14, 5], "uv": [16, 32], "inflate": 0.2}
+          ]
+        },
+        {
+          "name": "tunic_skirt",
+          "parent": "waist_core",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {"origin": [-4, 14, -2], "size": [8, 10, 4], "uv": [16, 48], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "cloak_anchor",
+          "parent": "body_torso",
+          "pivot": [0, 36, 2.5],
+          "rotation": [5, 0, 0]
+        },
+        {
+          "name": "cloak_drape",
+          "parent": "cloak_anchor",
+          "pivot": [0, 36, 2.5],
+          "cubes": [
+            {"origin": [-5, 12, 2.5], "size": [10, 24, 1], "uv": [40, 0]}
+          ]
+        },
+        {
+          "name": "quiver_strap",
+          "parent": "body_torso",
+          "pivot": [0, 30, 0],
+          "rotation": [0, 0, -25],
+          "cubes": [
+            {"origin": [-4.5, 24, -2.6], "size": [9, 12, 5.2], "uv": [0, 32], "inflate": 0.3}
+          ]
+        },
+        {
+          "name": "quiver_container",
+          "parent": "quiver_strap",
+          "pivot": [2, 32, 3],
+          "rotation": [0, 0, 25],
+          "cubes": [
+            {"origin": [0, 26, 3], "size": [4, 14, 4], "uv": [48, 46]}
+          ]
+        },
+        {
+          "name": "neck_stem",
+          "parent": "body_torso",
+          "pivot": [0, 36, 0]
+        },
+        {
+          "name": "head_cranium",
+          "parent": "neck_stem",
+          "pivot": [0, 36, 0],
+          "cubes": [
+            {"origin": [-4, 36, -4], "size": [8, 8, 8], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "hood_cowl",
+          "parent": "head_cranium",
+          "pivot": [0, 36, 0],
+          "cubes": [
+            {"origin": [-4.5, 36, -4.5], "size": [9, 9, 9], "uv": [32, 0], "inflate": 0.25}
+          ]
+        },
+        {
+          "name": "hood_tail",
+          "parent": "hood_cowl",
+          "pivot": [0, 40, 4.5],
+          "rotation": [-15, 0, 0],
+          "cubes": [
+            {"origin": [-2, 36, 4.5], "size": [4, 6, 2], "uv": [52, 10]}
+          ]
+        },
+        {
+          "name": "shoulder_L",
+          "parent": "body_torso",
+          "pivot": [5, 34, 0]
+        },
+        {
+          "name": "arm_upper_L",
+          "parent": "shoulder_L",
+          "pivot": [6, 34, 0],
+          "cubes": [
+            {"origin": [4, 24, -2], "size": [4, 12, 4], "uv": [32, 48]}
+          ]
+        },
+        {
+          "name": "arm_lower_L",
+          "parent": "arm_upper_L",
+          "pivot": [6, 24, 0]
+        },
+        {
+          "name": "hand_L",
+          "parent": "arm_lower_L",
+          "pivot": [6, 24, 0]
+        },
+        {
+          "name": "bow_grip",
+          "parent": "hand_L",
+          "pivot": [6, 23, -1],
+          "rotation": [0, 0, -45],
+          "cubes": [
+             {"origin": [5.5, 20, -4], "size": [1, 6, 1], "uv": [0, 16]}
+          ]
+        },
+        {
+          "name": "bow_limb_upper",
+          "parent": "bow_grip",
+          "pivot": [6, 26, -3.5],
+          "rotation": [0, 0, 20],
+          "cubes": [
+             {"origin": [5.5, 26, -4], "size": [1, 10, 1], "uv": [4, 16]}
+          ]
+        },
+        {
+          "name": "bow_limb_lower",
+          "parent": "bow_grip",
+          "pivot": [6, 20, -3.5],
+          "rotation": [0, 0, -20],
+          "cubes": [
+             {"origin": [5.5, 10, -4], "size": [1, 10, 1], "uv": [4, 16]}
+          ]
+        },
+        {
+          "name": "shoulder_R",
+          "parent": "body_torso",
+          "pivot": [-5, 34, 0]
+        },
+        {
+          "name": "arm_upper_R",
+          "parent": "shoulder_R",
+          "pivot": [-6, 34, 0],
+          "cubes": [
+            {"origin": [-8, 24, -2], "size": [4, 12, 4], "uv": [40, 16]}
+          ]
+        },
+        {
+          "name": "arm_lower_R",
+          "parent": "arm_upper_R",
+          "pivot": [-6, 24, 0]
+        },
+        {
+          "name": "leg_upper_L",
+          "parent": "waist_core",
+          "pivot": [1.9, 12, 0],
+          "cubes": [
+            {"origin": [-0.1, 0, -2], "size": [4, 12, 4], "uv": [0, 16]}
+          ]
+        },
+        {
+          "name": "boot_L",
+          "parent": "leg_upper_L",
+          "pivot": [1.9, 5, 0],
+          "cubes": [
+             {"origin": [-0.1, 0, -2.5], "size": [4, 5, 5], "uv": [0, 49], "inflate": 0.1}
+          ]
+        },
+        {
+          "name": "leg_upper_R",
+          "parent": "waist_core",
+          "pivot": [-1.9, 12, 0],
+          "cubes": [
+            {"origin": [-3.9, 0, -2], "size": [4, 12, 4], "uv": [16, 48]}
+          ]
+        },
+        {
+          "name": "boot_R",
+          "parent": "leg_upper_R",
+          "pivot": [-1.9, 5, 0],
+          "cubes": [
+             {"origin": [-3.9, 0, -2.5], "size": [4, 5, 5], "uv": [0, 49], "inflate": 0.1}
+          ]
+        }
+      ]
+    }
+  ]
+}

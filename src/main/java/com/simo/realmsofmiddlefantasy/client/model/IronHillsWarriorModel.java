@@ -19,6 +19,6 @@ public class IronHillsWarriorModel extends GeoModel<IronHillsWarriorEntity> {
 
     @Override
     public ResourceLocation getAnimationResource(IronHillsWarriorEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/iron_hills_warrior_animation.json");
+        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/iron_hills_warrior.animation.json");
     }
 }

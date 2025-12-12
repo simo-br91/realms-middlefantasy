@@ -1,0 +1,96 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.citadel_guard.idle": {
+      "loop": true,
+      "bones": {
+        "root_base": {
+          "position": [0, "math.sin(query.life_time * 50) * 0.5", 0]
+        },
+        "torso_upper": {
+          "rotation": ["math.sin(query.life_time * 50) * 1.5", 0, 0]
+        },
+        "head_anchor": {
+          "rotation": ["math.sin(query.life_time * 40) * 1.0", "math.sin(query.life_time * 30) * 2.0", 0]
+        },
+        "arm_R_anchor": {
+          "rotation": [-5, 0, 2]
+        },
+        "arm_L_anchor": {
+          "rotation": [-5, 0, -2]
+        },
+        "skirt_tabard_front": {
+          "rotation": ["math.sin(query.life_time * 50) * 2", 0, 0]
+        }
+      }
+    },
+    "animation.citadel_guard.walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "leg_R_anchor": {
+          "rotation": ["math.cos(query.anim_time * 30) * 40", 0, 0]
+        },
+        "leg_L_anchor": {
+          "rotation": ["math.cos(query.anim_time * 30 + 180) * 40", 0, 0]
+        },
+        "arm_R_anchor": {
+          "rotation": ["math.cos(query.anim_time * 30 + 180) * 20", 0, 2]
+        },
+        "arm_L_anchor": {
+          "rotation": ["math.cos(query.anim_time * 30) * 20", 0, -2]
+        },
+        "torso_upper": {
+          "rotation": [0, "math.cos(query.anim_time * 30) * 2", 0]
+        },
+        "skirt_tabard_front": {
+          "rotation": ["math.abs(math.sin(query.anim_time * 30)) * 15", 0, 0]
+        },
+        "skirt_tabard_back": {
+          "rotation": ["math.abs(math.sin(query.anim_time * 30)) * 15", 0, 0]
+        }
+      }
+    },
+    "animation.citadel_guard.attack": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.5,
+      "bones": {
+        "torso_upper": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-15, 20, 0],
+            "0.3": [15, -10, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "arm_R_anchor": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-120, -20, 0],
+            "0.3": [45, 0, 0],
+            "0.5": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.citadel_guard.hurt": {
+      "animation_length": 0.5,
+      "bones": {
+        "head_anchor": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [-20, 0, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "root_base": {
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.1": [-1, 0, -1],
+            "0.5": [0, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

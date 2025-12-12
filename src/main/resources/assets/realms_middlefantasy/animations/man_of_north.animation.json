@@ -1,0 +1,90 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.man_of_north.idle": {
+      "loop": true,
+      "bones": {
+        "waist_core": {
+          "position": [0, "math.sin(query.life_time * 50) * 0.1", 0]
+        },
+        "head_neck_skin": {
+          "rotation": ["math.sin(query.life_time * 30) * 2", "math.sin(query.life_time * 20) * 3", 0]
+        },
+        "cloak_drape_upper": {
+          "rotation": ["2 + math.sin(query.life_time * 40) * 1", 0, 0]
+        },
+        "cloak_drape_lower": {
+          "rotation": ["1 + math.sin(query.life_time * 40 - 20) * 2", 0, 0]
+        },
+        "arm_upper_L": {
+          "rotation": [0, 0, -3]
+        },
+        "arm_upper_R": {
+          "rotation": [0, 0, 3]
+        }
+      }
+    },
+    "animation.man_of_north.walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "leg_hip_L": {
+          "rotation": ["math.sin(query.anim_time * 20) * 40", 0, 0]
+        },
+        "leg_knee_L": {
+          "rotation": ["Math.abs(Math.sin(query.anim_time * 20) * 30)", 0, 0]
+        },
+        "leg_hip_R": {
+          "rotation": ["math.sin(query.anim_time * 20 + 180) * 40", 0, 0]
+        },
+        "leg_knee_R": {
+          "rotation": ["Math.abs(Math.sin(query.anim_time * 20 + 180) * 30)", 0, 0]
+        },
+        "arm_upper_L": {
+          "rotation": ["math.sin(query.anim_time * 20 + 180) * 20", 0, -5]
+        },
+        "arm_upper_R": {
+          "rotation": ["math.sin(query.anim_time * 20) * 20", 0, 5]
+        },
+        "cloak_drape_upper": {
+          "rotation": ["10 + math.sin(query.anim_time * 40) * 3", 0, 0]
+        },
+        "cloak_drape_lower": {
+          "rotation": ["15 + math.sin(query.anim_time * 40 - 30) * 5", 0, 0]
+        },
+        "torso_upper": {
+          "rotation": [0, "math.sin(query.anim_time * 20) * 5", 0]
+        }
+      }
+    },
+    "animation.man_of_north.attack": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.5,
+      "bones": {
+        "torso_upper": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [0, 20, 0],
+            "0.3": [0, -30, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "arm_upper_R": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [-60, -20, 30],
+            "0.3": [45, 0, 0],
+            "0.5": [0, 0, 0]
+          }
+        },
+        "cloak_drape_lower": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [20, 10, 0],
+            "0.4": [5, -5, 0]
+          }
+        }
+      }
+    }
+  }
+}

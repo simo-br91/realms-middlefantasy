@@ -1,0 +1,91 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.iron_hills_warrior.idle": {
+      "loop": true,
+      "animation_length": 4.0,
+      "bones": {
+        "torso_core": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "2.0": [2, 0, 0],
+            "4.0": [0, 0, 0]
+          }
+        },
+        "head_base": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "2.0": [-2, 0, 0],
+            "4.0": [0, 0, 0]
+          }
+        },
+        "beard_main_mass": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "2.0": [3, 0, 0],
+            "4.0": [0, 0, 0]
+          }
+        },
+        "arm_R_shoulder": {
+          "rotation": [0, 0, 5]
+        },
+        "arm_L_shoulder": {
+          "rotation": [0, 0, -5]
+        }
+      }
+    },
+    "animation.iron_hills_warrior.walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "leg_R_thigh": {
+          "rotation": ["Math.cos(query.anim_time * 30.0) * 40.0", 0, 0]
+        },
+        "leg_L_thigh": {
+          "rotation": ["Math.cos(query.anim_time * 30.0 + 180) * 40.0", 0, 0]
+        },
+        "arm_R_shoulder": {
+          "rotation": ["Math.cos(query.anim_time * 30.0 + 180) * 20.0", 0, 5]
+        },
+        "arm_L_shoulder": {
+          "rotation": ["Math.cos(query.anim_time * 30.0) * 20.0", 0, -5]
+        },
+        "torso_core": {
+          "position": [0, "Math.abs(Math.cos(query.anim_time * 30.0)) * 0.5", 0],
+          "rotation": [0, 0, "Math.cos(query.anim_time * 30.0) * 2.0"]
+        },
+        "beard_main_mass": {
+          "rotation": ["Math.cos(query.anim_time * 60.0) * 5.0", 0, 0]
+        }
+      }
+    },
+    "animation.iron_hills_warrior.attack": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.8,
+      "bones": {
+        "torso_core": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.3": [-15, 20, 0],
+            "0.5": [15, -10, 0],
+            "0.8": [0, 0, 0]
+          }
+        },
+        "arm_R_shoulder": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.3": [-110, -15, 0],
+            "0.5": [60, 0, 0],
+            "0.8": [0, 0, 0]
+          }
+        },
+        "beard_main_mass": {
+          "rotation": {
+            "0.4": [-20, 0, 0],
+            "0.6": [10, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

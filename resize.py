@@ -1,22 +1,38 @@
 from PIL import Image
+import os
 
-def process_image(input_path, output_path, size=(32, 32)):
-    # Load the image
-    img = Image.open(input_path)
+def process_folder(input_dir, output_dir, size=(32, 32)):
+    # Create output directory if it doesn't exist
+    os.makedirs(output_dir, exist_ok=True)
 
-    # Resize the image to the desired size (32x32)
-    img_resized = img.resize(size, Image.NEAREST)  # NEAREST for pixel art
+    for filename in os.listdir(input_dir):
+        # Process only image files
+        if not filename.lower().endswith((".png", ".jpg", ".jpeg", ".bmp", ".tga")):
+            continue
 
-    # Convert to RGBA to ensure transparency
-    if img_resized.mode != 'RGBA':
-        img_resized = img_resized.convert('RGBA')
+        input_path = os.path.join(input_dir, filename)
+        output_path = os.path.join(output_dir, filename)
 
-    # Save the processed image with transparency
-    img_resized.save(output_path, format='PNG')
-    print(f"Image saved to {output_path}")
+        try:
+            img = Image.open(input_path)
 
-# Example usage
-input_image_path = 'C:/Users/simor/Documents/realms-middlefantasy/src/main/resources/assets/realms_middlefantasy/textures/block/black_iron_block.png'  # Replace with your image path
-output_image_path = 'C:/Users/simor/Documents/realms-middlefantasy/black_iron_block.png'  # Replace with the desired output path
+            # Resize using NEAREST for pixel-art style
+            img_resized = img.resize(size, Image.NEAREST)
 
-process_image(input_image_path, output_image_path)
+            # Ensure RGBA (transparency support)
+            if img_resized.mode != "RGBA":
+                img_resized = img_resized.convert("RGBA")
+
+            # Save as PNG (keeps transparency)
+            img_resized.save(output_path, format="PNG")
+            print(f"✔ Processed: {filename}")
+
+        except Exception as e:
+            print(f"✖ Failed on {filename}: {e}")
+
+# -------- CONFIG --------
+
+input_folder = r"C:/Users/simor/Documents/realms-middlefantasy/input"
+output_folder = r"C:/Users/simor/Documents/realms-middlefantasy/processed_textures"
+
+process_folder(input_folder, output_folder)
