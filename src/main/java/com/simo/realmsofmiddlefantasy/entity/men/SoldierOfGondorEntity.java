@@ -130,12 +130,19 @@ class ShieldDefenseGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        return this.soldier.getHealth() < this.soldier.getMaxHealth() * 0.5; // Trigger defense when health is low
+        // Trigger if health is low AND has a target
+        return this.soldier.getHealth() < this.soldier.getMaxHealth() * 0.5 && this.soldier.getTarget() != null;
+    }
+
+    @Override
+    public void start() {
+        // Optional: Play a sound or start animation state
+        this.soldier.playSound(SoundEvents.SHIELD_BLOCK, 1.0F, 1.0F);
     }
 
     @Override
     public void tick() {
-        // In defense mode, reduce incoming damage
-        // Logic for shield defense animation can be added here
+        // Simulate blocking by adding Resistance II (40% dmg reduction)
+        this.soldier.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.DAMAGE_RESISTANCE, 20, 1, false, false));
     }
 }

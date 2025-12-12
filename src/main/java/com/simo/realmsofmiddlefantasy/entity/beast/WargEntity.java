@@ -82,14 +82,15 @@ public class WargEntity extends Monster implements GeoEntity {
 
         if (state.isMoving()) {
             state.getController().setAnimation(
-                    RawAnimation.begin().then(
-                            isSprinting() ? "sprint_pack" : "run_hunt",  // Sprinting in a pack or hunting mode
-                            Animation.LoopType.LOOP
-                    )
+                    RawAnimation.begin()
+                        .then(isSprinting() ? "sprint_pack" : "run_hunt", Animation.LoopType.LOOP)
+                        .then("look_at_target", Animation.LoopType.LOOP)
             );
         } else {
             state.getController().setAnimation(
-                    RawAnimation.begin().then("idle_prowl", Animation.LoopType.LOOP)  // Prowl animation when idle
+                    RawAnimation.begin()
+                        .then("idle_prowl", Animation.LoopType.LOOP)
+                        .then("look_at_target", Animation.LoopType.LOOP)
             );
         }
 

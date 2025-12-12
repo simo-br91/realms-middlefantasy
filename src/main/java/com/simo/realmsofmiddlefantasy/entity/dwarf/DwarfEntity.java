@@ -12,6 +12,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -53,6 +54,8 @@ public class DwarfEntity extends AbstractVillager implements GeoEntity {
         this.goalSelector.addGoal(3, new RandomStrollGoal(this, 0.4D));  // Casual movement goal
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 8.0F));  // Staring at the player for interaction
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));  // Add some randomness to the dwarf's gaze
+        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0D, true));
+        this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
     }
 
     @Override
@@ -154,6 +157,10 @@ public class DwarfEntity extends AbstractVillager implements GeoEntity {
     }
 
     private PlayState predicate(AnimationState<DwarfEntity> event) {
+        if (this.swinging) {
+            event.getController().setAnimation(RawAnimation.begin().then("attack", Animation.LoopType.PLAY_ONCE));
+            return PlayState.CONTINUE;
+        }
         // Animations based on actions (e.g., trading, moving)
         if (this.isTrading()) {
             event.getController().setAnimation(

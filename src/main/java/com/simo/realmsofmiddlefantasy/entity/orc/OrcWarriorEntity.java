@@ -1,6 +1,7 @@
 package com.simo.realmsofmiddlefantasy.entity.orc;
 
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -39,12 +40,15 @@ public class OrcWarriorEntity extends Monster implements GeoEntity {
     }
 
     @Override
-    public void tick() {
-        super.tick();
+    public net.minecraft.world.entity.SpawnGroupData finalizeSpawn(net.minecraft.world.level.ServerLevelAccessor level, net.minecraft.world.DifficultyInstance difficulty, net.minecraft.world.entity.MobSpawnType reason, @javax.annotation.Nullable net.minecraft.world.entity.SpawnGroupData spawnData, @javax.annotation.Nullable net.minecraft.nbt.CompoundTag dataTag) {
+        SpawnGroupData result = super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
         
-        // Difficulty scaling logic
-        double difficultyMultiplier = 1 + (this.level().getDifficulty().getId() * 0.1);  // Example: Slightly increase health per difficulty
+        // Logic runs once on spawn
+        double difficultyMultiplier = 1 + (difficulty.getDifficulty().getId() * 0.1);
         this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(26.0D * difficultyMultiplier);
+        this.setHealth(this.getMaxHealth()); // Ensure they spawn with full health
+        
+        return result;
     }
 
 
