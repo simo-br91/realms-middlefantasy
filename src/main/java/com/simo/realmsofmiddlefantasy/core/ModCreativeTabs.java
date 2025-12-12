@@ -69,7 +69,12 @@ public class ModCreativeTabs {
 
                                 output.accept(ModItems.CITADEL_GUARD_SPAWN_EGG.get());
                                 output.accept(ModItems.SOLDIER_OF_GONDOR_SPAWN_EGG.get());
+                                
+                                output.accept(ModItems.HOBBIT_SPAWN_EGG.get());
 
+                                output.accept(ModItems.IRON_HILLS_WARRIOR_SPAWN_EGG.get());
+
+                                output.accept(ModItems.ENT_SHEPHERD_SPAWN_EGG.get());
                             })
                             .build()
             );

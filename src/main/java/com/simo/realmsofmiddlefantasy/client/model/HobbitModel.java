@@ -9,16 +9,16 @@ public class HobbitModel extends GeoModel<HobbitEntity> {
     
     @Override
     public ResourceLocation getModelResource(HobbitEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "geo/hobbit_geo.json");
+        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "geo/shire_hhobbit_geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(HobbitEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "textures/entity/hobbit.png");
+        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "textures/entity/shire_hhobbit.png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(HobbitEntity entity) {
-        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/hobbit_animation.json");
+        return new ResourceLocation(RealmsOfMiddleFantasy.MODID, "animations/shire_hobbit_animation.json");
     }
 }

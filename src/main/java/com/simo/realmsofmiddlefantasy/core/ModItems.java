@@ -155,4 +155,16 @@ public class ModItems {
         public static final RegistryObject<Item> SOLDIER_OF_GONDOR_SPAWN_EGG = ITEMS.register("soldier_of_gondor_spawn_egg",
                 () -> new ForgeSpawnEggItem(ModEntities.SOLDIER_OF_GONDOR, 0x1A1A1A, 0xD4D4D4,
                         new Item.Properties()));
+
+        public static final RegistryObject<Item> HOBBIT_SPAWN_EGG = ITEMS.register("hobbit_spawn_egg",
+                () -> new ForgeSpawnEggItem(ModEntities.HOBBIT, 0x8B4513, 0xD2691E,
+                        new Item.Properties()));
+                
+        public static final RegistryObject<Item> IRON_HILLS_WARRIOR_SPAWN_EGG = ITEMS.register("iron_hills_warrior_spawn_egg",
+                () -> new ForgeSpawnEggItem(ModEntities.IRON_HILLS_WARRIOR, 0x4A4A4A, 0xFFD700,
+                        new Item.Properties()));
+
+        public static final RegistryObject<Item> ENT_SHEPHERD_SPAWN_EGG = ITEMS.register("ent_shepherd_spawn_egg",
+                () -> new ForgeSpawnEggItem(ModEntities.ENT_SHEPHERD, 0x4A3C2A, 0x6B8E23,
+                        new Item.Properties()));
 }

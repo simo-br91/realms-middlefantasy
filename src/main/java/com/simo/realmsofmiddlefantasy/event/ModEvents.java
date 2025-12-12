@@ -55,5 +55,8 @@ public class ModEvents {
         // Gondor Forces
         event.put(ModEntities.CITADEL_GUARD.get(), CitadelGuardEntity.createAttributes().build());
         event.put(ModEntities.SOLDIER_OF_GONDOR.get(), SoldierOfGondorEntity.createAttributes().build());
+
+        event.put(ModEntities.IRON_HILLS_WARRIOR.get(), IronHillsWarriorEntity.createAttributes().build());
+        event.put(ModEntities.HOBBIT.get(), HobbitEntity.createAttributes().build());
     }
 }

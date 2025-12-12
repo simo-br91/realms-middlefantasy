@@ -169,4 +169,27 @@ public class ModEntities {
                         () -> EntityType.Builder.<SoldierOfGondorEntity>of(SoldierOfGondorEntity::new, MobCategory.CREATURE)
                                 .sized(0.6f, 1.95f)
                                 .build(RealmsOfMiddleFantasy.MODID + ":soldier_of_gondor"));
+
+
+        public static final RegistryObject<EntityType<HobbitEntity>> HOBBIT =
+        ENTITY_TYPES.register("hobbit",
+                () -> EntityType.Builder.<HobbitEntity>of(HobbitEntity::new, MobCategory.CREATURE)
+                        .sized(0.5f, 1.2f)  // Hobbits are small
+                        .build(RealmsOfMiddleFantasy.MODID + ":hobbit"));
+
+        public static final RegistryObject<EntityType<IronHillsWarriorEntity>> IRON_HILLS_WARRIOR =
+        ENTITY_TYPES.register("iron_hills_warrior",
+                () -> EntityType.Builder.<IronHillsWarriorEntity>of(IronHillsWarriorEntity::new, MobCategory.CREATURE)
+                        .sized(0.6f, 1.5f)
+                        .build(RealmsOfMiddleFantasy.MODID + ":iron_hills_warrior"));
+
+        // ─────────────────────────────────────────────────────────
+        // Ancient Guardians
+        // ─────────────────────────────────────────────────────────
+
+        public static final RegistryObject<EntityType<EntShepherdEntity>> ENT_SHEPHERD =
+                ENTITY_TYPES.register("ent_shepherd",
+                        () -> EntityType.Builder.<EntShepherdEntity>of(EntShepherdEntity::new, MobCategory.CREATURE)
+                                .sized(1.8f, 4.5f)  // Massive size for Ents
+                                .build(RealmsOfMiddleFantasy.MODID + ":ent_shepherd"));
 }

@@ -161,9 +161,17 @@ public class HobbitEntity extends AbstractVillager implements GeoEntity {
     }
 
     private PlayState predicate(AnimationState<HobbitEntity> event) {
-        if (this.isTrading()) {
+        if (this.isDeadOrDying()) {
+            // You may want to add a death animation to your JSON
             event.getController().setAnimation(
                 RawAnimation.begin().then("animation.hobbit.idle", Animation.LoopType.LOOP)
+            );
+            return PlayState.CONTINUE;
+        }
+
+        if (this.swinging) {
+            event.getController().setAnimation(
+                RawAnimation.begin().then("animation.hobbit.attack", Animation.LoopType.PLAY_ONCE)
             );
             return PlayState.CONTINUE;
         }

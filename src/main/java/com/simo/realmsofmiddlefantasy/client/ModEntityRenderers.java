@@ -48,5 +48,12 @@ public class ModEntityRenderers {
         // Gondor Forces
         event.registerEntityRenderer(ModEntities.CITADEL_GUARD.get(), CitadelGuardRenderer::new);
         event.registerEntityRenderer(ModEntities.SOLDIER_OF_GONDOR.get(), SoldierOfGondorRenderer::new);
+
+        event.registerEntityRenderer(ModEntities.HOBBIT.get(), HobbitRenderer::new);
+
+        event.registerEntityRenderer(ModEntities.IRON_HILLS_WARRIOR.get(), IronHillsWarriorRenderer::new);
+
+        event.registerEntityRenderer(ModEntities.ENT_SHEPHERD.get(), EntShepherdRenderer::new);
+
     }
 }
