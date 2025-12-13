@@ -29,11 +29,7 @@ public class ModItems {
     // Mithril Items
     public static final RegistryObject<Item> MITHRIL_INGOT = ITEMS.register("mithril_ingot", 
         () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> MITHRIL_ORE = ITEMS.register("mithril_ore", 
-        () -> new BlockItem(ModBlocks.MITHRIL_ORE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> MITHRIL_BLOCK = ITEMS.register("mithril_block", 
-        () -> new BlockItem(ModBlocks.MITHRIL_BLOCK.get(), new Item.Properties()));
-
+    
     // Galvorn Items
     public static final RegistryObject<Item> GALVORN_INGOT = ITEMS.register("galvorn_ingot", 
         () -> new Item(new Item.Properties()));

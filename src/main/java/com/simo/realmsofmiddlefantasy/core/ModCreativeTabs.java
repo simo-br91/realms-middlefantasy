@@ -36,9 +36,10 @@ public class ModCreativeTabs {
                                 output.accept(ModItems.RAW_BLACK_IRON.get());
                                 output.accept(ModItems.BLACK_IRON_INGOT.get());
                                 
-                                // Added Mithril
-                                output.accept(ModItems.MITHRIL_ORE.get());
-                                output.accept(ModItems.MITHRIL_BLOCK.get());
+                                // [FIXED] Use ModBlocks instead of ModItems for blocks
+                                output.accept(ModBlocks.MITHRIL_ORE.get());
+                                output.accept(ModBlocks.MITHRIL_BLOCK.get());
+                                
                                 output.accept(ModItems.MITHRIL_INGOT.get());
 
                                 // Added Galvorn
@@ -47,6 +48,9 @@ public class ModCreativeTabs {
                                 // Dwarven blocks
                                 output.accept(ModBlocks.BLACK_IRON_BLOCK.get());
                                 output.accept(ModBlocks.DWARVEN_STONE.get());
+                                // Also add the Forge and Ithildin plates here if you want them in the tab!
+                                output.accept(ModBlocks.DWARVEN_FORGE.get());
+                                output.accept(ModBlocks.ITHILDIN_PLATE.get());
 
                                 // ──────────────────────────────────────
                                 // Equipment (Tools, Weapons, Armor)
@@ -103,7 +107,6 @@ public class ModCreativeTabs {
                                 output.accept(ModItems.SOLDIER_OF_GONDOR_SPAWN_EGG.get());
                                 output.accept(ModItems.HOBBIT_SPAWN_EGG.get());
                                 
-                                // These now exist in ModItems
                                 output.accept(ModItems.IRON_HILLS_WARRIOR_SPAWN_EGG.get());
                                 output.accept(ModItems.ENT_SHEPHERD_SPAWN_EGG.get());
                                 output.accept(ModItems.HUORN_SPAWN_EGG.get());
