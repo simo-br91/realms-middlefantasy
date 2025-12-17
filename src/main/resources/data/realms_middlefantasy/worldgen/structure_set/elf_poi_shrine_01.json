@@ -1,0 +1,11 @@
+{
+  "structures": [
+    { "structure": "realms_middlefantasy:elf_poi_shrine_01", "weight": 1 }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19004102,
+    "spacing": 48,
+    "separation": 24
+  }
+}

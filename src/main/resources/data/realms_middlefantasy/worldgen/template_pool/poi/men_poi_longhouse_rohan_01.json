@@ -1,0 +1,15 @@
+{
+  "name": "realms_middlefantasy:poi/men_poi_longhouse_rohan_01",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "realms_middlefantasy:poi/men_poi_longhouse_rohan_01",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

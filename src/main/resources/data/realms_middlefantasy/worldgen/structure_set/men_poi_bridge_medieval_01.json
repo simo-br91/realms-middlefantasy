@@ -1,0 +1,11 @@
+{
+  "structures": [
+    { "structure": "realms_middlefantasy:men_poi_bridge_medieval_01", "weight": 1 }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19004103,
+    "spacing": 48,
+    "separation": 24
+  }
+}

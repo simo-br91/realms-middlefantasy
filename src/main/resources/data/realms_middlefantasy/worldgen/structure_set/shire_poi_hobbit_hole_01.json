@@ -1,0 +1,11 @@
+{
+  "structures": [
+    { "structure": "realms_middlefantasy:shire_poi_hobbit_hole_01", "weight": 1 }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19004107,
+    "spacing": 48,
+    "separation": 24
+  }
+}

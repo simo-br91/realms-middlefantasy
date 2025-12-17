@@ -1,0 +1,15 @@
+{
+  "name": "realms_middlefantasy:poi/shire_poi_hobbit_house_ivy_01",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "realms_middlefantasy:poi/shire_poi_hobbit_house_ivy_01",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      }
+    }
+  ]
+}
