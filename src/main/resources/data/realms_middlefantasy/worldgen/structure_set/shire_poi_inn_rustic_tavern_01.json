@@ -1,0 +1,11 @@
+{
+  "structures": [
+    { "structure": "realms_middlefantasy:shire_poi_inn_rustic_tavern_01", "weight": 1 }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19005102,
+    "spacing": 72,
+    "separation": 36
+  }
+}

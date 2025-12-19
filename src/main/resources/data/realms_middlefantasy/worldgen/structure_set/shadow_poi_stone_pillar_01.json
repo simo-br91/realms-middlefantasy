@@ -1,10 +1,10 @@
 {
   "structures": [
-    { "structure": "realms_middlefantasy:men_poi_bridge_medieval_01", "weight": 1 }
+    { "structure": "realms_middlefantasy:shadow_poi_stone_pillar_01", "weight": 1 }
   ],
   "placement": {
     "type": "minecraft:random_spread",
-    "salt": 19004103,
+    "salt": 19005106,
     "spacing": 96,
     "separation": 48
   }

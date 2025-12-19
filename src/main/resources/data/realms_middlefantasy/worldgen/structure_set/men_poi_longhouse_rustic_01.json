@@ -1,0 +1,11 @@
+{
+  "structures": [
+    { "structure": "realms_middlefantasy:men_poi_longhouse_rustic_01", "weight": 1 }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19005103,
+    "spacing": 64,
+    "separation": 32
+  }
+}

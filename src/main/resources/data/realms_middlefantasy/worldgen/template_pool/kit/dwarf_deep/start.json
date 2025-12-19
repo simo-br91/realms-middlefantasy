@@ -1,12 +1,12 @@
 {
-  "name": "realms_middlefantasy:poi/elf_poi_shrine_01",
-  "fallback": "minecraft:empty",
+  "name": "realms_middlefantasy:kit/dwarf_deep/start",
+  "fallback": "realms_middlefantasy:kit/dwarf_deep/main",
   "elements": [
     {
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "realms_middlefantasy:poi/elf_poi_shrine_01",
+        "location": "realms_middlefantasy:kit/dwarf_deep/path_01",
         "processors": "minecraft:empty",
         "projection": "rigid"
       }

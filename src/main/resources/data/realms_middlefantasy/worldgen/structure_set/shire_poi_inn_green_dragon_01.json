@@ -1,10 +1,10 @@
 {
   "structures": [
-    { "structure": "realms_middlefantasy:men_poi_watchtower_01", "weight": 1 }
+    { "structure": "realms_middlefantasy:shire_poi_inn_green_dragon_01", "weight": 1 }
   ],
   "placement": {
     "type": "minecraft:random_spread",
-    "salt": 19004105,
+    "salt": 19005101,
     "spacing": 80,
     "separation": 40
   }

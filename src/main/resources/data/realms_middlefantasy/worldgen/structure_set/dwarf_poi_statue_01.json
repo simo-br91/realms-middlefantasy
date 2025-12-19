@@ -1,10 +1,10 @@
 {
   "structures": [
-    { "structure": "realms_middlefantasy:ruins_poi_skeleton_crypt_01", "weight": 1 }
+    { "structure": "realms_middlefantasy:dwarf_poi_statue_01", "weight": 1 }
   ],
   "placement": {
     "type": "minecraft:random_spread",
-    "salt": 19004106,
+    "salt": 19005105,
     "spacing": 120,
     "separation": 60
   }

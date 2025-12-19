@@ -1,12 +1,12 @@
 {
-  "name": "realms_middlefantasy:poi/men_poi_bridge_medieval_01.json",
+  "name": "realms_middlefantasy:poi/men_poi_bridge_medieval_01",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "realms_middlefantasy:poi/men_poi_bridge_medieval_01.json",
+        "location": "realms_middlefantasy:poi/men_poi_bridge_medieval_01",
         "processors": "minecraft:empty",
         "projection": "rigid"
       }

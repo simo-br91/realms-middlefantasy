@@ -4,8 +4,7 @@
     "minecraft:badlands",
     "minecraft:eroded_badlands",
     "minecraft:wooded_badlands",
-    "minecraft:savanna_plateau",
-    "minecraft:savanna",
-    "minecraft:desert"
+    "minecraft:stony_peaks",
+    "minecraft:windswept_gravelly_hills"
   ]
 }

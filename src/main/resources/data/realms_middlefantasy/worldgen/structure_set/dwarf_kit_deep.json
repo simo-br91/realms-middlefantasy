@@ -1,0 +1,11 @@
+{
+  "structures": [
+    { "structure": "realms_middlefantasy:dwarf_kit_deep", "weight": 1 }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19006101,
+    "spacing": 160,
+    "separation": 80
+  }
+}

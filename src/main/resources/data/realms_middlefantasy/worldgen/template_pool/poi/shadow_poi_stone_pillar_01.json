@@ -1,11 +1,12 @@
 {
+  "name": "realms_middlefantasy:poi/shadow_poi_stone_pillar_01",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "realms_middlefantasy:orc_camp_small_1",
+        "location": "realms_middlefantasy:poi/shadow_poi_stone_pillar_01",
         "processors": "minecraft:empty",
         "projection": "rigid"
       }
